@@ -657,3 +657,165 @@ firewall-cmd --reload  //重启防火墙
 访问成功
 
 **安装完成！！！**
+
+
+
+### 六、Go环境配置
+
+##### 1、下载Go安装包
+
+> 官网：[Downloads - The Go Programming Language (google.cn)](https://golang.google.cn/dl/)
+>
+> 下载包：https://golang.google.cn/dl/go1.18.2.linux-amd64.tar.gz
+
+上传到服务器
+
+##### 2、解压
+
+- 在/usr/local 下新建 go文件架
+
+  ```
+  mkdir go
+  ```
+
+- 切换到Go安装包路径
+
+- 解压
+
+  ```
+  tar -zxvf go1.18.2.linux-amd64.tar.gz -C /usr/local/go
+  ```
+
+##### 3、建立工作目录
+
+> 官方建议放在 /home/go 下，创建三个目录：bin（编译后可的执行文件的存放路径）、pkg（编译包时，生成的.a文件的存放路径）、src（源码路径，一般我们的工程就创建在src下面）
+
+```
+mkdir -p /home/go/bin /home/go/pkg /home/go/src
+```
+
+##### 4、配置环境变量
+
+```
+vim /etc/profile
+```
+
+```shell
+export GOROOT=/usr/local/go/go
+export GOPATH=/home/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+```
+
+![](E:\Data_Tool\Typora\resources\Linux\Go2.png)
+
+```
+source /etc/profile
+```
+
+##### 5、检查
+
+- 版本信息
+
+```
+go version
+```
+
+![](E:\Data_Tool\Typora\resources\Linux\Go3.png)
+
+- 配置信息
+
+```
+go env
+```
+
+![](E:\Data_Tool\Typora\resources\Linux\Go4.png)
+
+**安装完成！！！**
+
+
+
+### 七、Python环境配置
+
+CentOS 7.4 默认⾃带了⼀个Python2.7 环境，再装⼀个Python3 ，打造⼀个共存的环境。
+
+![](E:\Data_Tool\Typora\resources\Linux\python1.png)
+
+##### 1、下载
+
+> 官网：[Python Release Python 3.10.4 | Python.org](https://www.python.org/downloads/release/python-3104/)
+>
+> ![](E:\Data_Tool\Typora\resources\Linux\python2.png)
+
+##### 2、解压
+
+```
+cd /usr/local
+mkdir python
+```
+
+```
+cd /root
+tar -zxvf Python-3.10.4.tgz -C /usr/local/python/
+```
+
+##### 3、安装相关预备环境
+
+```
+yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-develgcc make
+```
+
+##### 4、编译
+
+- 安装目录
+
+```
+cd /usr/local/python
+mkdir python3
+```
+
+- 编译安装
+
+```
+cd /usr/local/python/Python-3.10.4
+```
+
+```
+./configure --prefix=/usr/local/python/python3
+```
+
+![](E:\Data_Tool\Typora\resources\Linux\python3.png)
+
+- 安装
+
+```
+make && make install
+```
+
+编译完成！！！
+
+##### 5、验证安装
+
+```
+/usr/local/python/python3/bin/python3
+```
+
+![](E:\Data_Tool\Typora\resources\Linux\pythin4.png)
+
+***ctrl+D*** 退出
+
+##### 6、建立软连接
+
+```
+ln -s /usr/local/python/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/python/python3/bin/pip3 /usr/bin/pip3
+```
+
+##### 7、检查
+
+```
+python3
+```
+
+![](E:\Data_Tool\Typora\resources\Linux\python4.png)
+
+安装完成！！！！
