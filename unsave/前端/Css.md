@@ -422,3 +422,41 @@ position : sticky
 
 ## 十二、高级技巧
 
+#### 1、精灵图(sprites)
+
+> 减少服务器的接受和返回的次数
+
+###### 1、主要背景图片，定位背景图片位置，一张图片多次使用调
+
+按照坐标轴调整
+
+###### 2、字体图标
+
+###### 3、三角
+
+```css
+width :0;
+height:0;
+border :10px solid transparent;
+border-top-color : pink;
+```
+
+###### 4、用户界面样式
+
+1. 更改鼠标样式
+
+   ```css
+   {cursor : pointer }
+   ```
+
+   | 属性值      | 描述      |
+   | ----------- | --------- |
+   | default     | 小白 默认 |
+   | pointer     | 小手      |
+   | move        | 移动      |
+   | text        | 文本      |
+   | not-allowed | 禁止      |
+
+2. aa
+
+3. ss
