@@ -22,19 +22,19 @@
 
 ###### 1、新建虚拟机
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-23-42.png" style="zoom: 50%;" />
+<img src="https://pic.imgdb.cn/item/629631860947543129cd0d30.png" style="zoom: 50%;" />
 
 选择典型配置就可以了
 
 ###### 2、选择镜像文件
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-24-10.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/629631860947543129cd0db7.png" style="zoom:50%;" />
 
 ==这里选择下载下来的镜像文件，忽略提示无法检测，继续下一步==
 
 ###### 3、选择系统版本以及版本
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-24-34.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/629631860947543129cd0dc1.png" style="zoom:50%;" />
 
 按照图示选择就可以了
 
@@ -45,7 +45,7 @@
 
 - 选择磁盘大小
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-25-04.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/629631860947543129cd0d2a.png" style="zoom:50%;" />
 
 磁盘大小就默认的60G就行，都为默认。
 
@@ -53,19 +53,19 @@
 
 ###### 4、编辑虚拟机设置
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-25-47.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/6296318f0947543129cd1ae4.png" style="zoom:50%;" />
 
 ###### 5、加入访问控制密码
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-26-30.png" style="zoom: 50%;" />
+<img src="https://pic.imgdb.cn/item/6296318f0947543129cd1af2.png" style="zoom: 50%;" />
 
 ###### 6、选择固件类型（UEFI）
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-27-35.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/6296318f0947543129cd1b03.png" style="zoom:50%;" />
 
 ###### 7、加入TPM安全模块（==**这是最重要的**==）
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-29-04.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/6296318f0947543129cd1ac8.png" style="zoom:50%;" />
 
 - 检查自已电脑TPM版本
 
@@ -81,7 +81,7 @@
 
 **（这里太小，很有可能会安装出问题）**
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_22-30-19.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/6296318f0947543129cd1ad2.png" style="zoom:50%;" />
 
 ###### 9、然后到这里基本配置就结束了！！！
 
@@ -103,7 +103,7 @@
 
 在软件顶部找到虚拟机菜单，选择安装 VMware Tools
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-16_23-31-25.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/629631960947543129cd24fa.png" style="zoom:50%;" />
 
 **记得在虚拟机运行的时候安装**
 
@@ -119,7 +119,7 @@
 
 **！！！安装运行成功**
 
-![](E:\图片\snipaste\Linux\Windows 10 x64-2022-05-16-22-19-16.png)
+![](https://pic.imgdb.cn/item/629631960947543129cd24e5.png)
 
 ### 三、MacOS 安装配置 
 
@@ -141,7 +141,7 @@
 
 1. ​	将破解工具解压到VMware 安装路径下
 
-   <img src="E:\图片\snipaste\MacOS\Snipaste_2022-05-17_10-30-59.png" style="zoom:50%;" />
+   <img src="https://pic.imgdb.cn/item/62962f6d0947543129c9c510.png" style="zoom:50%;" />
 
    
 
@@ -149,7 +149,7 @@
 
    - 打开资源管理器
 
-     ![](E:\图片\snipaste\MacOS\Snipaste_2022-05-17_10-45-45.png)
+     ![](https://pic.imgdb.cn/item/62962f6d0947543129c9c522.png)
 
      将有关VMware的进程全部关闭
 
@@ -157,7 +157,7 @@
 
 3. 右键使用管理员身份运行 **win-install.cmd**
 
-   <img src="E:\图片\snipaste\MacOS\Snipaste_2022-05-17_10-35-08.png" style="zoom:50%;" />
+   <img src="https://pic.imgdb.cn/item/62962f6d0947543129c9c517.png" style="zoom:50%;" />
 
    然后会出现命令行格式，命令行会自已运行，不需要自已去操作，运行完成后会自动关闭
 
@@ -165,7 +165,7 @@
 
    新建虚拟机，查看是否有MacOS选项
 
-   <img src="E:\图片\snipaste\MacOS\Snipaste_2022-05-17_10-56-10.png" style="zoom:50%;" />
+   <img src="https://pic.imgdb.cn/item/62962f6d0947543129c9c533.png" style="zoom:50%;" />
 
    出现则成功
 
@@ -175,7 +175,7 @@
 
    典型->安装程序光盘映像（选择下载下来的镜像文件）->选择操作系统->选则保存位置（尽量要大，避免C盘）->选择磁盘大小（我选的80G，尽量大于等于60G）->完成！！！
 
-   <img src="E:\图片\snipaste\MacOS\Snipaste_2022-05-17_10-56-10.png" style="zoom:50%;" />
+   <img src="https://pic.imgdb.cn/item/62962f6d0947543129c9c533.png" style="zoom:50%;" />
 
 2. **此时不要着急运行虚拟机，还没有完成配置哦**
 
@@ -183,11 +183,11 @@
 
      修改.vmx后缀的文件
 
-     <img src="E:\图片\snipaste\MacOS\Snipaste_2022-05-17_11-03-53.png" style="zoom:50%;" />
+     <img src="https://pic.imgdb.cn/item/62962f6d0947543129c9c508.png" style="zoom:50%;" />
 
      **记事本打开，在文件最后加入以下内容**
 
-     ![](E:\图片\snipaste\MacOS\Snipaste_2022-05-17_11-30-03.png)
+     ![](https://pic.imgdb.cn/item/62962f770947543129c9d490.png)
 
      ==注意自已电脑的处理器==
 
@@ -222,19 +222,19 @@
 
 5. 选择磁盘工具
 
-   <img src="E:\图片\snipaste\MacOS\macOS 11-2022-05-17-11-38-11.png" style="zoom: 50%;" />
+   <img src="https://pic.imgdb.cn/item/62962f3c0947543129c97b22.png" style="zoom: 50%;" />
 
 6. 抹除磁盘
 
-   <img src="E:\图片\snipaste\MacOS\macOS 11-2022-05-17-11-40-53.png" style="zoom:50%;" />
+   <img src="https://pic.imgdb.cn/item/62962f3c0947543129c97b2d.png" style="zoom:50%;" />
 
-   <img src="E:\图片\snipaste\MacOS\macOS 11-2022-05-17-11-41-12.png" alt="macOS 11-2022-05-17-11-41-12" style="zoom:50%;" />
+   <img src="https://pic.imgdb.cn/item/62962f3c0947543129c97b46.png" alt="macOS 11-2022-05-17-11-41-12" style="zoom:50%;" />
 
 7. 关闭磁盘工具（左上角信号灯红色的）
 
 8. 选择安装MacOS
 
-   <img src="E:\图片\snipaste\MacOS\macOS 11-2022-05-17-11-38-11.png" style="zoom:50%;" />
+   <img src="https://pic.imgdb.cn/item/62962f3c0947543129c97b22.png" style="zoom:50%;" />
 
 9. 依次继续就行
 
@@ -258,4 +258,6 @@
 
     **完成！！！**
 
-![](E:\图片\snipaste\MacOS\macOS 11-2022-05-17-10-08-43.png)
+![](https://pic.imgdb.cn/item/62962f3c0947543129c97b19.png)
+
+![](https://pic.imgdb.cn/item/62962f3c0947543129c97b0b.png)

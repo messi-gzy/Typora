@@ -64,9 +64,9 @@ java -version
 javac
 ```
 
-![](E:\图片\snipaste\Linux\java.png)
+![](https://pic.imgdb.cn/item/629635460947543129d2a036.png)
 
-<img src="E:\图片\snipaste\Linux\javac.png" style="zoom: 50%;" />
+<img src="https://pic.imgdb.cn/item/629635460947543129d2a052.png" style="zoom: 50%;" />
 
 成功！！！
 
@@ -161,7 +161,7 @@ netstat -tnlp
 
 显示tomcat启动页则部署成功
 
-![](E:\图片\snipaste\Linux\tomcat.png)
+![](https://pic.imgdb.cn/item/6296357f0947543129d2e4c3.png)
 
 ##### 8、关闭tomcat
 
@@ -255,7 +255,7 @@ webapps/test/test.png
 rpm -qa|grep mariadb
 ```
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-18_16-47-38.png" style="zoom:50%;" />
+<img src="https://pic.imgdb.cn/item/629636920947543129d45275.png" style="zoom:50%;" />
 
 如果有，就
 
@@ -271,7 +271,7 @@ yum -y remove mariadb-libs-5.5.56-2.el7.x86_64
 
 > 官网：[MySQL :: Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/5.7.html#download)
 >
-> <img src="E:\图片\snipaste\Linux\Snipaste_2022-05-18_16-53-17.png" style="zoom: 67%;" />
+> <img src="https://pic.imgdb.cn/item/629636920947543129d45285.png" style="zoom: 67%;" />
 
 上传并创建文件夹
 
@@ -365,7 +365,7 @@ cd /usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/bin/
 
 - 如果此时提醒 error while loading....libaio.so.1 .....
 
-  <img src="E:\图片\snipaste\Linux\Snipaste_2022-05-20_13-23-22.png" style="zoom:150%;" />
+  <img src="https://pic.imgdb.cn/item/629636a10947543129d466b7.png" style="zoom:150%;" />
 
 - 原因缺少libaio包
 
@@ -375,7 +375,7 @@ cd /usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/bin/
 
 - 安装64位
 
-  ![](E:\图片\snipaste\Linux\Snipaste_2022-05-20_13-24-03.png)
+  ![](https://pic.imgdb.cn/item/629636a10947543129d466c1.png)
 
   ```
   yum search libaio
@@ -388,7 +388,7 @@ cd /usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/bin/
 cat /usr/local/mysql/data/mysql.err
 ```
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-18_20-08-34.png"  />
+<img src="https://pic.imgdb.cn/item/629636920947543129d45290.png"  />
 
 ==**一定记住这个密码哦！！！**==
 
@@ -410,7 +410,7 @@ vim /etc/init.d/mysql
 
 修改其***basedir*** 和***datadir*** 为实际对应⽬录
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-18_20-48-34.png" style="zoom: 67%;" />
+<img src="https://pic.imgdb.cn/item/629636920947543129d45299.png" style="zoom: 67%;" />
 
 ##### 8、设置MYSQL系统服务
 
@@ -432,7 +432,7 @@ chkconfig --add mysql
 chkconfig --list mysql
 ```
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-18_21-17-58.png)
+![](https://pic.imgdb.cn/item/629636920947543129d4526e.png)
 
 服务注册完成
 
@@ -442,7 +442,7 @@ chkconfig --list mysql
 service mysql start
 ```
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-18_21-19-29.png)
+![](https://pic.imgdb.cn/item/6296369a0947543129d45d87.png)
 
 **==启动成功==**
 
@@ -462,7 +462,7 @@ vim ~/.bash_profile
 export PATH=$PATH:/usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/bin
 ```
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-18_21-25-10.png)
+![](https://pic.imgdb.cn/item/6296369a0947543129d45d8d.png)
 
 生效环境变量
 
@@ -480,7 +480,7 @@ source ~/.bash_profile
 mysql -u root -p
 ```
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-18_21-30-25.png)
+![](https://pic.imgdb.cn/item/6296369a0947543129d45d96.png)
 
 密码是之前保存的随机密码
 
@@ -495,7 +495,7 @@ alter user user() identified by "666666";
 flush privileges;
 ```
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-18_21-33-02.png)
+![](https://pic.imgdb.cn/item/6296369a0947543129d45dae.png)
 
 ###### 	3、设置远程连接
 
@@ -507,7 +507,7 @@ update user set user.Host='%' where user.User='root';
 flush privileges;
 ```
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-18_21-35-39.png)
+![](https://pic.imgdb.cn/item/6296369a0947543129d45d7b.png)
 
 ==**Ctrl+D**退出命令行==
 
@@ -517,17 +517,13 @@ flush privileges;
 
 DataGrip：
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-18_21-39-18.png)
+![](https://pic.imgdb.cn/item/629636a10947543129d466a1.png)
 
 连接成功！！！
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-18_21-40-32.png)
+<img src="https://pic.imgdb.cn/item/629636a10947543129d466ad.png" style="zoom:150%;" />
 
 **安装完成！！！！**
-
-
-
-
 
 ### 五、Nginx
 
@@ -559,7 +555,7 @@ tar -zxvf nginx-1.21.6.tar.gz -C /usr/local/nginx/
 yum install gcc-c++
 ```
 
-<img src="E:\图片\snipaste\Linux\Snipaste_2022-05-21_23-20-05.png" style="zoom: 67%;" />
+<img src="https://pic.imgdb.cn/item/629635f60947543129d39773.png" style="zoom: 67%;" />
 
 ###### 2、安装 pcre-devel
 
@@ -641,7 +637,7 @@ vim /etc/rc.local
 /usr/local/nginx/sbin/nginx
 ```
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-21_23-37-55.png)
+![](https://pic.imgdb.cn/item/629635f60947543129d3974f.png)
 
 ###### 6、记得开放端口
 
@@ -652,7 +648,7 @@ firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --reload  //重启防火墙
 ```
 
-![](E:\图片\snipaste\Linux\Snipaste_2022-05-21_23-43-48.png)
+![](https://pic.imgdb.cn/item/629635f60947543129d39755.png)
 
 访问成功
 
@@ -689,6 +685,8 @@ firewall-cmd --reload  //重启防火墙
 ##### 3、建立工作目录
 
 > 官方建议放在 /home/go 下，创建三个目录：bin（编译后可的执行文件的存放路径）、pkg（编译包时，生成的.a文件的存放路径）、src（源码路径，一般我们的工程就创建在src下面）
+>
+> ![](https://pic.imgdb.cn/item/629633c70947543129d071c5.png)
 
 ```
 mkdir -p /home/go/bin /home/go/pkg /home/go/src
@@ -706,7 +704,7 @@ export GOPATH=/home/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 
-![](E:\Data_Tool\Typora\resources\Linux\Go2.png)
+![](https://pic.imgdb.cn/item/629633c70947543129d071c9.png)
 
 ```
 source /etc/profile
@@ -720,7 +718,7 @@ source /etc/profile
 go version
 ```
 
-![](E:\Data_Tool\Typora\resources\Linux\Go3.png)
+![](https://pic.imgdb.cn/item/629633c70947543129d071db.png)
 
 - 配置信息
 
@@ -728,7 +726,7 @@ go version
 go env
 ```
 
-![](E:\Data_Tool\Typora\resources\Linux\Go4.png)
+<img src="https://pic.imgdb.cn/item/629633c70947543129d071e8.png" style="zoom: 50%;" />
 
 **安装完成！！！**
 
@@ -738,13 +736,13 @@ go env
 
 CentOS 7.4 默认⾃带了⼀个Python2.7 环境，再装⼀个Python3 ，打造⼀个共存的环境。
 
-![](E:\Data_Tool\Typora\resources\Linux\python1.png)
+![](https://pic.imgdb.cn/item/628f7287094754312959648c.png)
 
 ##### 1、下载
 
 > 官网：[Python Release Python 3.10.4 | Python.org](https://www.python.org/downloads/release/python-3104/)
 >
-> ![](E:\Data_Tool\Typora\resources\Linux\python2.png)
+> ![](https://pic.imgdb.cn/item/628f72870947543129596493.png)
 
 ##### 2、解压
 
@@ -783,7 +781,7 @@ cd /usr/local/python/Python-3.10.4
 ./configure --prefix=/usr/local/python/python3
 ```
 
-![](E:\Data_Tool\Typora\resources\Linux\python3.png)
+![](https://pic.imgdb.cn/item/628f7287094754312959649d.png)
 
 - 安装
 
@@ -799,7 +797,7 @@ make && make install
 /usr/local/python/python3/bin/python3
 ```
 
-![](E:\Data_Tool\Typora\resources\Linux\pythin4.png)
+![](https://pic.imgdb.cn/item/628f72870947543129596488.png)
 
 ***ctrl+D*** 退出
 
@@ -816,6 +814,6 @@ ln -s /usr/local/python/python3/bin/pip3 /usr/bin/pip3
 python3
 ```
 
-![](E:\Data_Tool\Typora\resources\Linux\python4.png)
+![](https://pic.imgdb.cn/item/628f72870947543129596484.png)
 
 安装完成！！！！
