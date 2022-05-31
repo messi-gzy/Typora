@@ -446,7 +446,7 @@ border-top-color : pink;
 1. 更改鼠标样式
 
    ```css
-   {cursor : pointer }
+    {cursor : pointer }
    ```
 
    | 属性值      | 描述      |
@@ -457,6 +457,85 @@ border-top-color : pink;
    | text        | 文本      |
    | not-allowed | 禁止      |
 
-2. aa
+2. 表单轮廓线
 
-3. ss
+   ```css
+   {outline : none / 0;}
+   ```
+
+3. 文本域取消拖拽
+
+   ```css
+   {resize : none }
+   ```
+
+4. vertical-align
+
+   块级元素不存在基线准则
+
+   | baseline | 默认 ，基线 |
+   | -------- | ----------- |
+   | middle   | 顶端        |
+   | bottom   | 中部        |
+   | top      | 底端        |
+
+5. 图片底侧空白间隙
+
+   - vertical-align
+   - display : block;
+
+6. 溢出文字省略号显示
+
+   文字换行
+
+   - ```css
+     white-space : normal //自动换行
+     ```
+
+   - ```css
+     white-space : nowrap //取消自动换行
+     ```
+
+   溢出的隐藏
+
+   - ```css
+     overflow : hidden
+     ```
+
+   省略号
+
+   - ```css
+     text-overflow : ellipsis
+     ```
+
+   多行省略号
+
+   - ```css
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+     ```
+
+7. 文字围绕浮动元素
+
+   浮动
+
+8. 三角强化
+
+   ```
+   .box {
+           width: 0px;
+           height: 0px;
+           border-top: 100px solid  transparent;
+           border-bottom: 0px solid rgb(32, 166, 32);
+           border-left: 0px solid rgb(24, 67, 141);
+           border-right: 50px solid rgb(149, 14, 117);
+       }
+   ```
+
+   ![](https://pic.imgdb.cn/item/629621890947543129b640c7.png)
+
+9. CSS初始化
+

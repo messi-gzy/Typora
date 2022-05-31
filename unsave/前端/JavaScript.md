@@ -370,10 +370,43 @@
 1. 全局作用域
 2. 函数作用域
 
+#### 2.7、对象遍历
+
+```javascript
+let obj={
+    name:"maxin",
+    age:21,
+    sayHello:function(){
+        alert(1)
+    }
+}
+for (let k in obj){
+    console.log(k)  //变量属性名
+    console.log(obj[k]) //变量值
+ // obj[k]();
+}
+```
 
 
+## 三、内置对象
 
-## 三、基本用法               
+#### 1、Math 对象
 
-#### 1、
+- Math.PI
+
+- Math.abs()
+
+- ........
+
+- 随机数
+
+  ==**[0,1)**==
+
+  ```javascript
+  Math.random()
+  ```
+
+#### 2、Date 对象
+
+
 
