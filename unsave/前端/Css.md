@@ -539,3 +539,53 @@ border-top-color : pink;
 
 9. CSS初始化
 
+## 十三、新增语法
+
+<img src="https://pic.imgdb.cn/item/629738a40947543129c8d361.jpg" style="zoom: 33%;" />
+
+#### 1、视频标签
+
+```html
+ <video src="...." controls="controls"></video>
+```
+
+<img src="https://pic.imgdb.cn/item/62973a030947543129caebde.jpg" style="zoom:50%;" />
+
+#### 2、音频标签
+
+```html
+ <audio src="E:\CloudMusic\天行九歌-(动画《天行九歌》主题曲)的MP3下载_霍尊-天行九歌.mp3" controls="controls"></audio>
+```
+
+![](https://pic.imgdb.cn/item/629742ac0947543129d7d633.png)
+
+#### 3、表单元素
+
+![](https://pic.imgdb.cn/item/62975a520947543129f3e2b1.jpg)
+
+![6.jpg](https://s2.loli.net/2022/06/01/4yl7eCqA9FBcOHD.jpg)
+
+#### 4、伪类选择器
+
+![](https://pic.imgdb.cn/item/629762960947543129fea015.jpg)
+
+- ```css
+  nth-child(even)//偶数孩子
+  nth-child(odd)//奇数孩子
+  nth-child(n)//公式计算 （只能为n，n从0取）
+  <!--nth-child将所有孩子都排序 -->
+  <!--nth-of-type将指定元素都排序 -->
+  ```
+
+#### 5、伪元素选择器
+
+| 选择符   | 简介                     |
+| -------- | ------------------------ |
+| ::before | 在元素内部前面插入内容   |
+| ::after  | 在元素内部的后面插入内容 |
+
+:clap:
+
+![](https://pic.imgdb.cn/item/62976798094754312904cb35.jpg)
+
+ 

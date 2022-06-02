@@ -117,5 +117,14 @@
 
 ### 三、Gradle
 
+### 四、Node.js
 
+> 官网：
+>
+> http://nodejs.cn/download/
+>
+> <img src="https://pic.imgdb.cn/item/62982faf0947543129c0ad59.png" style="zoom: 33%;" />
 
+检查
+
+![](https://pic.imgdb.cn/item/62982f180947543129c0059a.png)

@@ -817,3 +817,45 @@ python3
 ![](https://pic.imgdb.cn/item/628f72870947543129596484.png)
 
 安装完成！！！！
+
+
+
+### 八、Node.js 配置
+
+##### 1、下载
+
+> 官网：
+>
+> http://nodejs.cn/download/
+>
+> ![](https://pic.imgdb.cn/item/629771ca0947543129136f64.png)
+
+##### 2、解压
+
+```
+mkdir /usr/local/node
+tar -xvf node-v16.15.0-linux-x64.tar.xz -C /usr/local/node
+mv /usr/local/node/node-v16.15.0-linux-x64 /usr/local/node/node
+```
+
+##### 3、配置环境变量
+
+```
+vim /etc/profile
+```
+
+```
+export PATH=/usr/local/node/node/bin:$PATH
+```
+
+![](https://pic.imgdb.cn/item/629773a509475431291635d3.png)
+
+##### 4、检查
+
+```
+node -v
+npm version
+npx -v
+```
+
+![](https://pic.imgdb.cn/item/62977405094754312916e5dc.png)
