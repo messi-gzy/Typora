@@ -1,4 +1,4 @@
-# Node.JS
+Node.JS
 
 ### 一、目录
 
@@ -245,7 +245,7 @@ const electron=require('electron')
 
 ##### 4、导出接口
 
-**module 对象**
+----------**module 对象**
 
 > module.exports 将成员共享出去
 >
@@ -278,4 +278,371 @@ const electron=require('electron')
   ```
 
 ==永远以**module.exports**导出的接口为主==
+
+> module.exports===exports
+
+##### 5、模块化规范
+
+CommonJS
+
+
+
+### 七、包管理
+
+##### 1、包概念
+
+> 第三方封装的包
+
+##### 2、体验
+
+- 安装
+
+```shell
+npm install moment
+npm i moment
+```
+
+- 官网
+
+> https://www.npmjs.com/
+
+- 安装指定版本的包
+
+```shell
+npm install moment@2.22.2
+```
+
+> 不用删除之前的包
+
+- 包管理
+
+  <img src="https://pic.imgdb.cn/item/6299ac3109475431297b6194.png" style="zoom: 67%;" />
+
+- 一次性安装所有包
+
+```shell
+npm install
+```
+
+- 卸载包
+
+```shell
+npm uninstall moment
+```
+
+- a
+
+- a
+
+- a
+
+  
+
+##### 3、包管理配置文件
+
+------------**package.json**
+
+<img src="https://pic.imgdb.cn/item/6299ade109475431297d905b.png" style="zoom:50%;" />
+
+- dependencies
+
+> 上线也需要
+
+- devDependencies
+
+> 上线不需要，测试需要
+
+```shell
+npm install --save-dev webpack
+```
+
+##### 4、镜像
+
+###### 1、查看当前镜像源
+
+```shell
+npm config get registry
+```
+
+![](https://pic.imgdb.cn/item/6299b2c40947543129843bff.png)
+
+###### 2、切换淘宝镜像源
+
+```shell
+ npm config set registry=https://registry.npm.taobao.org/
+```
+
+###### 3、nrm工具
+
+> 更方便的安装
+
+```shell
+npm install nrm -g
+```
+
+- 查看所有镜像源
+
+```shell
+nrm ls
+```
+
+<img src="https://pic.imgdb.cn/item/6299b6a709475431298931a6.png" style="zoom:50%;" />
+
+- 切换镜像源
+
+```shell
+nrm use taobao
+```
+
+##### 5、包分类
+
+###### 1、项目包
+
+- 开发依赖包
+
+  > devDependencies
+  >
+  > ```shell
+  > npm install ... -D
+  > ```
+
+- 核心依赖包
+
+  > dependencies
+  >
+  > ```shell
+  > npm install ...
+  > ```
+
+###### 2、全局包
+
+- 目录
+
+> C:\Users\MateBook13\AppData\Roaming\npm\node_modules
+>
+> 工具性质的包
+
+- 安装全局包
+
+```shell
+npm install ... -g
+```
+
+- 卸载全局包
+
+```shell
+npm uninstall ... -g
+```
+
+##### 6、开发自已的包
+
+###### 1、初始化
+
+```shell
+npm init -y
+```
+
+```json
+{
+  "name": "outs_tools",
+  "version": "1.0.0",
+  "description": "测试",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+###### 2、开发
+
+```javascript
+const date=require('./src/dateFormat')
+const html=require('./src/htmlEscape')
+
+module.exports={
+    ...date,
+    ...html
+}
+```
+
+<img src="https://pic.imgdb.cn/item/6299d2ec0947543129aff14f.png" style="zoom:50%;" />
+
+<img src="https://pic.imgdb.cn/item/6299d2ec0947543129aff13c.png" style="zoom:50%;" />
+
+###### 3、发布包
+
+1、登录
+
+```shell
+npm login
+```
+
+2、发布
+
+> 包名不能相同
+
+> 切换到根目录
+
+```shell
+npm publish
+```
+
+<img src="https://pic.imgdb.cn/item/6299d7ea0947543129b6629e.png" style="zoom: 67%;" />
+
+3、删除已经发布的包
+
+```shell
+npm unpublish ... --force
+```
+
+![](https://pic.imgdb.cn/item/6299da090947543129b8c0fd.png)
+
+
+
+### 八、Express
+
+-----------**web**开发框架
+
+##### 1、基本服务器
+
+###### 	1、创建基本服务器
+
+```javascript
+const express=require('express')
+//创建Web服务器
+const app=express()
+
+app.listen(8090,()=>{
+    console.log("running");
+})
+```
+
+###### 	2、监听*Get*和*Post*的请求
+
+```javascript
+app.get('/usr',(req,res)=>{
+    res.send({
+        name:"maxin",
+        age:21,
+        grilfriend:"gzy"
+    })
+})
+
+app.post('/usr',(req,res)=>{
+    res.send("POST响应成功")
+})
+```
+
+###### 	3、获取*URL*携带的查询参数
+
+```javascript
+http://127.0.0.1:8090/?name=maxin
+
+app.post('/',(req,res)=>{
+    console.log(req.query)
+    res.send("POST响应成功")
+})
+```
+
+###### 	4、获取*URL*的动态参数
+
+```javascript
+http://127.0.0.1:8090/usr/3/hello
+
+app.get('/usr/:id/:name',(req,res)=>{
+    console.log(req.params)
+    res.send(req.params)
+})
+```
+
+##### 2、静态资源托管
+
+###### 	1、单个资源托管
+
+```javascript
+http://127.0.0.1:8090/3-1.png
+
+const express=require('express')
+//创建Web服务器
+const app=express()
+
+//对外提供资源
+app.use(express.static('../resources'))//文件夹
+
+
+app.listen(8090,()=>{
+    console.log("running");
+})
+```
+
+###### 	2、托管多个资源目录
+
+```javascript
+const express=require('express')
+//创建Web服务器
+const app=express()
+
+//对外提供资源
+app.use(express.static('../resources'))//文件夹
+app.use(express.static('../public'))//文件夹
+
+app.listen(8090,()=>{
+    console.log("running");
+})
+```
+
+###### 	3、挂载路径前缀
+
+```javascript
+http://127.0.0.1:8090/resources/3-1.png
+
+const express=require('express')
+//创建Web服务器
+const app=express()
+
+//对外提供资源
+app.use('/resources',express.static('../resources'))//文件夹
+
+app.listen(8090,()=>{
+    console.log("running");
+})
+```
+
+
+
+### #、第三方包
+
+##### 1、i5ting_toc
+
+> html--->md
+
+1、安装（全局）
+
+```shell
+npm install i5ting_toc -g
+```
+
+2、使用
+
+```shell
+i5ting_toc -f node.md -o
+```
+
+##### 2、nodemon
+
+1、安装（全局）
+
+```shell
+npm install nodemon -g
+```
+
+2、使用
+
+```shell
+nodemon app.js
+```
 

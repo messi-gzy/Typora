@@ -128,3 +128,38 @@
 检查
 
 ![](https://pic.imgdb.cn/item/62982f180947543129c0059a.png)
+
+
+
+### 五、MinGW
+
+##### 1、下载
+
+> 官网：
+>
+> https://sourceforge.net/projects/mingw-w64/files/
+>
+> <img src="https://pic.imgdb.cn/item/629ad0d10947543129c04f78.png" style="zoom: 67%;" />
+
+##### 2、安装
+
+解压
+
+![](https://pic.imgdb.cn/item/629ad28c0947543129c2760b.png)
+
+##### 3、环境变量
+
+![](https://pic.imgdb.cn/item/629ad3060947543129c30c3e.png)
+
+**系统变量-->path-->新建-->解压后的bin目录**
+
+##### 4、验证
+
+```shell
+gcc --version
+g++ --version
+```
+
+<img src="https://pic.imgdb.cn/item/629ad6100947543129c6a325.png" style="zoom:50%;" />
+
+![](https://pic.imgdb.cn/item/629ad6100947543129c6a31c.png)
