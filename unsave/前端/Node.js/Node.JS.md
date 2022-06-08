@@ -1,4 +1,4 @@
-Node.JS
+# Node.JS
 
 ### 一、目录
 
@@ -330,14 +330,6 @@ npm install
 npm uninstall moment
 ```
 
-- a
-
-- a
-
-- a
-
-  
-
 ##### 3、包管理配置文件
 
 ------------**package.json**
@@ -612,6 +604,218 @@ app.listen(8090,()=>{
 })
 ```
 
+##### 3、路由
+
+> 映射关系
+
+###### 1、概念
+
+> - 请求类型
+> - 请求URL
+> - 处理函数
+>
+> 先后顺序匹配
+
+###### 2、使用
+
+1. 简单使用
+
+   ```javascript
+   const express=require('express')
+   
+   const app=express()
+   
+   app.get("/",(req,res)=>{
+       res.send('hello')
+   })
+   
+   app.post("/",(req,res)=>{
+       res.send('world')
+   })
+   
+   app.listen(8090,()=>{
+       console.log("start");
+   })
+   ```
+
+2. 模块化路由
+
+   <img src="https://pic.imgdb.cn/item/629f3b540947543129db3fce.png" style="zoom: 50%;" />
+
+   ```javascript
+   const express=require('express')
+   
+   const userRouter=require('./express-module')
+   
+   //注册路由模块
+   const app=express()
+   app.use(userRouter)
+   
+   app.listen(8090,()=>{
+   
+   })
+   ```
+
+3. 添加前缀
+
+   ```javascript
+   app.use("/api",userRouter)
+   ```
+
+##### 4、中间件
+
+###### 1、概念
+
+> 业务流程中的中间处理环节
+
+###### 2、流程处理
+
+<img src="https://pic.imgdb.cn/item/629f3efd0947543129dff635.jpg" style="zoom:50%;" />
+
+###### 3、格式
+
+<img src="https://pic.imgdb.cn/item/629f41c00947543129e39b1a.jpg" style="zoom:150%;" />
+
+###### 4、next（）
+
+> 把流转关系转交给下一个中间件或路由，多个中间件连续调用的关键
+
+```javascript
+const middleFunction=function(req,res,next){
+    console.log("中间件函数")
+    next()
+}
+```
+
+###### 5、全局中间件
+
+```javascript
+const middleFunction=function(req,res,next){
+    console.log("中间件函数")
+    next()
+}
+app.use(middleFunction)//注册全局生效函数
+```
+
+```javascript
+app.use((req,res,next)=>{
+    console.log("简化中间件")
+    res.send("gzysb")
+})
+```
+
+多个全局中间件
+
+按进入顺序排序
+
+```javascript
+app.use((req,res,next)=>{
+    console.log("中间件1")
+    next()
+})
+
+app.use((req,res,next)=>{
+    console.log("中间件2")
+    next()
+})
+```
+
+###### 6、局部中间件
+
+```javascript
+const mv=(req,res,next)=>{
+    console.log("局部中间件")
+    next()
+}
+
+app.get('/',mv,(req,res)=>{
+    res.send("home")
+})
+```
+
+多个局部中间件
+
+<img src="https://pic.imgdb.cn/item/62a0284f0947543129c9f772.png" style="zoom:50%;" />
+
+###### 7、注意事项
+
+1. 一定在路由前注册中间件
+2. keyi多个连续中间件
+3. next（）
+4. 逻辑清晰
+5. ***中间件共享（req,res）***
+
+##### 5、中间件的分类
+
+###### 1、应用级别的中间件
+
+> app.use()  | app.get()  | app.post()
+
+###### 2、路由级别的中间件
+
+> express.Router()
+
+###### 3、错误级别的中间件
+
+```javascript
+app.get('/',(req,res)=>{
+   throw new Error("error")
+   res.send("home")
+})
+//捕获异常
+app.use((err,req,res,next)=>{
+    console.log("error"+err.message)
+    res.send(err.message)
+   // next()
+})
+```
+
+> ==***错误中间件注册到所有路由之后***==
+
+###### 4、内置中间件
+
+1. express.static  //静态资源
+
+2. express.json  //解析JSON  （4.16.0+）
+
+   ```javascript
+   app.use(express.json())
+   ```
+
+3. express.urlencodes  //解析URL-encoded 数据 （4.16.0+）
+
+   ```javascript
+   app.use(express.urlencoded({ extended :false}))
+   
+   app.post('/',(req,res)=>{
+       console.log(req.body)
+       res.send("home")
+   })
+   ```
+
+###### 5、第三方中间件
+
+body-parser
+
+```java
+const express=require('express')
+const parser =require('body-parser')
+const app =express()
+
+app.use(parser.urlencoded({ extended :false}))
+
+app.post('/',(req,res)=>{
+    console.log(req.body)
+    res.send("home")
+})
+```
+
+###### 6、req.body
+
+***必须配置解析表单的中间件才能拿到数据***
+
+<img src="https://pic.imgdb.cn/item/62a0327e0947543129d60f40.png" style="zoom: 50%;" />
+
 
 
 ### #、第三方包
@@ -646,3 +850,4 @@ npm install nodemon -g
 nodemon app.js
 ```
 
+##### 3、node-gyp
