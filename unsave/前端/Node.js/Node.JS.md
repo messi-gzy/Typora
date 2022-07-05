@@ -818,36 +818,65 @@ app.post('/',(req,res)=>{
 
 
 
-### #、第三方包
+##### 
 
-##### 1、i5ting_toc
+###### 7、自定义中间件
 
-> html--->md
+1. 监听data,end数据
 
-1、安装（全局）
+   ```javascript
+   app.use((req,res,next)=>{
+       let str=''
+   
+       req.on('data',(chunk)=>{
+           str+=chunk
+       })
+       req.on('end',()=>{
+           console.log(str)
+       })
+   })
+   ```
 
-```shell
-npm install i5ting_toc -g
+2. querystring模块
+
+   <img src="https://pic.imgdb.cn/item/62a70a890947543129c3ab12.png" style="zoom:67%;" />
+
+###### 8、接口
+
+```javascript
+router.get('/get',(req,res)=>{
+    const query=req.query
+
+    res.send({
+        status:0,
+        msg:"GET成功",
+        data:query
+    })
+})
+
+router.post('/post',(req,res)=>{
+    const body=req.body
+    
+    res.send({
+        status:0,
+        msg:"POST成功",
+        data:body
+    })
+})
 ```
 
-2、使用
+###### 9、解决跨域
 
-```shell
-i5ting_toc -f node.md -o
-```
+> **CORS** 配置
+>
+> <img src="https://pic.imgdb.cn/item/62a7148a0947543129d65654.png" style="zoom:50%;" />
 
-##### 2、nodemon
+响应头：
 
-1、安装（全局）
+1. > Access-Control-Allow-Origin : <origin> | *     请求地址
 
-```shell
-npm install nodemon -g
-```
+2. > Access-Control-Allow-Headers : <origin> | *     请求地址
 
-2、使用
+3. > Access-Control-Allow-Methods: <origin> | *     请求方式
 
-```shell
-nodemon app.js
-```
-
-##### 3、node-gyp
+4. a
