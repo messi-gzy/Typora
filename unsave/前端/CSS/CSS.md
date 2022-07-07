@@ -422,7 +422,7 @@ position : sticky
 
 ## 十二、高级技巧
 
-###### 1、精灵图(sprites)
+#### 1、精灵图(sprites)
 
 > 减少服务器的接受和返回的次数
 
@@ -430,9 +430,9 @@ position : sticky
 
 按照坐标轴调整
 
-###### 2、字体图标
+#### 2、字体图标
 
-###### 3、三角
+#### 3、三角
 
 ```css
 width :0;
@@ -441,7 +441,7 @@ border :10px solid transparent;
 border-top-color : pink;
 ```
 
-###### 4、用户界面样式
+#### 4、用户界面样式
 
 1. 更改鼠标样式
 
@@ -588,4 +588,37 @@ border-top-color : pink;
 
 ![](https://pic.imgdb.cn/item/62976798094754312904cb35.jpg)
 
- 
+####  6、盒子模型
+
+> #### **$\textcolor{blue}{box-sizing:bordeer-box}$**
+
+#### 7、图片模糊
+
+```html
+<style>
+    img {
+        filter :blur(100px);
+    }
+    
+</style>
+<body>
+    <img src="../../../图片/snipaste/MacOS/macOS 11-2022-05-17-11-41-12.png" alt="">
+</body>
+```
+
+> blur(...),值越大，越模糊
+
+#### 8、过渡
+
+![](https://pic.imgdb.cn/item/62c521345be16ec74ae51515.jpg)
+
+```css
+div {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    transition: width 1s ease 1s,height 1s ease 1s;//逗号隔开
+}
+```
+

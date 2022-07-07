@@ -2,7 +2,13 @@
 
 ---
 
-## 一、基础
+## 一、目录
+
+---
+
+## 二、基础
+
+---
 
 #### 1、数据类型
 
@@ -123,6 +129,8 @@ cout<<a<<endl; //a=10
 #### 3、数组
 
 `内存中连续内存空间`
+
+==数组名也是首地址==
 
 ##### 1、一维数组
 
@@ -245,3 +253,339 @@ int *p=(int *)0x1100;
 ```
 
 ---
+
+##### 4、***const***修饰指针
+
+###### 1、常量指针
+
+> 指针指向可以改，指向的值不可以改
+>
+> const int *p=&a;
+
+![](https://pic.imgdb.cn/item/62c4459e5be16ec74a11e74b.png)
+
+---
+
+###### 2、指针常量
+
+> 指针的指向不可以改，指向的值可以改
+>
+> int  * const  p=&a;
+
+![](https://pic.imgdb.cn/item/62c447f25be16ec74a157ac1.png)
+
+---
+
+###### 3、即修饰指针也修饰常量
+
+> 指针的指向不可以改，指向的值也不可以改
+>
+> const int * const p =&a;
+
+![](https://pic.imgdb.cn/item/62c447985be16ec74a14f0ff.png)
+
+---
+
+##### 5、指针和数组
+
+`指针指向数组首地址，通过++实现数组往后移`
+
+###### 1、定义
+
+```c++
+int arr[10]={1,2,3};
+int *p=arr;
+cout<<++*p<<endl;// 2
+```
+
+###### 2、动态数组
+
+```c++
+int *a=new int[10];//申请空间
+*a=10;
+a[1]=20;
+cout<<a[0]<<endl;
+delete []a;//释放空间
+```
+
+---
+
+##### 6、指针和函数
+
+![](https://pic.imgdb.cn/item/62c451815be16ec74a235b91.png)
+
+---
+
+#### 6、结构体
+
+##### 1、定义
+
+`一些类型组合成的一个类型`
+
+> #### **$\textcolor{blue}{结构体}$**
+>
+> ==C++中可以省略***struct***关键字==
+>
+> 定义：
+>
+> ```c++
+> struct Student
+> {
+>     int m_age;
+>     string m_name;
+>     double m_score;
+> };
+> ```
+
+---
+
+##### 2、创建
+
+- struct Student s1;
+
+> s1.m_name
+>
+> s1.m_age;
+
+- struct Student s2 = {18,"aaa",23.5};
+
+> 赋初值
+
+- 在定义结构体时就创建结构体变量
+
+> <img src="https://pic.imgdb.cn/item/62c4f10f5be16ec74ab07acd.png" style="zoom:67%;" />
+
+---
+
+##### 3、结构体数组
+
+```c++
+struct Student
+{
+    int m_age;
+    string m_name;
+    double m_score;
+};
+
+int main() {
+    struct Student student[5]
+    {
+        {18,"aaa",98.5},
+        {19,"bbb",98.5},
+        {20,"ccc",98.5}
+    };
+    for(int i=0;i<sizeof(student)/ sizeof(student[0]);i++)
+    {
+        cout<<student[i].m_name<<endl;
+    }
+    return 0;
+}
+```
+
+---
+
+##### 4、结构体指针
+
+> $\textcolor{red}{利用操作符}$`->` $\textcolor{red}{访问内容}$
+
+```c++
+Student s1={21,"小王",98.66};
+Student *p=&s1;
+cout<<p->m_name<<endl;
+```
+
+---
+
+##### 5、结构体嵌套结构体
+
+```c++
+struct Student
+{
+    int m_age;
+    string m_name;
+};
+struct Teacher
+{
+    int m_age;
+    string m_name;
+    double m_score;
+    struct Student student;
+};
+int main() {
+    Teacher teacher={21,"maxin",98.0,{12,"gzy"}};
+    cout<<teacher.student.m_name<<"\t"<<teacher.m_name<<endl;
+    return 0;
+}
+```
+
+---
+
+##### 6、结构体做函数参数
+
+```c++
+void Printf_1(struct Teacher teacher)//值传递
+{
+    cout<<teacher.student.m_name<<"\t"<<teacher.m_name<<endl;
+};
+void Printf_2(struct Teacher *teacher)//地址传递
+{
+    cout<<teacher->student.m_name<<"\t"<<teacher->m_name<<endl;
+};
+
+int main() {
+    Teacher teacher={21,"maxin",98.0,{12,"gzy"}};
+    Printf_1(teacher);
+    Printf_2(&teacher);
+    return 0;
+}
+```
+
+---
+
+##### 7、结构体中 *const* 使用
+
+![](https://pic.imgdb.cn/item/62c509fb5be16ec74acc2106.png)
+
+> 减少拷贝，减少内存开销，只读不可以修改
+
+---
+
+
+
+## 三、初级
+
+---
+
+#### 1、内存分区
+
+![](https://pic.imgdb.cn/item/62c53b3f5be16ec74a06063a.jpg)
+
+---
+
+##### 1、代码区
+
+- 共享
+- 只读
+
+##### 2、全局区
+
+- 全局变量
+- 静态常量
+- 常量区
+
+1. 字符串常量
+2. const 修饰的变量
+
+`数据由操作系统释放`
+
+----
+
+##### 3、栈区
+
+`编译器由编译器管理和开辟`
+
+> 函数参数和局部变量等，在生命周期期间结束后自动释放
+
+##### 4、堆区
+
+`由开发者管理操作，需要自已释放`
+
+###### 1、开辟数据
+
+> ### $\textcolor{red}{new}$<-->$\textcolor{red}{delete\\\free()}$
+
+获取和释放堆内存
+
+---
+
+
+
+#### 2、引用
+
+`给变量起别名`
+
+> 数据类型 &别名 = 原名
+
+##### 1、定义
+
+```c++
+int a=10;
+int &b=a;
+b=20;
+cout<<a<<endl;
+```
+
+---
+
+##### 2、注意事项
+
+| 引用         | 指针         |
+| ------------ | ------------ |
+| 必须初始化   | 可以不初始化 |
+| 不能为空     | 可以为空     |
+| 不能更换目标 | 可以更换目标 |
+
+---
+
+###### 1、引用必须初始化
+
+![](https://pic.imgdb.cn/item/62c597f75be16ec74a80f714.png)
+
+---
+
+###### 2、不可以更改
+
+> ### $\textcolor{blue}{初始化后不可以再更改为其他的引用}$
+
+<img src="https://pic.imgdb.cn/item/62c598895be16ec74a81ca92.png" style="zoom: 67%;" />
+
+---
+
+##### 3、做函数参数
+
+```c++
+void Swap(int &a,int &b)
+{
+    int temp=a;
+    a=b;
+    b=temp;
+}
+
+int main() {
+    int a=10,c=30;
+    Swap(a,c);
+    cout<<a<<" "<<c<<endl;
+    return 0;
+}
+```
+
+---
+
+##### 4、函数返回值
+
+###### 1、不可以返回局部变量的引用
+
+![](https://pic.imgdb.cn/item/62c6f3fef54cd3f93703d0dc.png)
+
+###### 2、引用可以作为左值
+
+<img src="https://pic.imgdb.cn/item/62c6f3fef54cd3f93703d0df.png" style="zoom: 50%;" />
+
+---
+
+##### 5、引用的本质
+
+> int &ref=a; ------->int * const ref=&a;(指针常量)
+>
+> 指向的值可以改，指针指向不可以改。
+
+##### 6、常量引用
+
+![](https://pic.imgdb.cn/item/62c6f9faf54cd3f9370c6c1b.png)
+
+![](https://pic.imgdb.cn/item/62c6fa6ff54cd3f9370d119b.png)
+
+`值传递会占用多余内存，常量引用防止误操作`
+
+
+
