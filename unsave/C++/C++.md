@@ -452,7 +452,7 @@ int main() {
 
 
 
-## 三、初级
+## 三、进价
 
 ---
 
@@ -588,4 +588,288 @@ int main() {
 `值传递会占用多余内存，常量引用防止误操作`
 
 
+
+#### 3、函数初级
+
+##### 1、带有默认参数的函数
+
+1. 如果传参就用所传的参数
+
+2. 传参数从左往右（第一个之后必须都得有默认参数）
+
+   <img src="https://pic.imgdb.cn/item/62c824b4f54cd3f93755da7a.png" style="zoom:67%;" />
+
+3. 形参必须从右往左
+
+4. **缺省参数不能同时在声明和实现中出现**
+
+   <img src="https://pic.imgdb.cn/item/62c8250bf54cd3f9375666d7.png" style="zoom:67%;" />
+
+> #### $\textcolor{red}{**缺省参数不能同时在声明和实现中出现**}$
+
+##### 2、函数占位参数
+
+```c++
+void func(int a,int,int )
+{
+    
+}
+int main() {
+    func(10,10,10);
+    return 0;
+}
+```
+
+`返回值类型 函数名 （数据类型）{}`
+
+##### 3、内联函数
+
+##### 4、函数重载
+
+`函数名可以相同，提高复用性`
+
+###### 1、条件
+
+- 同一个作用域
+- 函数名称相同
+- 参数类型不同、个数不同、顺序不同
+
+> #### $\textcolor{red}{函数的返回值不可以作为函数重载的条件}$
+
+```c++
+int add(int a,double b)
+{}
+int add(int a,int b)
+{}
+```
+
+###### 2、注意事项
+
+1. 引用作为函数重载
+
+   ```c++
+   void add(int& a){}
+   ----
+   int a=10;
+   add(a);
+   ```
+
+   ```c++
+   void add(const int& a){}
+   ----
+   add(10);
+   ```
+
+2. 默认参数
+
+![](https://pic.imgdb.cn/item/62c98ccbf54cd3f93720c883.png)
+
+
+
+#### 4、类和对象
+
+面向对象的三大特性 ：`封装`、`继承`、`多态`
+
+##### 1、封装
+
+###### 1、封装的意义
+
+- 将属性和行为作为一个整体，表现生活中的事务
+- 将属性和行为加以权限控制
+
+###### 2、实例化对象
+
+```c++
+class Circle
+{
+public:
+    double m_dr;
+    double Calculate()
+    {
+        return 2*m_dr*PI;
+    }
+};
+int main() {
+    Circle circle;
+    circle.m_dr=10;
+    cout<<circle.Calculate()<<endl;
+    return 0;
+}
+```
+
+###### 3、意义
+
+属性：成员变量
+
+行为：成员方法
+
+###### 4、访问权限
+
+- 公共权限 `public`             类内和类外都可以访问
+- 保护权限 `protected`       类内可以访问，类外不可以访问。==子类可以访问父类内容==
+- 私有权限 `private`           类内可以访问，类外不可以访问。==子类不可以访问父类内容==
+
+```C++
+class Student
+{
+public:
+    string m_strName;
+protected:
+    char m_chID[18];
+private:
+    char m_chPassword[64];
+};
+```
+
+###### 5、struct和class区别
+
+`struct` 默认 ==公共==（public）
+
+`class`   默认 ==私有== （private）
+
+
+
+##### 2、初始化和清理
+
+###### 1、构造函数和析构函数
+
+**构造函数** ：`类名（）{}`
+
+- 与类名相同
+- 可以有参数，发生重载
+- 自动调用
+
+**析构函数** ： `~类名（）{}`
+
+- ~+类名
+- 不可以有参数，不可以重载
+- 在对象销毁时自动调用
+
+```c++
+class Student
+{
+public:
+    string m_strName;
+    int m_dID;
+    Student(string name,int id)
+    {
+        cout<<"构造函数"<<endl;
+        this->m_strName=move(name);
+        this->m_dID=id;
+    };
+    ~Student()
+    {
+        cout<<"析构函数"<<endl;
+    }
+};
+```
+
+
+
+###### 2、构造函数的分类
+
+**两种分类** ：
+
+1. 参数：
+
+   - 有参构造
+
+   ```c++
+   Student(string name,int id)
+   {
+       cout<<"构造函数"<<endl;
+       this->m_strName=move(name);
+       this->m_dID=id;
+   };
+   ```
+
+   - 无参构造
+
+   ```c++
+   Student()
+   {
+       cout<<"无参构造函数"<<endl;
+   };
+   ```
+
+2. 类型
+
+   - 普通构造
+   - 拷贝构造
+
+   ```c++
+   Student(string name,int id)
+   {
+       cout<<"构造函数"<<endl;
+       this->m_strName=move(name);
+       this->m_dID=id;
+   };
+   ```
+
+**三种调用方式** ：
+
+1. 括号法
+
+   - 默认
+
+     > ```c++
+     > Student student_1;
+     > ```
+
+   - 有参
+
+     > ```c++
+     > Student student_2("a",20);
+     > Student s1=Student("a",20);
+     > ```
+
+   - 拷贝
+
+     > ```c++
+     > Student student_3(student_2);
+     > ```
+
+2. 显示法
+
+   ```c++
+    Person p2 = Person(10); 
+    Person p3 = Person(p2);
+   
+   
+   Student *student=new Student("a",10);
+   delete student;
+   ```
+
+3. 隐式转换法
+
+   ```c++
+    Person p4 = 10; // Person p4 = Person(10); 
+    Person p5 = p4; // Person p5 = Person(p4); 
+   ```
+
+==注意：不能利用 拷贝构造函数 初始化匿名对象 编译器认为是对象声明==    //`Student p5(p4);`
+
+###### 3、拷贝构造函数及调用时机
+
+C++中拷贝构造函数调用时机通常有三种情况
+
+- 使用一个已经创建完毕的对象来初始化一个新对象
+- 值传递的方式给函数参数传值
+- 以值方式返回局部对象
+
+
+
+1、拷贝构造函数
+
+```c++
+Student (const Student &student)
+{
+    this->m_strName=student.m_strName;
+    this->m_dID=student.m_dID;
+}
+```
+
+引用方式：`const Student &student`
+
+==拷贝防止原参数被改变==
 
