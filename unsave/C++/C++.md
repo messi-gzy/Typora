@@ -729,7 +729,7 @@ private:
 
 
 
-##### 2、初始化和清理
+##### 2、初始化和释放
 
 ###### 1、构造函数和析构函数
 
@@ -764,7 +764,7 @@ public:
 };
 ```
 
-
+`作用：释放堆区内存`
 
 ###### 2、构造函数的分类
 
@@ -795,16 +795,28 @@ public:
 2. 类型
 
    - 普通构造
+   
+     ```c++
+     Student(string name,int id)
+     {
+         cout<<"构造函数"<<endl;
+         this->m_strName=move(name);
+         this->m_dID=id;
+     };
+     ```
+   
    - 拷贝构造
-
-   ```c++
-   Student(string name,int id)
-   {
-       cout<<"构造函数"<<endl;
-       this->m_strName=move(name);
-       this->m_dID=id;
-   };
-   ```
+   
+     ```c++
+     Student (const Student &student)
+     {
+         this->m_strName=student.m_strName;
+         this->m_dID=student.m_dID+1;
+     }
+     ```
+   
+     
+   
 
 **三种调用方式** ：
 
@@ -859,7 +871,7 @@ C++中拷贝构造函数调用时机通常有三种情况
 
 
 
-1、拷贝构造函数
+`拷贝构造函数`
 
 ```c++
 Student (const Student &student)
@@ -872,4 +884,243 @@ Student (const Student &student)
 引用方式：`const Student &student`
 
 ==拷贝防止原参数被改变==
+
+
+
+###### 4、构造函数调用规则
+
+默认情况下，c++编译器至少给一个类添加3个函数
+
+1．默认构造函数(无参，函数体为空)
+
+2．默认析构函数(无参，函数体为空)
+
+3．默认拷贝构造函数，对属性进行值拷贝
+
+构造函数调用规则如下：
+
+* 如果用户定义有参构造函数，c++不在提供默认无参构造，但是会提供默认拷贝构造
+
+* 如果用户定义拷贝构造函数，c++不会再提供其他构造函数
+
+
+
+###### 5、深拷贝和浅拷贝
+
+`浅拷贝`：简单的赋值拷贝操作
+
+`深拷贝`：在堆区重新申请空间，进行拷贝操作
+
+
+
+> 浅拷贝问题：堆区的内存被重复释放。
+>
+> 利用自已的深拷贝解决。
+
+深拷贝：
+
+```c++
+Student (const Student &student)
+{
+    this->m_strName=student.m_strName;
+    this->m_dID=new int(*student.m_dID);
+}
+```
+
+
+
+> ==总结：如果属性有在堆区开辟的，一定要自己提供拷贝构造函数，防止浅拷贝带来的问题==
+
+
+
+###### 6、初始化列表
+
+**作用：**
+
+C++提供了初始化列表语法，用来初始化属性
+
+**语法：**
+
+`构造函数()：属性1(值1),属性2（值2）... {}`
+
+```c++
+string m_strName;
+int m_dID;
+Student(string name,int id):m_strName(move(name)),m_dID(id)
+{
+
+}
+```
+
+
+
+###### 7、类对象作为类成员
+
+```c++
+class A {}
+class B
+{
+    A a；
+}
+```
+
+![](https://pic.imgdb.cn/item/62de924df54cd3f9372211d3.png)
+
+- 当类中成员是其他类对象时，我们称该成员为 对象成员   
+-  构造的顺序是 ：先调用对象成员的构造，再调用本类构造    
+- 析构顺序与构造相反
+
+
+
+###### 8、静态成员
+
+- 静态变量
+  - 所有对象共享同一份数据
+  - 在编译阶段分配内存
+  - 类内声明，类外初始化
+- 静态函数
+  - 所有对象共享同一个函数
+  - 静态函数只能访问静态成员变量
+
+`静态变量`
+
+1. 类内声明，类外定义
+
+   ```c++
+   class CPerson
+   {
+   public:
+       static int m_dShare;
+   };
+   
+   int CPerson::m_dShare=10;  //分配内存
+   int main()
+   {
+       CPerson cPerson;
+       cout<<CPerson::m_dShare<<endl;
+       return 0;
+   }
+   ```
+
+2. 访问方式
+
+   - 对象访问
+
+     > ```c++
+     > CPerson cPerson;
+     > cout<<cPerson.m_dShare<<endl;
+     > ```
+
+   - 类名访问
+
+     > ```c++
+     > cout<<CPerson::m_dShare<<endl;
+     > ```
+
+`静态函数`
+
+1. 静态函数只能访问静态成员
+
+   ![](https://pic.imgdb.cn/item/62dea54ff54cd3f937998297.png)
+
+
+
+##### 3、对象模型与**this**指针
+
+###### 1、成员变量和成员函数分开存储
+
+> 空对象占用**1**字节空间，独一无二的空间
+
+> **==只有非静态成员变量属于对象==**
+
+
+
+###### 2、***this*** 指针
+
+​	每一个非静态成员函数只会诞生一份函数实例，也就是说**多个同类型的对象会共用一块代码**
+
+那么问题是：这一块代码是如何区分那个对象调用自己的呢？
+
+​	c++通过提供特殊的对象指针，this指针，解决上述问题。**this指针指向被调用的成员函数所属的对象**
+
+​	this指针是**隐含**每一个非静态成员函数内的一种指针
+
+​	this指针**不需要定义**，直接使用即可
+
+​	this指针的用途：
+
+- 当形参和成员变量同名时，可用this指针来区分
+
+  ```c++
+  CPerson(int id,string name)
+  {
+      this->m_dID=id;
+      this->m_strName=name;
+  }
+  ```
+
+- 在类的非静态成员函数中返回对象本身，可使用return *this
+
+  - 返回值
+
+    ![](https://pic.imgdb.cn/item/62dff3e6f54cd3f9375541de.png)
+
+  - **返回引用**
+
+    ![](https://pic.imgdb.cn/item/62dff45ff54cd3f93758f72f.png)
+
+
+
+###### 3、空指针调用成员函数
+
+![](https://pic.imgdb.cn/item/62dff569f54cd3f93760d4a8.png)
+
+空指针调用`this`报错
+
+
+
+###### 4、const修饰成员函数
+
+**常函数：**
+
+- 成员函数后加const后我们称为这个函数为**常函数**
+
+  ```c++
+  void ShowName() const
+  {
+      cout<<this->m_strName<<endl;
+  }
+  ```
+
+- 常函数内不可以修改成员属性
+
+  ![](https://pic.imgdb.cn/item/62dff74bf54cd3f93772419e.png)
+
+- 成员属性声明时加关键字mutable后，在常函数中依然可以修改
+
+  ```c++
+  mutable int m_dID;
+  string m_strName;
+  void ShowName() const
+  {
+      this->m_dID=20;
+      cout<<this->m_strName<<endl;
+  }
+  ```
+
+  <img src="https://pic.imgdb.cn/item/62dff7e3f54cd3f93778ed9d.png" style="zoom:67%;" />
+
+**常对象：**
+
+- 声明对象前加const称该对象为常对象
+
+  ![](https://pic.imgdb.cn/item/62dff874f54cd3f9377eb439.png)
+
+- 常对象只能调用常函数
+
+  <img src="https://pic.imgdb.cn/item/62dff8eaf54cd3f93783540b.png" style="zoom:67%;" />
+
+
+
+##### 4、友元
 
