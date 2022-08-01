@@ -156,3 +156,112 @@ g++ --version
 <img src="https://pic.imgdb.cn/item/629ad6100947543129c6a325.png" style="zoom:50%;" />
 
 ![](https://pic.imgdb.cn/item/629ad6100947543129c6a31c.png)
+
+
+
+### 六、rust安装
+
+#### 1、下载
+
+> 官网：[https://www.rust-lang.org/zh-CN/tools/install](https://www.rust-lang.org/zh-CN/tools/install)
+
+#### 2、安装
+
+> 提示：需要C/C++编译器 `MSVC` 或者 `MinGW`
+
+##### 1、打开安装包
+
+[![](https://pic.imgdb.cn/item/62e0b39bf54cd3f9371d2bd7.png)](https://pic.imgdb.cn/item/62e0b39bf54cd3f9371d2bd7.png)
+
+##### 2、检查
+
+![](https://pic.imgdb.cn/item/62e0b697f54cd3f9372bf7b2.png)
+
+##### 3、新建项目
+
+###### 1、创建
+
+`创建`
+
+> ```shell
+> cargo new hello
+> ```
+
+`目录结构`
+
+- hello
+  - src
+    - main.rs
+  - Cargo.toml
+
+###### 2、运行
+
+`运行`
+
+> ```shell
+> cargo run
+> ```
+
+![](https://pic.imgdb.cn/item/62e0bb2ef54cd3f93743db79.png)
+
+###### 3、添加依赖
+
+在==Cargo.toml==中添加
+
+```toml
+[dependencies]
+ferris-says = "0.1"
+```
+
+![](https://pic.imgdb.cn/item/62e0bbcdf54cd3f937472e65.png)
+
+ `安装依赖`
+
+> ```
+> cargo build
+> ```
+
+测试
+
+```rust
+//main.rs
+
+use ferris_says::say; // from the previous step
+use std::io::{stdout, BufWriter};
+
+fn main() {
+    let stdout = stdout();
+    let message = String::from("Hello fellow Rustaceans!");
+    let width = message.chars().count();
+
+    let mut writer = BufWriter::new(stdout.lock());
+    say(message.as_bytes(), width, &mut writer).unwrap();
+}
+```
+
+运行 ：cargo run
+
+![](https://pic.imgdb.cn/item/62e0c045f54cd3f9375f4ab9.png)
+
+
+
+#### 3、命令
+
+###### 1、更新
+
+```powershell
+rustup update
+```
+
+###### 2、卸载
+
+```powershell
+rustup self uninstall
+```
+
+###### 3、本地文档
+
+```powershell
+rustup doc
+```
+

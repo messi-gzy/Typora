@@ -1,473 +1,21 @@
-# C++
-
----
+# C++ 进阶
 
 ## 一、目录
 
----
+## 二、进阶
 
-## 二、基础
-
----
-
-#### 1、数据类型
-
-##### 1、sizeof
-
-查看占用内存大小
-
-```c++
-int a=10;
-cout<<sizeof(a)<<endl;
-```
-
-##### 2、char
-
-单个字符（使用单引号引用）（只能放单个字符）
-
-~~不可用双引号~~
-
-```c++
-char a='a';
-cout<<a<<"\t"<<sizeof(a)<<endl;
-cout<<(int)a<<endl;
-```
-
-###### ASCll码表格
-
-<img src="https://pic.imgdb.cn/item/62c2e1ca5be16ec74a7e08f4.png"  />
-
----
-
-##### 3、转义字符
-
-| 转移字符                 | 含义 |
-| ------------------------ | ---- |
-| 换行                     | \n   |
-| 反斜杠                   | \\\  |
-| 水平制表符(整齐输出数据) | \t   |
-| 警示音                   | \a   |
-| 回车                     | \r   |
-
-##### 4、字符串型
-
-###### 1、C语言
-
-```c++
-char a[]="hello world!";//双引号 (数组形式)
-cout<<a<<endl;
-```
-
-###### 2、C++ 
-
-`string 变量名 = "......"`
-
-```c++
-string a="hello world!";
-cout<<a<<endl;
-```
-
----
-
-##### 5、运算符
-
-###### 	1、算术运算符
-
-- ++a /--a  `先自身++/--，再表达式运算`
-
-  ```c++
-  int a=10;
-  int b=a++ * 10; //a=11  b=100
-  ```
-
-- a++ / a-- `先表达式运算，再自身++/--`
-
-  ```c++
-  int a=10;
-  int b=++a * 10; //a=11  b=110
-  ```
-
-###### 	2、赋值运算符
-
-| 运算符 | 术语   | 示例      | 结果     |
-| ------ | ------ | --------- | -------- |
-| =      | 赋值   | a=2;b=3;  | a=2;b=3; |
-| +=     | 加等于 | a=0;a+=2; | a=2;     |
-| -=     | 减等于 | a=5;a-=3; | a=2;     |
-| *=     | 乘等于 | a=2;a*=2  | a=4;     |
-| /=     | 除等于 | a=4;a/=2; | a=2      |
-| %=     | 模等于 | a=3;a%=2; | a=1;     |
-
-###### 	3、三目运算符
-
-a和b 比较 谁大返回谁
-
-```c++
-int a=10,b=20,c;
-c = a > b ? a:b;
-cout<<c<<endl; // c=20
-```
-
----
-
-#### 2、程序流程
-
-##### 1、goto语句
-
-`跳转语句`
-
-```c++
-int a=10,b=20;
-goto FLAG;
-a=30;
-FLAG:
-cout<<a<<endl; //a=10
-```
-
----
-
-#### 3、数组
-
-`内存中连续内存空间`
-
-==数组名也是首地址==
-
-##### 1、一维数组
-
-###### 	1、定义
-
-```c++
-int a[10];
-int b[10]={0,0};
-int c[]={1,1};
-```
-
-###### 	2、内存空间
-
-```c++
-int ing[10];
-cout<<sizeof(ing)<<endl;
-```
-
-###### 	3、数组长度
-
-```c++
-int ing[10];
-cout<<sizeof(ing)/sizeof(ing[0])<<endl;
-```
-
-###### 	4、首地址
-
-```c++
-cout<<ing<<endl;
-cout<<(long long)ing<<endl;
-```
-
----
-
-##### 2、二维数组
-
-###### 	1、定义
-
-```c++
-int a[10][10];
-int b[10][10]={{0,0},{1,1,1}};
-int c[10][10]={0,0,0};
-int d[][10]={0,1,2,3};
-```
-
-###### 	2、内存空间
-
-```C++
-cout<<a<<"  "<< sizeof(a)<<endl;
-```
-
----
-
-#### 4、函数
-
-##### 1、声明
-
-```c++
-//函数声明
-int compere(int a,int b);
-//函数定义
-int compere(int a,int b)
-{
-    return a > b ? a : b;
-}
-```
-
-`声明可多次，定义就一次`
-
----
-
-#### 5、指针
-
-`指针间接访问内存`
-
-`通过指针保存一个地址`
-
-##### 1、定义
-
-==指针数据类型与原变量类型一致==
-
-```C++
-int a=10;
-int *p;
-p=&a;
-```
-
-###### 	1、地址
-
-`&a`   `p`
-
-###### 	2、值
-
-`*p`
-
-###### 	3、内存
-
-指针大小为4字节（32位）
-
-​					8字节（64位）
-
----
-
-##### 2、空指针
-
-###### 	1、初始化
-
-```c++
-int *p=NULL;
-```
-
-###### 	2、访问权限
-
-无访问权限，越界访问
-
-##### 3、野指针
-
-```c++
-int *p=(int *)0x1100;
-```
-
----
-
-##### 4、***const***修饰指针
-
-###### 1、常量指针
-
-> 指针指向可以改，指向的值不可以改
->
-> const int *p=&a;
-
-![](https://pic.imgdb.cn/item/62c4459e5be16ec74a11e74b.png)
-
----
-
-###### 2、指针常量
-
-> 指针的指向不可以改，指向的值可以改
->
-> int  * const  p=&a;
-
-![](https://pic.imgdb.cn/item/62c447f25be16ec74a157ac1.png)
-
----
-
-###### 3、即修饰指针也修饰常量
-
-> 指针的指向不可以改，指向的值也不可以改
->
-> const int * const p =&a;
-
-![](https://pic.imgdb.cn/item/62c447985be16ec74a14f0ff.png)
-
----
-
-##### 5、指针和数组
-
-`指针指向数组首地址，通过++实现数组往后移`
-
-###### 1、定义
-
-```c++
-int arr[10]={1,2,3};
-int *p=arr;
-cout<<++*p<<endl;// 2
-```
-
-###### 2、动态数组
-
-```c++
-int *a=new int[10];//申请空间
-*a=10;
-a[1]=20;
-cout<<a[0]<<endl;
-delete []a;//释放空间
-```
-
----
-
-##### 6、指针和函数
-
-![](https://pic.imgdb.cn/item/62c451815be16ec74a235b91.png)
-
----
-
-#### 6、结构体
-
-##### 1、定义
-
-`一些类型组合成的一个类型`
-
-> #### **$\textcolor{blue}{结构体}$**
->
-> ==C++中可以省略***struct***关键字==
->
-> 定义：
->
-> ```c++
-> struct Student
-> {
->     int m_age;
->     string m_name;
->     double m_score;
-> };
-> ```
-
----
-
-##### 2、创建
-
-- struct Student s1;
-
-> s1.m_name
->
-> s1.m_age;
-
-- struct Student s2 = {18,"aaa",23.5};
-
-> 赋初值
-
-- 在定义结构体时就创建结构体变量
-
-> <img src="https://pic.imgdb.cn/item/62c4f10f5be16ec74ab07acd.png" style="zoom:67%;" />
-
----
-
-##### 3、结构体数组
-
-```c++
-struct Student
-{
-    int m_age;
-    string m_name;
-    double m_score;
-};
-
-int main() {
-    struct Student student[5]
-    {
-        {18,"aaa",98.5},
-        {19,"bbb",98.5},
-        {20,"ccc",98.5}
-    };
-    for(int i=0;i<sizeof(student)/ sizeof(student[0]);i++)
-    {
-        cout<<student[i].m_name<<endl;
-    }
-    return 0;
-}
-```
-
----
-
-##### 4、结构体指针
-
-> $\textcolor{red}{利用操作符}$`->` $\textcolor{red}{访问内容}$
-
-```c++
-Student s1={21,"小王",98.66};
-Student *p=&s1;
-cout<<p->m_name<<endl;
-```
-
----
-
-##### 5、结构体嵌套结构体
-
-```c++
-struct Student
-{
-    int m_age;
-    string m_name;
-};
-struct Teacher
-{
-    int m_age;
-    string m_name;
-    double m_score;
-    struct Student student;
-};
-int main() {
-    Teacher teacher={21,"maxin",98.0,{12,"gzy"}};
-    cout<<teacher.student.m_name<<"\t"<<teacher.m_name<<endl;
-    return 0;
-}
-```
-
----
-
-##### 6、结构体做函数参数
-
-```c++
-void Printf_1(struct Teacher teacher)//值传递
-{
-    cout<<teacher.student.m_name<<"\t"<<teacher.m_name<<endl;
-};
-void Printf_2(struct Teacher *teacher)//地址传递
-{
-    cout<<teacher->student.m_name<<"\t"<<teacher->m_name<<endl;
-};
-
-int main() {
-    Teacher teacher={21,"maxin",98.0,{12,"gzy"}};
-    Printf_1(teacher);
-    Printf_2(&teacher);
-    return 0;
-}
-```
-
----
-
-##### 7、结构体中 *const* 使用
-
-![](https://pic.imgdb.cn/item/62c509fb5be16ec74acc2106.png)
-
-> 减少拷贝，减少内存开销，只读不可以修改
-
----
-
-
-
-## 三、进价
-
----
-
-#### 1、内存分区
+### 1、内存分区
 
 ![](https://pic.imgdb.cn/item/62c53b3f5be16ec74a06063a.jpg)
 
 ---
 
-##### 1、代码区
+#### 1、代码区
 
 - 共享
 - 只读
 
-##### 2、全局区
+#### 2、全局区
 
 - 全局变量
 - 静态常量
@@ -480,17 +28,17 @@ int main() {
 
 ----
 
-##### 3、栈区
+#### 3、栈区
 
 `编译器由编译器管理和开辟`
 
 > 函数参数和局部变量等，在生命周期期间结束后自动释放
 
-##### 4、堆区
+#### 4、堆区
 
 `由开发者管理操作，需要自已释放`
 
-###### 1、开辟数据
+##### 1、开辟数据
 
 > ### $\textcolor{red}{new}$<-->$\textcolor{red}{delete\\\free()}$
 
@@ -500,13 +48,13 @@ int main() {
 
 
 
-#### 2、引用
+### 2、引用
 
 `给变量起别名`
 
 > 数据类型 &别名 = 原名
 
-##### 1、定义
+#### 1、定义
 
 ```c++
 int a=10;
@@ -517,7 +65,7 @@ cout<<a<<endl;
 
 ---
 
-##### 2、注意事项
+#### 2、注意事项
 
 | 引用         | 指针         |
 | ------------ | ------------ |
@@ -527,13 +75,13 @@ cout<<a<<endl;
 
 ---
 
-###### 1、引用必须初始化
+##### 1、引用必须初始化
 
 ![](https://pic.imgdb.cn/item/62c597f75be16ec74a80f714.png)
 
 ---
 
-###### 2、不可以更改
+##### 2、不可以更改
 
 > ### $\textcolor{blue}{初始化后不可以再更改为其他的引用}$
 
@@ -541,7 +89,7 @@ cout<<a<<endl;
 
 ---
 
-##### 3、做函数参数
+#### 3、做函数参数
 
 ```c++
 void Swap(int &a,int &b)
@@ -561,25 +109,25 @@ int main() {
 
 ---
 
-##### 4、函数返回值
+#### 4、函数返回值
 
-###### 1、不可以返回局部变量的引用
+##### 1、不可以返回局部变量的引用
 
 ![](https://pic.imgdb.cn/item/62c6f3fef54cd3f93703d0dc.png)
 
-###### 2、引用可以作为左值
+##### 2、引用可以作为左值
 
 <img src="https://pic.imgdb.cn/item/62c6f3fef54cd3f93703d0df.png" style="zoom: 50%;" />
 
 ---
 
-##### 5、引用的本质
+#### 5、引用的本质
 
 > int &ref=a; ------->int * const ref=&a;(指针常量)
 >
 > 指向的值可以改，指针指向不可以改。
 
-##### 6、常量引用
+#### 6、常量引用
 
 ![](https://pic.imgdb.cn/item/62c6f9faf54cd3f9370c6c1b.png)
 
@@ -589,9 +137,9 @@ int main() {
 
 
 
-#### 3、函数初级
+### 3、函数初级
 
-##### 1、带有默认参数的函数
+#### 1、带有默认参数的函数
 
 1. 如果传参就用所传的参数
 
@@ -607,7 +155,7 @@ int main() {
 
 > #### $\textcolor{red}{**缺省参数不能同时在声明和实现中出现**}$
 
-##### 2、函数占位参数
+#### 2、函数占位参数
 
 ```c++
 void func(int a,int,int )
@@ -622,13 +170,13 @@ int main() {
 
 `返回值类型 函数名 （数据类型）{}`
 
-##### 3、内联函数
+#### 3、内联函数
 
-##### 4、函数重载
+#### 4、函数重载
 
 `函数名可以相同，提高复用性`
 
-###### 1、条件
+##### 1、条件
 
 - 同一个作用域
 - 函数名称相同
@@ -643,7 +191,7 @@ int add(int a,int b)
 {}
 ```
 
-###### 2、注意事项
+##### 2、注意事项
 
 1. 引用作为函数重载
 
@@ -666,18 +214,18 @@ int add(int a,int b)
 
 
 
-#### 4、类和对象
+### 4、类和对象
 
 面向对象的三大特性 ：`封装`、`继承`、`多态`
 
-##### 1、封装
+#### 1、封装
 
-###### 1、封装的意义
+##### 1、封装的意义
 
 - 将属性和行为作为一个整体，表现生活中的事务
 - 将属性和行为加以权限控制
 
-###### 2、实例化对象
+##### 2、实例化对象
 
 ```c++
 class Circle
@@ -697,13 +245,13 @@ int main() {
 }
 ```
 
-###### 3、意义
+##### 3、意义
 
 属性：成员变量
 
 行为：成员方法
 
-###### 4、访问权限
+##### 4、访问权限
 
 - 公共权限 `public`             类内和类外都可以访问
 - 保护权限 `protected`       类内可以访问，类外不可以访问。==子类可以访问父类内容==
@@ -721,7 +269,7 @@ private:
 };
 ```
 
-###### 5、struct和class区别
+##### 5、struct和class区别
 
 `struct` 默认 ==公共==（public）
 
@@ -729,9 +277,9 @@ private:
 
 
 
-##### 2、初始化和释放
+#### 2、初始化和释放
 
-###### 1、构造函数和析构函数
+##### 1、构造函数和析构函数
 
 **构造函数** ：`类名（）{}`
 
@@ -766,7 +314,7 @@ public:
 
 `作用：释放堆区内存`
 
-###### 2、构造函数的分类
+##### 2、构造函数的分类
 
 **两种分类** ：
 
@@ -795,7 +343,7 @@ public:
 2. 类型
 
    - 普通构造
-   
+
      ```c++
      Student(string name,int id)
      {
@@ -804,9 +352,9 @@ public:
          this->m_dID=id;
      };
      ```
-   
+
    - 拷贝构造
-   
+
      ```c++
      Student (const Student &student)
      {
@@ -814,9 +362,8 @@ public:
          this->m_dID=student.m_dID+1;
      }
      ```
-   
+
      
-   
 
 **三种调用方式** ：
 
@@ -861,7 +408,7 @@ public:
 
 ==注意：不能利用 拷贝构造函数 初始化匿名对象 编译器认为是对象声明==    //`Student p5(p4);`
 
-###### 3、拷贝构造函数及调用时机
+##### 3、拷贝构造函数及调用时机
 
 C++中拷贝构造函数调用时机通常有三种情况
 
@@ -887,7 +434,7 @@ Student (const Student &student)
 
 
 
-###### 4、构造函数调用规则
+##### 4、构造函数调用规则
 
 默认情况下，c++编译器至少给一个类添加3个函数
 
@@ -905,7 +452,7 @@ Student (const Student &student)
 
 
 
-###### 5、深拷贝和浅拷贝
+##### 5、深拷贝和浅拷贝
 
 `浅拷贝`：简单的赋值拷贝操作
 
@@ -933,7 +480,7 @@ Student (const Student &student)
 
 
 
-###### 6、初始化列表
+##### 6、初始化列表
 
 **作用：**
 
@@ -954,7 +501,7 @@ Student(string name,int id):m_strName(move(name)),m_dID(id)
 
 
 
-###### 7、类对象作为类成员
+##### 7、类对象作为类成员
 
 ```c++
 class A {}
@@ -967,12 +514,12 @@ class B
 ![](https://pic.imgdb.cn/item/62de924df54cd3f9372211d3.png)
 
 - 当类中成员是其他类对象时，我们称该成员为 对象成员   
--  构造的顺序是 ：先调用对象成员的构造，再调用本类构造    
+- 构造的顺序是 ：先调用对象成员的构造，再调用本类构造    
 - 析构顺序与构造相反
 
 
 
-###### 8、静态成员
+##### 8、静态成员
 
 - 静态变量
   - 所有对象共享同一份数据
@@ -1025,9 +572,9 @@ class B
 
 
 
-##### 3、对象模型与**this**指针
+#### 3、对象模型与**this**指针
 
-###### 1、成员变量和成员函数分开存储
+##### 1、成员变量和成员函数分开存储
 
 > 空对象占用**1**字节空间，独一无二的空间
 
@@ -1035,7 +582,7 @@ class B
 
 
 
-###### 2、***this*** 指针
+##### 2、***this*** 指针
 
 ​	每一个非静态成员函数只会诞生一份函数实例，也就是说**多个同类型的对象会共用一块代码**
 
@@ -1071,7 +618,7 @@ class B
 
 
 
-###### 3、空指针调用成员函数
+##### 3、空指针调用成员函数
 
 ![](https://pic.imgdb.cn/item/62dff569f54cd3f93760d4a8.png)
 
@@ -1079,7 +626,7 @@ class B
 
 
 
-###### 4、const修饰成员函数
+##### 4、const修饰成员函数
 
 **常函数：**
 
@@ -1122,5 +669,282 @@ class B
 
 
 
-##### 4、友元
+#### 4、友元
+
+​	在程序里，有些私有属性 也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术
+
+友元的目的就是让一个函数或者类 访问另一个类中私有成员
+
+​	友元的关键字为 ==friend==
+
+友元的三种实现
+
+- 全局函数做友元
+- 类做友元
+- 成员函数做友元
+
+
+
+##### 1、全局函数做友元
+
+```c++
+class CPerson
+{
+    friend void GetName(CPerson *cPerson);
+private:
+    string m_strName;
+public:
+   int m_dID;
+   int m_dAge;
+};
+
+void GetName(CPerson *cPerson)
+{
+    cout<<"private"<<cPerson->m_dID<<cPerson->m_strName<<endl;
+}
+```
+
+![](https://pic.imgdb.cn/item/62e103c5f54cd3f937eb4cb5.png)
+
+
+
+##### 2、类做友元
+
+```c++
+class CPerson
+{
+    friend class CTeacher;
+private:
+    string m_strName;
+public:
+   int m_dID;
+   void SetData()
+   {
+       m_strName="hello";
+       m_dID=20;
+   }
+
+};
+class CTeacher
+{
+public:
+    void Visit(const CPerson &cPerson)
+    {
+        cout<<cPerson.m_strName<<endl;
+    };
+};
+```
+
+<img src="https://pic.imgdb.cn/item/62e10e61f54cd3f93724c32b.png" style="zoom:67%;" />
+
+##### 3、成员函数做友元
+
+![](https://pic.imgdb.cn/item/62e11018f54cd3f9372f6d02.png)
+
+```c++
+class CPerson_2
+{
+public:
+    static void Get1ID(CPerson &cPerson1);
+    static void Get1Name(CPerson &cPerson1);
+};
+
+class CPerson
+{
+    friend void CPerson_2::Get1Name(CPerson &cPerson1);
+private:
+    string m_strName;
+public:
+    int m_dID{};
+    void SetData()
+    {
+        m_strName="hello";
+        m_dID=20;
+    }
+};
+
+void CPerson_2::Get1ID(CPerson &cPerson1)
+{
+    cout<<cPerson1.m_dID<<endl;
+};
+
+void CPerson_2::Get1Name(CPerson &cPerson1)
+{
+    cout<<cPerson1.m_strName<<endl;
+};
+```
+
+
+
+#### 5、运算符重载
+
+##### 1、`+`运算符重载
+
+1、全局函数
+
+```c++
+CStudent operator + (CStudent &cStudent_1,CStudent &cStudent_2)
+{
+    CStudent temp;
+    temp.m_dNum=cStudent_1.m_dNum+cStudent_2.m_dNum;
+    temp.m_dID=cStudent_1.m_dID+cStudent_2.m_dID;
+    return temp;
+}
+```
+
+`使用方法`
+
+- > ```C++
+  > cStudent_3= operator+(cStudent_1,cStudent_2);
+  > ```
+
+- > ```c++
+  > cStudent_3=cStudent_1+cStudent_2;
+  > ```
+
+2、成员函数
+
+```c++
+CStudent CStudent::operator +(CStudent &cStudent) const
+{
+    CStudent temp;
+    temp.m_dNum=this->m_dNum+cStudent.m_dNum;
+    temp.m_dID=this->m_dID+cStudent.m_dID;
+    return temp;
+} ;
+```
+
+`使用方法`
+
+- > ```C++
+  > cStudent_3=cStudent_1.operator+(cStudent_2);
+  > ```
+
+- > ```c++
+  > cStudent_3=cStudent_1+cStudent_2;
+  > ```
+
+3、重载
+
+```c++
+CStudent operator +(CStudent &cStudent) const;
+CStudent operator +(int number) const;
+```
+
+
+
+##### 2、`<<`左移运算符重载
+
+1、全局函数
+
+```c++
+ostream  & operator <<(ostream  &out ,CStudent &cStudent)
+{
+    out<<cStudent.m_dNum<<"\t"<<cStudent.m_dID<<endl;
+    return out;
+}
+```
+
+2、友元函数
+
+```c++
+friend ostream  & operator <<(ostream  &out ,CStudent &cStudent);
+
+
+ostream  & operator <<(ostream  &out ,CStudent &cStudent)
+{
+    out<<cStudent.m_dNum<<"\t"<<cStudent.m_dID<<endl;
+    return out;
+}
+```
+
+##### 3、`++`运算符重载
+
+> ```c++
+> int a=10;
+> cout<<a++<<endl;//10
+> a=10;
+> cout<<++a<<endl;//11
+> ```
+
+1、++前置
+
+```c++
+CNewType& operator ++()
+{
+    m_dNum++;
+    return *this;
+};
+```
+
+2、后置++
+
+```c++
+CNewType operator ++(int)
+{
+    CNewType newType=*this;
+    m_dNum++;
+    return newType;
+};
+```
+
+##### 4、`=`运算符重载
+
+`深拷贝`
+
+```c++
+CNewType& operator = (CNewType &newType)
+{
+    if(m_dNum!= nullptr){
+        delete m_dNum;
+        m_dNum= nullptr;
+    }
+    this->m_dNum=new int(*newType.m_dNum);
+    return *this;
+};
+```
+
+##### 5、`关系运算符`运算符重载
+
+```c++
+bool operator ==(CNewType &newType) const
+{
+    if(this->m_dNum==newType.m_dNum&&this->m_strName==newType.m_strName){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+bool operator !=(CNewType &newType) const
+{
+    if(this->m_dNum!=newType.m_dNum||this->m_strName!=newType.m_strName){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+```
+
+##### 6、`函数调用`运算符重载
+
+```c++
+void operator()(string test)
+{
+    cout<<test<<endl;
+}
+
+
+
+CNewType newType_1(20,"a");
+newType_1("hello world");
+
+//匿名对象调用
+CNewType()("hello");
+```
+
+
+
+#### 6、继承
 
