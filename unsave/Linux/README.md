@@ -8,19 +8,19 @@
 
 ### 1、环境配置
 
-[环境配置](.\Linux\Linux环境部署+项目部署.md)
+[环境配置](./Linux/Linux环境部署+项目部署.md)
 
 ---
 
 ### 2、命令行
 
-[Linux 命令](.\Linux\Linux命令.md)
+[Linux 命令](./Linux/Linux命令.md)
 
 ---
 
 ### 3、Vim
 
-[Vim](.\Linux\Vim.md)
+[Vim](./Linux/Vim.md)
 
 ---
 
