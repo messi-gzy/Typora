@@ -42,6 +42,10 @@
 
 ![](https://pic.imgdb.cn/item/63033d3e16f2c2beb1ef21e4.gif)
 
+#### 6、Better C++ Syntax
+
+> 这将为您提供 C++ 的前沿语法突出显示。这意味着您的主题将能够更好地为您的代码着色。这曾经是一个修复，但后来 VS Code 开始使用它作为 C 和 C++ 突出显示的官方来源。
+
 
 
 ### 2、Python
