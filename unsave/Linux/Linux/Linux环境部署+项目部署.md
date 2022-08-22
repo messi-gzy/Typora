@@ -7,20 +7,20 @@
 ##### 1、下载jdk
 
 - 官网：
-
+  
   > https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.tar.gz
 
 - 百度网盘：
-
+  
   > 链接：https://pan.baidu.com/s/1p9jmzqHA7Yrx7yaVsK-h0g 
   > 提取码：0s12 
   > --来自百度网盘超级会员V1的分享
 
 ##### 2、利用ftp软件将压缩包上传到服务器
 
-​	目录（我这里放到了root目录下）
+​    目录（我这里放到了root目录下）
 
-​	之后再 /usr/local/目录下新建java目录
+​    之后再 /usr/local/目录下新建java目录
 
 ```
 cd /usr/local/
@@ -33,7 +33,7 @@ mkdir java
 tar -zxvf /root/jdk-jdk-8U331-Linux-64.tar.gz -C /usr/local/java 
 ```
 
-##### 4、配置环境     
+##### 4、配置环境
 
 ```
 vim /etc/profile
@@ -75,20 +75,20 @@ javac
 ##### 1、下载压缩包
 
 - 官网：
-
+  
   > https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.20/bin/apache-tomcat-10.0.20.tar.gz
 
 - 百度网盘：
-
+  
   > 链接：https://pan.baidu.com/s/1iIi9Ac_SPkkgGSOab2rlzw 
   > 提取码：tkvt 
   > --来自百度网盘超级会员V1的分享
 
 ##### 2、利用ftp软件将压缩包上传到服务器
 
-​	目录（我这里放到了root目录下）
+​    目录（我这里放到了root目录下）
 
-​	之后再 /usr/local/目录下新建tomcat目录
+​    之后再 /usr/local/目录下新建tomcat目录
 
 ```
 cd /usr/local/
@@ -119,13 +119,13 @@ netstat -tnlp
 ```
 
 - 查看tomcat默认端口（若需要修改默认端口选择此方法）
-
+  
   > ```
   > vim /usr/local/tomcat/apache-tomcat-10.0.20/conf/server.xml
   > ```
-
+  
   查看<Connector post=“8080”，修改post，
-
+  
   按Esc，输入（**：wq**）保存并退出
 
 - 查看防火墙信息，若关闭状态则开启防火墙
@@ -135,12 +135,10 @@ netstat -tnlp
 - 重启防火墙
 
 - 再服务器控制台网页开启端口 TCP 8080 端口
-
+  
   （可以同时开启TCP 23端口）
 
 - 重启防火墙
-
-  
 
 ##### 5、开启tomcat
 
@@ -173,7 +171,7 @@ cd /usr/local/tomcat/apache-tomcat-10.0.20/bin/
 ##### 9、配置快捷键并开机自启动
 
 - ⾸先进⼊/etc/rc.d/init.d ⽬录，创建⼀个名为tomcat 的⽂件，并赋予执⾏权限
-
+  
   > ```
   > cd /etc/rc.d/init.d/
   > touch tomcat
@@ -181,7 +179,7 @@ cd /usr/local/tomcat/apache-tomcat-10.0.20/bin/
   > ```
 
 - 编辑tomcat
-
+  
   > ```sh
   > vim tomcat
   > 
@@ -221,14 +219,14 @@ cd /usr/local/tomcat/apache-tomcat-10.0.20/bin/
   > ```
 
 - 快捷键启动
-
+  
   > ```
   > service tomcat start
   > service tomcat stop
   > ```
 
 - 开机自启动
-
+  
   > ```
   > chkconfig --add tomcat
   > chkconfig tomcat on
@@ -243,7 +241,6 @@ cd /usr/local/tomcat/apache-tomcat-10.0.20/bin/
 webapps/test/test.png
 
 浏览器访问 **ip+：8080/test/test.png**
-
 
 ### 四、MySQL
 
@@ -270,7 +267,7 @@ yum -y remove mariadb-libs-5.5.56-2.el7.x86_64
 ##### 2、下载并上传
 
 > 官网：[MySQL :: Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/5.7.html#download)
->
+> 
 > <img src="https://pic.imgdb.cn/item/629636920947543129d45285.png" style="zoom: 67%;" />
 
 上传并创建文件夹
@@ -351,38 +348,38 @@ chmod 777 /var/lib/mysql
 
 ##### 7、安装MySQL
 
-###### 	1、进入文件
+###### 1、进入文件
 
 ```
 cd /usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/bin/
 ```
 
-###### 	2、初始化
+###### 2、初始化
 
 ```
 ./mysqld --initialize --user=mysql --basedir=/usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/ --datadir=/usr/local/mysql/data
 ```
 
 - 如果此时提醒 error while loading....libaio.so.1 .....
-
+  
   <img src="https://pic.imgdb.cn/item/629636a10947543129d466b7.png" style="zoom:150%;" />
 
 - 原因缺少libaio包
-
+  
   下载即可
-
+  
   但是yum下载默认为32位的，还是会出错
 
 - 安装64位
-
+  
   ![](https://pic.imgdb.cn/item/629636a10947543129d466c1.png)
-
+  
   ```
   yum search libaio
   yum install libaio-devel.x86_64 -y
   ```
 
-###### 	3、检查密码
+###### 3、检查密码
 
 ```
 cat /usr/local/mysql/data/mysql.err
@@ -396,13 +393,13 @@ cat /usr/local/mysql/data/mysql.err
 
 ==**一定记住这个密码哦！！！**==
 
-###### 	4、复制文件
+###### 4、复制文件
 
 ```
 cp /usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/support-files/mysql.server /etc/init.d/mysql
 ```
 
-###### 	5、修改文件
+###### 5、修改文件
 
 ```
 vim /etc/init.d/mysql
@@ -414,19 +411,19 @@ vim /etc/init.d/mysql
 
 ##### 8、设置MYSQL系统服务
 
-###### 	1、⾸先增加mysql 服务控制脚本执⾏权限
+###### 1、⾸先增加mysql 服务控制脚本执⾏权限
 
 ```
 chmod +x /etc/init.d/mysql
 ```
 
-###### 	2、同时将mysqld 服务加⼊到系统服务
+###### 2、同时将mysqld 服务加⼊到系统服务
 
 ```
 chkconfig --add mysql
 ```
 
-###### 	3、最后检查mysqld 服务是否已经⽣效即可
+###### 3、最后检查mysqld 服务是否已经⽣效即可
 
 ```
 chkconfig --list mysql
@@ -445,8 +442,6 @@ service mysql start
 ![](https://pic.imgdb.cn/item/6296369a0947543129d45d87.png)
 
 **==启动成功==**
-
-
 
 ##### 10、添加环境变量
 
@@ -470,11 +465,9 @@ export PATH=$PATH:/usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/bin
 source ~/.bash_profile
 ```
 
-
-
 ##### 11、登录MySQL
 
-​	1、登录
+​    1、登录
 
 ```
 mysql -u root -p
@@ -486,7 +479,7 @@ mysql -u root -p
 
 显示如上表示成功
 
-###### 	2、修改root密码
+###### 2、修改root密码
 
 继续在命令行执行
 
@@ -497,7 +490,7 @@ flush privileges;
 
 ![](https://pic.imgdb.cn/item/6296369a0947543129d45dae.png)
 
-###### 	3、设置远程连接
+###### 3、设置远程连接
 
 继续在命令行操作
 
@@ -511,7 +504,7 @@ flush privileges;
 
 ==**Ctrl+D**退出命令行==
 
-###### 	4、远程测试
+###### 4、远程测试
 
 工具连接
 
@@ -530,7 +523,7 @@ DataGrip：
 ##### 1、下载并上传到服务器
 
 > 官网：
->
+> 
 > https://nginx.org/en/download.html
 
 位置：/root
@@ -574,8 +567,6 @@ yum install -y zlib zlib-devel
 ```
 yum install -y openssl openssl-devel
 ```
-
-
 
 ##### 4、编译安装
 
@@ -654,14 +645,12 @@ firewall-cmd --reload  //重启防火墙
 
 **安装完成！！！**
 
-
-
 ### 六、Go环境配置
 
 ##### 1、下载Go安装包
 
 > 官网：[Downloads - The Go Programming Language (google.cn)](https://golang.google.cn/dl/)
->
+> 
 > 下载包：https://golang.google.cn/dl/go1.18.2.linux-amd64.tar.gz
 
 上传到服务器
@@ -669,7 +658,7 @@ firewall-cmd --reload  //重启防火墙
 ##### 2、解压
 
 - 在/usr/local 下新建 go文件架
-
+  
   ```
   mkdir go
   ```
@@ -677,7 +666,7 @@ firewall-cmd --reload  //重启防火墙
 - 切换到Go安装包路径
 
 - 解压
-
+  
   ```
   tar -zxvf go1.18.2.linux-amd64.tar.gz -C /usr/local/go
   ```
@@ -685,7 +674,7 @@ firewall-cmd --reload  //重启防火墙
 ##### 3、建立工作目录
 
 > 官方建议放在 /home/go 下，创建三个目录：bin（编译后可的执行文件的存放路径）、pkg（编译包时，生成的.a文件的存放路径）、src（源码路径，一般我们的工程就创建在src下面）
->
+> 
 > ![](https://pic.imgdb.cn/item/629633c70947543129d071c5.png)
 
 ```
@@ -730,8 +719,6 @@ go env
 
 **安装完成！！！**
 
-
-
 ### 七、Python环境配置
 
 CentOS 7.4 默认⾃带了⼀个Python2.7 环境，再装⼀个Python3 ，打造⼀个共存的环境。
@@ -741,7 +728,7 @@ CentOS 7.4 默认⾃带了⼀个Python2.7 环境，再装⼀个Python3 ，打造
 ##### 1、下载
 
 > 官网：[Python Release Python 3.10.4 | Python.org](https://www.python.org/downloads/release/python-3104/)
->
+> 
 > ![](https://pic.imgdb.cn/item/628f72870947543129596493.png)
 
 ##### 2、解压
@@ -818,16 +805,14 @@ python3
 
 安装完成！！！！
 
-
-
 ### 八、Node.js 配置
 
 ##### 1、下载
 
 > 官网：
->
+> 
 > http://nodejs.cn/download/
->
+> 
 > ![](https://pic.imgdb.cn/item/629771ca0947543129136f64.png)
 
 ##### 2、解压
