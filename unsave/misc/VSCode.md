@@ -62,6 +62,46 @@
 
 ### 8、主题
 
+#### 1、主题颜色
+
+##### 1.1、Ayu
+
+> 包括文件图标
+>
+> <img src="https://pic.imgdb.cn/item/6303904816f2c2beb1208d1c.png" style="zoom: 33%;" />
+
+##### 1.2、C/C++ Themes
+
+> ![](https://pic.imgdb.cn/item/6303909316f2c2beb120abd3.png)
+
+##### 1.3、GitHub Theme
+
+> 六种主题
+>
+> ![](https://pic.imgdb.cn/item/6303910b16f2c2beb120d882.png)
+
+##### 1.4、Slack Theme
+
+> 十一种图标
+>
+> ![](https://pic.imgdb.cn/item/630391d516f2c2beb12168dc.png)
+
+##### 1.5、Quiet Light Theme
+
+> 个人最喜欢的一款主题，虽然整体为白色看起来比较刺眼，但是顶部及底部、侧边栏更多为柔和色，在平常使用起来比较舒服。
+>
+> VSCode自带
+>
+> ![](https://pic.imgdb.cn/item/630392f316f2c2beb1221dd4.png)
+
+
+
+
+
+#### 2、文件图标
+
+#### 3、侧边栏图标
+
 ### 9、Git
 
 ### 10、misc
