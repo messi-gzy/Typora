@@ -44,10 +44,6 @@
 
 [gdb](./MinGW/GNU/gdb.md)
 
-
-
-
-
 ### 3.2、CMakeLists
 
 #### 3.2.1、cmake
@@ -61,7 +57,5 @@
 #### 3.2.3、Makefile
 
 [Makefile](./MinGW/cmake/Makefile.md)
-
-
 
 ### 3.3、make
