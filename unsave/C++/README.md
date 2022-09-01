@@ -8,17 +8,17 @@
 
 ### 2.1、C++ 基础
 
-[基础（1）](./C++/基础/C++_basic_1.md)
+[基础（1）](./C++/basic/C++_basic_1.md)
 
-[基础（2）](./C++/基础/C++_basic_2.md)
+[基础（2）](./C++/basic/C++_basic_2.md)
 
 ### 2.2、C++ 进阶
 
-[进阶（1）](./C++/进阶/C++_advance_1.md)
+[进阶（1）](./C++/advance/C++_advance_1.md)
 
 ### 2.3、C++ 示例
 
-[示例（1）](./C++/示例/C++_example.md)
+[示例（1）](./C++/example/C++_example.md)
 
 ## 三、STL
 

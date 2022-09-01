@@ -1,24 +1,38 @@
 # VSCode
 
+---
+
 ## 一、目录
 
+---
+
 ## 二、插件推荐
+
+----
 
 ### 1、C/C++
 
 > 开发C/C++ 拓展插件
 
+---
+
 #### 1、C/C++
 
 > C/C++ 扩展为 Visual Studio Code 添加了对 C/C++ 的语言支持，包括智能提示和调试等功能。
+
+---
 
 #### 2、C/C++ Extension Pack
 
 > C/C++ 拓展包
 
+---
+
 #### 3、C/C++ Snippets
 
 > C/C++ **代码段**的补充提示
+
+---
 
 #### 4、CMake
 
@@ -36,31 +50,49 @@
 >
 > 自动化编译项目。
 
+---
+
 #### 5、Doxygen Documentation Generator
 
 > 根据方法或者类内容自动生成注释提示信息
 
 ![](https://pic.imgdb.cn/item/63033d3e16f2c2beb1ef21e4.gif)
 
+---
+
 #### 6、Better C++ Syntax
 
 > 这将为您提供 C++ 的前沿语法突出显示。这意味着您的主题将能够更好地为您的代码着色。这曾经是一个修复，但后来 VS Code 开始使用它作为 C 和 C++ 突出显示的官方来源。
 
-
+---
 
 ### 2、Python
 
+---
+
 ### 3、NodeJS
+
+---
 
 ### 4、Vue
 
+---
+
 ### 5、rust
+
+---
 
 ### 6、HTML
 
+---
+
 ### 7、Go
 
+---
+
 ### 8、主题
+
+---
 
 #### 1、主题颜色
 
@@ -70,9 +102,13 @@
 >
 > <img src="https://pic.imgdb.cn/item/6303904816f2c2beb1208d1c.png" style="zoom: 33%;" />
 
+---
+
 ##### 1.2、C/C++ Themes
 
 > ![](https://pic.imgdb.cn/item/6303909316f2c2beb120abd3.png)
+
+---
 
 ##### 1.3、GitHub Theme
 
@@ -80,11 +116,15 @@
 >
 > ![](https://pic.imgdb.cn/item/6303910b16f2c2beb120d882.png)
 
+---
+
 ##### 1.4、Slack Theme
 
 > 十一种图标
 >
 > ![](https://pic.imgdb.cn/item/630391d516f2c2beb12168dc.png)
+
+---
 
 ##### 1.5、Quiet Light Theme
 
@@ -94,23 +134,33 @@
 >
 > ![](https://pic.imgdb.cn/item/630392f316f2c2beb1221dd4.png)
 
-
+---
 
 
 
 #### 2、文件图标
 
+---
+
 #### 3、侧边栏图标
+
+---
 
 ### 9、Git
 
+---
+
 ### 10、misc
+
+---
 
 #### 1、Remote-SSH
 
 > 连接远程主机进行云开发
 
 ![](https://pic.imgdb.cn/item/630246a216f2c2beb1893be1.png)
+
+---
 
 #### 2、Bookmarks
 
@@ -124,10 +174,14 @@
 
 ![](https://pic.imgdb.cn/item/63024bec16f2c2beb18c3370.png)
 
+---
+
 如果快捷键冲突，更换快捷键
 
 1. <img src="https://pic.imgdb.cn/item/63024bec16f2c2beb18c3379.png" style="zoom:67%;" />
 2. <img src="https://pic.imgdb.cn/item/63024bec16f2c2beb18c3380.png" style="zoom:200%;" />
+
+---
 
 #### 3、CloudMusic
 
@@ -135,11 +189,15 @@
 
 ![](https://pic.imgdb.cn/item/6302515c16f2c2beb18e8da2.png)
 
+---
+
 #### 4、Zhihu On VSCode
 
 > 基于 VSCode 的知乎客户端提供包括阅读，搜索，创作，发布等一站式服务，内容加载速度比 Web 端更快，创新的 Markdown-Latex 混合语法让内容创作者更方便地插入代码块，数学公式，并一键发布至知乎平台。
 
 ![](https://pic.imgdb.cn/item/6302501716f2c2beb18e062c.png)
+
+---
 
 #### 5、z-reader
 
@@ -149,6 +207,8 @@
 
 ![](https://pic.imgdb.cn/item/6302611616f2c2beb195d6a2.png)
 
+---
+
 #### 6、CodeSnap
 
 > 代码截图工具
@@ -157,9 +217,13 @@
 
 <img src="https://pic.imgdb.cn/item/6302525b16f2c2beb18ef52b.png" style="zoom: 50%;" />
 
+---
+
 `效果`
 
 ![](https://pic.imgdb.cn/item/6302525b16f2c2beb18ef53e.png)
+
+---
 
 #### 7、Polacode-2022
 
@@ -175,11 +239,15 @@
 
    同时还**可以修改样式**，最后保存图片。
 
+---
+
 #### 8、NBA real-time score
 
 > 实时获取当天NBA比赛比分，并显示在vscode下方状态栏左侧；更可以观看实时文字直播，以及赛后数据统计。你可以边搬砖边关注NBA
 
 右键选择 `get NBA real-time score`  既打开插件，软件左下角实时显示比赛赛况。
+
+---
 
 #### 9、CodeRun
 
@@ -187,9 +255,13 @@
 >
 > **C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6, Ruby, Go, Lua, Groovy, PowerShell, BAT/CMD, BASH/SH, F# Script, F# (.NET Core), C# Script, C# (.NET Core), VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml Script, R, AppleScript, Elixir, Visual Basic .NET, Clojure, Haxe, Objective-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Free Pascal, Haskell, Nim, D, Lisp, Kit, V, SCSS, Sass, CUDA, Less, Fortran, Ring, Standard ML, and custom command**
 
+---
+
 #### 10、Docker
 
 > **Docker**
+
+---
 
 #### 11、Hex Editor
 
@@ -197,13 +269,19 @@
 >
 > vscode 默认不支持打开二进制文件，此插件可以修改**16进制**的文件
 
+---
+
 #### 12、LeetCode
 
 > **LeetCode** 刷题系统
 
+---
+
 #### 13、Live Server
 
 > 生成一个本地服务器，实时刷新生成的**HTML页面**
+
+---
 
 #### 14、Markdown Preview Enhanced
 
@@ -211,15 +289,21 @@
 
 ![](https://pic.imgdb.cn/item/630259c416f2c2beb192d607.png)
 
+---
+
 #### 15、MySQL
 
 > `MySQL` 数据库的可视化操作、阅读。
+
+---
 
 #### 16、Path Intellisense
 
 > **路径智能补全**
 
 ![](https://pic.imgdb.cn/item/63025bd216f2c2beb193ad6d.gif)
+
+---
 
 #### 17、Project Manager
 
@@ -229,9 +313,13 @@
 
 <img src="https://pic.imgdb.cn/item/63025c5816f2c2beb193e03e.png" style="zoom: 67%;" />
 
+---
+
 #### 18、SQLite Viewer
 
 > **sqlite** 数据库的可视化操作
+
+---
 
 #### 19、Todo Tree
 
@@ -241,11 +329,15 @@
 
 ![](https://pic.imgdb.cn/item/63025d3716f2c2beb1943964.png)
 
+---
+
 #### 20、vscode-pdf
 
 > PDF阅读器
 
 ![](https://pic.imgdb.cn/item/630260f616f2c2beb195cb5f.png)
+
+---
 
 #### 21、Draw.io Integration
 
@@ -255,6 +347,8 @@
 
 ![](https://pic.imgdb.cn/item/6302fbb216f2c2beb1c8da21.png)
 
+---
+
 #### 22、Code Spell Checker
 
 > 代码拼写检测
@@ -262,6 +356,8 @@
 ![](https://pic.imgdb.cn/item/6303269c16f2c2beb1e000a2.png)
 
 ![](https://pic.imgdb.cn/item/6303269c16f2c2beb1e000a8.png)
+
+---
 
 #### 23、Live Share
 
@@ -274,7 +370,7 @@
 3. 复制会议链接
 4. 开始协作编辑与调试
 
-
+---
 
 
 
@@ -282,9 +378,13 @@
 
 ## 三、快捷键
 
+---
+
 #### 1、格式化
 
 > Shift+Alt+F
+
+---
 
 #### 2、Switcher
 
@@ -292,6 +392,8 @@
 
 > Alt+O
 
-##### 3、搜索栏
+---
+
+#### 3、搜索栏
 
 > Ctrl+Shift+P

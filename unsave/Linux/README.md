@@ -1,14 +1,16 @@
 # README
 
-## 一、目录
+`目录`
+
+[toc]
 
 ---
 
-## 二、Linux
+## 一、Linux
 
 ### 1、环境配置
 
-[环境配置](./Linux/Linux环境部署+项目部署.md)
+[环境配置](./Linux/Linux_environment.md)
 
 ---
 
@@ -18,13 +20,23 @@
 
 ---
 
-### 3、Vim
+### 3、Linux 基础
+
+[Linux 基础](./Linux/Linux_basic.md)
+
+### 4、Vim
 
 [Vim](./Linux/Vim.md)
 
 ---
 
-## 三、Git
+### 5、Shell
+
+[Shell](./Linux/shell.md)
+
+---
+
+## 二、Git
 
 ---
 
@@ -36,7 +48,7 @@
 
 ---
 
-## 四、VMware 虚拟机
+## 三、VMware 虚拟机
 
 ---
 
