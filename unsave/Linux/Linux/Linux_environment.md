@@ -495,7 +495,7 @@ flush privileges;
 继续在命令行操作
 
 ```
-use mysql;
+use mysql
 update user set user.Host='%' where user.User='root';
 flush privileges;
 ```

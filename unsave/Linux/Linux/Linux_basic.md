@@ -158,8 +158,151 @@
 
 ### 3、系统管理
 
+> **进程：一个正在被执行的程序和命令 （process）**
+>
+> **服务：启动之后一直存在、常驻内存的进程 （service）**
+
+---
+
 #### 1、Linux 服务管理
+
+##### 1、service
+
+> ~~CentOS 之前版本的使用~~,后续版本使用 ***systemctl***
+>
+> 
+>
+> **service  服务名 start | stop | restart | status**
+
+查看系统服务
+
+```bash
+cd /etc/init.d/
+
+ls
+```
+
+![](https://pic.imgdb.cn/item/6313244d16f2c2beb1e738d6.png)
+
+---
+
+##### 2、systemctl
+
+> CentOS 7使用 ***systemctl***
+>
+> 
+>
+> **systemctl   start | stop | restart | status | disable | enable 服务名**
+
+查看系统服务
+
+```bash
+cd /usr/lib/systemd/system、
+
+ll
+```
+
+![](https://pic.imgdb.cn/item/6313264616f2c2beb1e9deb8.png)
+
+---
 
 #### 2、系统运行级别
 
+> 系统运行图形化操作界面
+>
+> ```bash
+> setup
+> ```
+>
+> ![](https://pic.imgdb.cn/item/6313299716f2c2beb1ed24b0.png)
+>
+> 带 `*` 代表开机自启动，`space（空格）` 取消/开启
+
+---
+
+![](https://pic.imgdb.cn/item/63132bd716f2c2beb1ef48af.jpg)
+
+```bash
+vim /etc/inittab
+```
+
+---
+
+- **CentOS 的运行级别简化**
+
+> `multi-user.target` : 运行级别 3（多用户有网，命令行模式）
+>
+> `graphical.target` : 运行级别 5（多用户有网，图形界面模式）
+
+- **查看当前运行级别**
+
+> ```bash
+> systemctl get-default
+> ```
+>
+> `systemctl get-default`
+
+- **修改当前运行级别**
+
+> ```bash
+> systemctl set-default xxx.target
+> # xxx -->> multi-user | graphical
+> ```
+>
+> `systemctl set-default xxx.target`
+>
+> `# xxx -->> multi-user | graphical`
+
+---
+
+![](https://pic.imgdb.cn/item/6313303516f2c2beb1f3aaad.png)
+
+```cpp
+init 3 // 命令行模式
+init 5 // 图形界面
+```
+
+---
+
 #### 3、配置服务
+
+##### 1、查看服务
+
+![](https://pic.imgdb.cn/item/6313310116f2c2beb1f463b9.png)
+
+> ```bash
+> chkconfig --list  #6
+> chkconfig --livel 3 network off # 更改 network 服务的3级别为关 
+> 
+> systemctl list-unit-files #7
+> ```
+
+---
+
+##### 2、防火墙
+
+> centos 6 : **iptables**
+>
+> centos 7 : **firewalld**
+>
+> 
+>
+> ```bash
+> systemctl stop firewalld
+> ```
+
+---
+
+##### 3、关机重启
+
+- **sync**   数据内存同步到硬盘
+- **halt** 停机不断电
+- **poweroff**  关机断电
+- **reboot**  重启
+- **shutdown**  [时间]
+
+---
+
+
+
+### 4、帮助命令
