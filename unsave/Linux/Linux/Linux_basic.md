@@ -77,7 +77,7 @@
 #### 12、/srv
 
 > **系统服务**
->
+> 
 > **<u>服务启动之后需要访问的数据目录</u>**，如 www 服务需要访问的网页数据存放在 /srv/www 内。
 
 #### 13、/sys
@@ -87,7 +87,7 @@
 #### 14、/tmp
 
 > **临时存放文件**
->
+> 
 > 一般用户或正在执行的程序临时存放文件的目录，任何人都可以访问，重要数据不可放置在此目录下。
 
 #### 15、/var
@@ -96,20 +96,20 @@
 
 ---
 
-#### 16、/usr 
+#### 16、/usr
 
 > **应用程序存放目录**
->
+> 
 > <u>**/usr/bin :**</u> 存放应用程序，
->
+> 
 > **<u>/usr/share :</u>** 存放共享数据，
->
+> 
 > **<u>/usr/lib :</u>** 存放不能直接运行的，却是许多程序运行所必需的一些函数库文件,
->
+> 
 > **<u>/usr/local :</u>**: 存放软件升级,
->
+> 
 > **<u>/usr/share/doc :</u>** 系统说明文件存放目录,
->
+> 
 > **<u>/usr/share/man :</u>**  程序说明文件存放目录。
 
 ---
@@ -117,7 +117,7 @@
 ### 2、网络配置
 
 > **查看ip地址**
->
+> 
 > ![](https://pic.imgdb.cn/item/6311beaa16f2c2beb1f860eb.png)
 
 ---
@@ -135,7 +135,7 @@
 ##### 1、登陆
 
 > 通过**ssh**登陆
->
+> 
 > ```bash
 > ssh 用户名@IP
 > ```
@@ -143,9 +143,9 @@
 ![](https://pic.imgdb.cn/item/6311c65816f2c2beb1fd1628.png)
 
 > 退出
->
+> 
 > ![](https://pic.imgdb.cn/item/6311c74f16f2c2beb1fe4d76.png)
->
+> 
 > ```bash
 > exit
 > ```
@@ -159,7 +159,7 @@
 ### 3、系统管理
 
 > **进程：一个正在被执行的程序和命令 （process）**
->
+> 
 > **服务：启动之后一直存在、常驻内存的进程 （service）**
 
 ---
@@ -169,9 +169,7 @@
 ##### 1、service
 
 > ~~CentOS 之前版本的使用~~,后续版本使用 ***systemctl***
->
 > 
->
 > **service  服务名 start | stop | restart | status**
 
 查看系统服务
@@ -189,9 +187,7 @@ ls
 ##### 2、systemctl
 
 > CentOS 7使用 ***systemctl***
->
 > 
->
 > **systemctl   start | stop | restart | status | disable | enable 服务名**
 
 查看系统服务
@@ -209,13 +205,13 @@ ll
 #### 2、系统运行级别
 
 > 系统运行图形化操作界面
->
+> 
 > ```bash
 > setup
 > ```
->
+> 
 > ![](https://pic.imgdb.cn/item/6313299716f2c2beb1ed24b0.png)
->
+> 
 > 带 `*` 代表开机自启动，`space（空格）` 取消/开启
 
 ---
@@ -231,7 +227,7 @@ vim /etc/inittab
 - **CentOS 的运行级别简化**
 
 > `multi-user.target` : 运行级别 3（多用户有网，命令行模式）
->
+> 
 > `graphical.target` : 运行级别 5（多用户有网，图形界面模式）
 
 - **查看当前运行级别**
@@ -239,7 +235,7 @@ vim /etc/inittab
 > ```bash
 > systemctl get-default
 > ```
->
+> 
 > `systemctl get-default`
 
 - **修改当前运行级别**
@@ -248,9 +244,9 @@ vim /etc/inittab
 > systemctl set-default xxx.target
 > # xxx -->> multi-user | graphical
 > ```
->
+> 
 > `systemctl set-default xxx.target`
->
+> 
 > `# xxx -->> multi-user | graphical`
 
 ---
@@ -282,11 +278,9 @@ init 5 // 图形界面
 ##### 2、防火墙
 
 > centos 6 : **iptables**
->
-> centos 7 : **firewalld**
->
 > 
->
+> centos 7 : **firewalld**
+> 
 > ```bash
 > systemctl stop firewalld
 > ```
@@ -302,7 +296,5 @@ init 5 // 图形界面
 - **shutdown**  [时间]
 
 ---
-
-
 
 ### 4、帮助命令

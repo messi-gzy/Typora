@@ -1,14 +1,14 @@
 # JavaScript
 
-## 一、 目录<a name="目录"></a>
+**目录**<a name="目录"></a>
 
-## 二、 基础语法
+## 一、 基础语法
 
 #### 2.1、输出语句
 
-| 页面输出     | document.write("~")        |
-| ------------ | -------------------------- |
-| 控制台输出   | console.log/info/warn/eror |
+| 页面输出   | document.write("~")        |
+| ------ | -------------------------- |
+| 控制台输出  | console.log/info/warn/eror |
 | 弹出窗口输出 | alert("~~ ~~")             |
 
 #### 2.2、数据类型
@@ -19,23 +19,23 @@
 
 > $\textcolor{red}{返回值为String类型 }$
 
-| 转义字符 | 含义   |
-| -------- | ------ |
-| \n       | 换行   |
-| \t       | 制表   |
-| \b       | 空格   |
-| \r       | 回车   |
-| \ \      | 斜杠   |
-| \ '      | 单引号 |
-| \ "      | 双引号 |
+| 转义字符 | 含义  |
+| ---- | --- |
+| \n   | 换行  |
+| \t   | 制表  |
+| \b   | 空格  |
+| \r   | 回车  |
+| \ \  | 斜杠  |
+| \ '  | 单引号 |
+| \ "  | 双引号 |
 
 ###### 2.2.2、Number类型
 
 > 整数和浮点数
 
-| 正无穷   | Infinity  |
-| -------- | --------- |
-| 负无穷   | -Infinity |
+| 正无穷  | Infinity  |
+| ---- | --------- |
+| 负无穷  | -Infinity |
 | 非法数字 | NaN       |
 
 [<B>return</B>](#目录)
@@ -51,15 +51,15 @@
 
 ###### 2.3.2、转换为Number类型
 
-| Number（）   | 任意   |
-| ------------ | ------ |
-| parselnt()   | 整数   |
+| Number（）     | 任意  |
+| ------------ | --- |
+| parselnt()   | 整数  |
 | parseFloat() | 浮点数 |
 
 ###### 2.3.3、转换为布尔型
 
 | Boolean（） |
-| ----------- |
+| --------- |
 
 [<B>return</B>](#目录)
 
@@ -77,8 +77,8 @@
 
 > ```javascript
 > var person = {
-> 	name: "aaa",
-> 	age: 18
+>     name: "aaa",
+>     age: 18
 > };
 > ```
 
@@ -121,12 +121,12 @@
 > ```javascript
 > //第一种
 > function 函数名([形参1，形参2]) {
-> 	......
+>     ......
 > }
 > 
 > //第二种
 > var 函数名 = function([形参1，形参2]) {
-> 	......
+>     ......
 > }
 > ```
 
@@ -205,7 +205,7 @@
 > ```
 
 > 判断一个对象是不是另一个对象的子类
->
+> 
 > ***$\textcolor{red}{instanceof}$***
 
 ###### 2.5.8、原型
@@ -236,16 +236,16 @@
 
 ###### 2.5.9、toString()方法
 
-| 类型     | 行为描述         |
-| -------- | ---------------- |
-| String   | 返回String       |
-| Number   | 返回Number       |
-| Boolean  | 返回布尔值       |
-| Object   | 返回对象名称     |
-| Array    | 数组逗号隔开     |
-| Date     | 日期             |
+| 类型       | 行为描述     |
+| -------- | -------- |
+| String   | 返回String |
+| Number   | 返回Number |
+| Boolean  | 返回布尔值    |
+| Object   | 返回对象名称   |
+| Array    | 数组逗号隔开   |
+| Date     | 日期       |
 | Error    | 错误信息的字符串 |
-| Function | 返回函数名称     |
+| Function | 返回函数名称   |
 
 ###### 2.5.10、hasOwnProperty方法
 
@@ -260,7 +260,7 @@
 
 ###### 2.5.11、继承
 
-​	1，原型链继承
+​    1，原型链继承
 
 > ```javascript
 > // 定义父类型构造函数
@@ -295,7 +295,7 @@
 > subType.showSubProp();
 > ```
 
-​    2，构造函数继承			
+​    2，构造函数继承            
 
 > ```javascript
 > // 定义父类型构造函数
@@ -326,7 +326,7 @@
 > console.log(subType.age);
 > ```
 
-​	3，组合继承
+​    3，组合继承
 
 > ```javascript
 > function Person(name, age) {
@@ -356,7 +356,7 @@
 > console.log(s.name, s.age, s.price);
 > ```
 
-​	4，垃圾回收
+​    4，垃圾回收
 
 > ```javascript
 > new person();
@@ -387,8 +387,7 @@ for (let k in obj){
 }
 ```
 
-
-## 三、内置对象
+## 二、内置对象
 
 #### 1、Math 对象
 
@@ -399,14 +398,193 @@ for (let k in obj){
 - ........
 
 - 随机数
-
+  
   ==**[0,1)**==
-
+  
   ```javascript
   Math.random()
   ```
 
 #### 2、Date 对象
 
+> ```javascript
+> let date = new Date('2019-8-8 8:8:8')
+> ```
 
+> 1970年1月1号
+
+#### 3、数组对象
+
+##### 1、创建
+
+> ```javascript
+> let array = new Array();
+> ```
+
+##### 2、检测是否为数组
+
+- 运算符
+
+`instanceof`
+
+- 方法
+
+> Array.isArray();
+
+##### 3、添加或删除
+
+###### 1、添加
+
+| 开头  | **push()**    |
+| --- | ------------- |
+| 末尾  | **unshift()** |
+
+###### 2、删除
+
+| 开头  | **pop()**   |
+| --- | ----------- |
+| 末尾  | **shift()** |
+
+###### 3、排序
+
+| 翻转  | **reverse()** |
+| --- | ------------- |
+| 末尾  | **sort()**    |
+
+###### 4、索引
+
+| 从前  | indexOf()         | 只返回第一个找到的,找不到返回-1 |
+| --- | ----------------- | ----------------- |
+| 从后  | **lastIndexOf()** | 只返回第一个找到的,找不到返回-1 |
+
+###### 5、数组转字符串
+
+| 字符串 | toString() |
+| --- | ---------- |
+| 分隔符 | **join()** |
+
+###### 6、其他
+
+| concat()     | 链接多个数组 |
+| ------------ | ------ |
+| **slice()**  | 截取一段数组 |
+| **splice()** | 删除一段   |
+
+
+
+#### 4、字符串对象
+
+##### 1、索引
+
+| indexOf（'目标',[起始位置]） | 返回位置 |
+| ---------------------------- | -------- |
+| **indexOf（'目标'）**        | 返回位置 |
+
+| charAt(index)         | 返回值      |
+| --------------------- | ----------- |
+| **charCodeAt(index)** | 返回ASCII值 |
+
+![](https://pic.imgdb.cn/item/6318956416f2c2beb1333b40.jpg)
+
+| toUpperCase()     | 转大写 |
+| ----------------- | ------ |
+| **toLowerCase()** | 转小写 |
+
+
+
+## 三、Web API
+
+> **操作浏览器功能和页面元素的API （`BOM`和 `DOM`）**
+
+### 1、DOM
+
+> **可处理可拓展语言的接口**
+
+`对象`
+
+- 文档： document
+- 元素：element
+- 节点：node
+
+
+
+#### 1、获取元素
+
+##### 1、根据==ID==获取
+
+> **getElementById()**
+>
+> ```javascript
+> let temp=document.getElementById('time');
+> console.log(temp);
+> console.dir(temp);//返回元素对象
+> ```
+
+##### 2、根据==标签名==获取
+
+> **getElementsBtTagName()**
+>
+> ```javascript
+> <div class="">1</div>
+> <div class="">2</div>
+> <div class="">3</div>
+> <div class="">4</div>
+> <script>
+>     let divs = document.getElementsByTagName('div');
+>     console.log(divs[0].outerText);
+> </script>
+> ```
+
+##### 3、根据==类名==获取
+
+> **getElementsByClassName()**
+>
+> ```javascript
+> <div class="a">1</div>
+> <div class="a">2</div>
+> <div class="a">3</div>
+> <div class="a">4</div>
+> <script>
+>     let divs = document.getElementsByClassName('a')
+>     console.log(divs)
+> </script>
+> ```
+
+##### 4、根据==选择器==获取
+
+> | **querySelector()**    | 只返回第一个元素对象 |
+> | ---------------------- | -------------------- |
+> | **querySelectorAll()** | **返回全部**         |
+>
+> ```
+> .box
+> #app
+> li
+> ```
+
+##### 5、特殊
+
+| body     | document.body                |
+| -------- | ---------------------------- |
+| **html** | **document.documentElement** |
+
+
+
+#### 2、事件基础
+
+> **触发---响应机制**
+
+执行时间的步骤
+
+- 获取事件源
+- 绑定/注册事件
+- 添加事件处理程序
+
+##### 事件分类
+
+###### 1、鼠标事件
+
+
+
+#### 3、操作元素
 
