@@ -4,8 +4,6 @@
 
 ## 二、C++
 
-[README](./C++/README.md)
-
 ### 2.1、C++ 基础
 
 [基础（1）](./C++/basic/C++_basic_1.md)
@@ -24,38 +22,12 @@
 
 ### 3.1、基础
 
+[STL](./STL/STL.md)
+
 ### 3.2、源码解析
+
+
 
 ## 四、MinGW
 
 [README](./MinGW/README.md)
-
-### 3.1、GNU
-
-#### 3.1.1、gcc
-
-[gcc](./MinGW/GNU/gcc.md)
-
-#### 3.1.2、g++
-
-[g++](./MinGW/GNU/g++.md)
-
-#### 3.1.3、gdb
-
-[gdb](./MinGW/GNU/gdb.md)
-
-### 3.2、CMakeLists
-
-#### 3.2.1、cmake
-
-[cmake](./MinGW/cmake/cmake.md)
-
-#### 3.2.2、CMakeLsits
-
-[CMakeLsits](./MinGW/cmake/CMakeLists.md)
-
-#### 3.2.3、Makefile
-
-[Makefile](./MinGW/cmake/Makefile.md)
-
-### 3.3、make
