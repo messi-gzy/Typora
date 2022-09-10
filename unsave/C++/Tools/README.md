@@ -1,7 +1,5 @@
 # README
 
-# MinGW
-
 `目录`
 
 ## 一、GNU

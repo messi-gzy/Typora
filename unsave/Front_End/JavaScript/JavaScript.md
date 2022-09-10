@@ -2,7 +2,11 @@
 
 **目录**<a name="目录"></a>
 
+---
+
 ## 一、 基础语法
+
+---
 
 #### 1.1、输出语句
 
@@ -10,6 +14,8 @@
 | ------ | -------------------------- |
 | 控制台输出  | console.log/info/warn/eror |
 | 弹出窗口输出 | alert("~~ ~~")             |
+
+---
 
 #### 1.2、数据类型
 
@@ -29,6 +35,8 @@
 | \ '  | 单引号 |
 | \ "  | 双引号 |
 
+---
+
 ###### 1.2.2、Number类型
 
 > 整数和浮点数
@@ -39,6 +47,8 @@
 | 非法数字 | NaN       |
 
 [<B>return</B>](#目录)
+
+---
 
 #### 1.3、强制类型转换
 
@@ -62,6 +72,8 @@
 | --------- |
 
 [<B>return</B>](#目录)
+
+---
 
 #### 1.4、对象
 
@@ -92,6 +104,8 @@
 > person['属性名']
 > ```
 
+---
+
 ###### 1.4.3、删除属性
 
 > ```javascript
@@ -114,9 +128,11 @@
 
 [<B>return</B>](#目录)
 
+---
+
 #### 1.5、函数
 
-###### 2.5.1、函数创建
+###### 1.5.1、函数创建
 
 > ```javascript
 > //第一种
@@ -135,6 +151,8 @@
 > ```javascript
 > /函数名([......])
 > ```
+
+---
 
 ###### 1.5.3、嵌套函数
 
@@ -170,6 +188,8 @@
 >             ....
 > })()
 > ```
+
+---
 
 ###### 1.5.6、对象中的函数
 
@@ -208,6 +228,8 @@
 > 
 > ***$\textcolor{red}{instanceof}$***
 
+---
+
 ###### 1.5.8、原型
 
 > ```javascript
@@ -234,6 +256,8 @@
 
 [<B>return</B>](#目录)
 
+---
+
 ###### 1.5.9、toString()方法
 
 | 类型       | 行为描述     |
@@ -258,6 +282,8 @@
 > console.log("age" in mc);
 > ```
 
+---
+
 ###### 1.5.11、继承
 
 ​    1，原型链继承
@@ -265,17 +291,17 @@
 > ```javascript
 > // 定义父类型构造函数
 > function SupperType() {
->     this.supProp = 'Supper property';
+>  this.supProp = 'Supper property';
 > }
 > 
 > // 给父类型的原型添加方法
 > SupperType.prototype.showSupperProp = function () {
->     console.log(this.supProp);
+>  console.log(this.supProp);
 > };
 > 
 > // 定义子类型的构造函数
 > function SubType() {
->     this.subProp = 'Sub property';
+>  this.subProp = 'Sub property';
 > }
 > 
 > // 创建父类型的对象赋值给子类型的原型
@@ -286,7 +312,7 @@
 > 
 > // 给子类型原型添加方法
 > SubType.prototype.showSubProp = function () {
->     console.log(this.subProp)
+>  console.log(this.subProp)
 > };
 > 
 > // 创建子类型的对象: 可以调用父类型的方法
@@ -294,6 +320,8 @@
 > subType.showSupperProp();
 > subType.showSubProp();
 > ```
+
+---
 
 ​    2，构造函数继承            
 
@@ -325,6 +353,8 @@
 > console.log(subType.name);
 > console.log(subType.age);
 > ```
+
+---
 
 ​    3，组合继承
 
@@ -365,10 +395,14 @@
 
 [<B>return</B>](#目录)
 
+---
+
 #### 1.6、作用域
 
 1. 全局作用域
 2. 函数作用域
+
+---
 
 #### 1.7、对象遍历
 
@@ -387,7 +421,11 @@ for (let k in obj){
 }
 ```
 
+---
+
 ## 二、内置对象
+
+---
 
 #### 1、Math 对象
 
@@ -405,6 +443,8 @@ for (let k in obj){
   Math.random()
   ```
 
+---
+
 #### 2、Date 对象
 
 > ```javascript
@@ -412,6 +452,8 @@ for (let k in obj){
 > ```
 
 > 1970年1月1号
+
+---
 
 #### 3、数组对象
 
@@ -430,6 +472,8 @@ for (let k in obj){
 - 方法
 
 > Array.isArray();
+
+---
 
 ##### 3、添加或删除
 
@@ -451,6 +495,8 @@ for (let k in obj){
 | --- | ------------- |
 | 末尾  | **sort()**    |
 
+---
+
 ###### 4、索引
 
 | 从前  | indexOf()         | 只返回第一个找到的,找不到返回-1 |
@@ -470,7 +516,7 @@ for (let k in obj){
 | **slice()**  | 截取一段数组 |
 | **splice()** | 删除一段   |
 
-
+---
 
 #### 4、字符串对象
 
@@ -490,11 +536,13 @@ for (let k in obj){
 | ----------------- | ------ |
 | **toLowerCase()** | 转小写 |
 
-
+---
 
 ## 三、Web API
 
 > **操作浏览器功能和页面元素的API （`BOM`和 `DOM`）**
+
+---
 
 ### 1、DOM
 
@@ -506,7 +554,7 @@ for (let k in obj){
 - 元素：element
 - 节点：node
 
-
+---
 
 #### 1、获取元素
 
@@ -534,6 +582,8 @@ for (let k in obj){
 >     console.log(divs[0].outerText);
 > </script>
 > ```
+
+---
 
 ##### 3、根据==类名==获取
 
@@ -568,7 +618,7 @@ for (let k in obj){
 | -------- | ---------------------------- |
 | **html** | **document.documentElement** |
 
-
+---
 
 #### 2、事件基础
 
@@ -580,11 +630,13 @@ for (let k in obj){
 - 绑定/注册事件
 - 添加事件处理程序
 
+---
+
 ##### 事件分类
 
 ###### 1、鼠标事件
 
-
+---
 
 #### 3、操作元素
 
@@ -599,6 +651,8 @@ for (let k in obj){
 > **element.class(....)**
 >
 > 修改对象属性
+
+---
 
 ##### 3、修改元素样式
 
@@ -617,7 +671,9 @@ for (let k in obj){
 >
 > 适合多样式
 
-###### 4、自定义属性值
+---
+
+###### 3、自定义属性值
 
 > **data-属性**
 
@@ -636,6 +692,8 @@ for (let k in obj){
 
 - element.removeAttribute('属性')
 
-
+---
 
 #### 4、节点操作
+
+---
