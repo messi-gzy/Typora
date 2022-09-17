@@ -1,14 +1,8 @@
 # C++ 基础（1）
 
----
-
 ## 一、目录
 
----
-
 ## 二、基础
-
----
 
 ### 1、数据类型
 
@@ -35,9 +29,7 @@ cout<<(int)a<<endl;
 
 ###### ASCll码表格
 
-<img src="https://pic.imgdb.cn/item/62c2e1ca5be16ec74a7e08f4.png"  />
-
----
+<img src="https://pic.imgdb.cn/item/62c2e1ca5be16ec74a7e08f4.png" style="zoom:67%;" />
 
 #### 3、转义字符
 
@@ -66,8 +58,6 @@ cout<<a<<endl;
 string a="hello world!";
 cout<<a<<endl;
 ```
-
----
 
 #### 5、运算符
 
@@ -107,8 +97,6 @@ int a=10,b=20,c;
 c = a > b ? a:b;
 cout<<c<<endl; // c=20
 ```
-
----
 
 ### 2、程序流程
 
@@ -163,8 +151,6 @@ cout<<ing<<endl;
 cout<<(long long)ing<<endl;
 ```
 
----
-
 #### 2、二维数组
 
 ##### 1、定义
@@ -182,8 +168,6 @@ int d[][10]={0,1,2,3};
 cout<<a<<"  "<< sizeof(a)<<endl;
 ```
 
----
-
 ### 4、函数
 
 #### 1、声明
@@ -199,8 +183,6 @@ int compere(int a,int b)
 ```
 
 `声明可多次，定义就一次`
-
----
 
 ### 5、指针
 
@@ -232,8 +214,6 @@ p=&a;
 
 ​                    8字节（64位）
 
----
-
 #### 2、空指针
 
 ###### 1、初始化
@@ -252,8 +232,6 @@ int *p=NULL;
 int *p=(int *)0x1100;
 ```
 
----
-
 #### 4、***const***修饰指针
 
 ##### 1、常量指针
@@ -264,8 +242,6 @@ int *p=(int *)0x1100;
 
 ![](https://pic.imgdb.cn/item/62c4459e5be16ec74a11e74b.png)
 
----
-
 ##### 2、指针常量
 
 > 指针的指向不可以改，指向的值可以改
@@ -274,8 +250,6 @@ int *p=(int *)0x1100;
 
 ![](https://pic.imgdb.cn/item/62c447f25be16ec74a157ac1.png)
 
----
-
 ##### 3、即修饰指针也修饰常量
 
 > 指针的指向不可以改，指向的值也不可以改
@@ -283,8 +257,6 @@ int *p=(int *)0x1100;
 > const int * const p =&a;
 
 ![](https://pic.imgdb.cn/item/62c447985be16ec74a14f0ff.png)
-
----
 
 #### 5、指针和数组
 
@@ -308,13 +280,9 @@ cout<<a[0]<<endl;
 delete []a;//释放空间
 ```
 
----
-
 #### 6、指针和函数
 
 ![](https://pic.imgdb.cn/item/62c451815be16ec74a235b91.png)
-
----
 
 ### 6、结构体
 
@@ -337,8 +305,6 @@ delete []a;//释放空间
 > };
 > ```
 
----
-
 #### 2、创建
 
 - struct Student s1;
@@ -354,8 +320,6 @@ delete []a;//释放空间
 - 在定义结构体时就创建结构体变量
 
 > <img src="https://pic.imgdb.cn/item/62c4f10f5be16ec74ab07acd.png" style="zoom:67%;" />
-
----
 
 #### 3、结构体数组
 
@@ -382,8 +346,6 @@ int main() {
 }
 ```
 
----
-
 #### 4、结构体指针
 
 > $\textcolor{red}{利用操作符}$`->` $\textcolor{red}{访问内容}$
@@ -393,8 +355,6 @@ Student s1={21,"小王",98.66};
 Student *p=&s1;
 cout<<p->m_name<<endl;
 ```
-
----
 
 #### 5、结构体嵌套结构体
 
@@ -418,8 +378,6 @@ int main() {
 }
 ```
 
----
-
 #### 6、结构体做函数参数
 
 ```c++
@@ -440,12 +398,8 @@ int main() {
 }
 ```
 
----
-
 #### 7、结构体中 *const* 使用
 
 ![](https://pic.imgdb.cn/item/62c509fb5be16ec74acc2106.png)
 
 > 减少拷贝，减少内存开销，只读不可以修改
-
----

@@ -4,15 +4,11 @@
 >
 > 使用**cmake**直接执行**CMakeLists** 生成不同平台的编译配置文件 
 
----
-
 
 
 ### 一、语法特性
 
 > **CMake要求要求工程主目录和所有存放源代码子目录下都要编写CMakeLists.txt文件**
-
----
 
 ##### 1、基本语法格式
 
@@ -31,8 +27,6 @@ add_executable(hello main.cpp hello.cpp)
 ADD_EXECUTABLE(hello main.cpp ${HELLO})
 ```
 
----
-
 ##### 3、变量
 
 > **变量取值**
@@ -42,8 +36,6 @@ ADD_EXECUTABLE(hello main.cpp ${HELLO})
   - if(TARGET)
   - ~~if(${TARGET})~~
 
----
-
 
 
 ### 二、重要指令
@@ -51,8 +43,6 @@ ADD_EXECUTABLE(hello main.cpp ${HELLO})
 `提示`
 
 **[...]**  >>>>>**可选参数**
-
----
 
 ##### 1、指定cmake最小版本
 
@@ -74,8 +64,6 @@ cmake_minimum_required(VERSION 3.4.1)
 project(HELLO)
 ```
 
----
-
 ##### 3、设置编译类型
 
 > 设置编译类型
@@ -83,8 +71,6 @@ project(HELLO)
 > - **==add_executable==(exename source1 source2 ... )# 生成可执行文件**
 > - **==add_library==(libname STATIC source1 source2 ... )# 生成静态库**
 > - **==add_library==(libname SHARED source1 source2 ... ) # 生成动态库或共享库**
-
----
 
 1. 可执行文件
 
@@ -107,8 +93,6 @@ project(HELLO)
    add_library(hello SHARED ${SRC})
    ```
 
----
-
 ##### 4、定义变量 
 
 > 定义变量
@@ -119,8 +103,6 @@ project(HELLO)
 # 定义SRC变量，其值为sayhello.cpp hello.cpp 
 set(SRC sayhello.cpp hello.cpp)
 ```
-
----
 
 ###### 4.1、==set== 直接设置变量的值
 
@@ -146,8 +128,6 @@ list(REMOVE_ITEM SRC_LIST main.cpp)
 add_executable(demo ${SRC_LIST})
 ```
 
----
-
 ##### 5、工程添加头文件搜索目录
 
 > 向工程添加多个特定的头文件搜索路径
@@ -164,8 +144,6 @@ include_directories(
 )
 ```
 
----
-
 ##### 6、设置库文件的搜索目录
 
 > 向工程添加多个特定的库文件搜索路径 
@@ -180,8 +158,6 @@ link_directories(
 )
 ```
 
----
-
 ##### 7、添加编译参数
 
 > 添加编译参数 
@@ -192,8 +168,6 @@ link_directories(
 # 添加编译参数 -Wall -std=c++11 -O2 
 add_compile_options(-Wall -std=c++11 -O2)
 ```
-
----
 
 ##### 8、设置 target 需要链接的共享库
 
@@ -208,8 +182,6 @@ add_compile_options(-Wall -std=c++11 -O2)
 target_link_libraries(main hello)
 ```
 
----
-
 ##### 9、添加子目录
 
 > **向当前工程添加存放源文件的子目录，**
@@ -223,16 +195,12 @@ target_link_libraries(main hello)
 add_subdirectory(src)
 ```
 
----
-
 ##### 10、指定编译包含的源文件
 
 > **指定编译包含的源文件**
 >
 > - **==add_library==(demo source1 source2 ...)** #明确包含哪些源文件
 > - **==aux_source_directory==(dir VAR)** 发现一个目录下所有的源代码文件并将列表存储在一个变量中
-
----
 
 1. 明确指定包含哪些源文件
 
@@ -266,8 +234,6 @@ add_subdirectory(src)
    add_library(demo ${SRC_LIST} ${SRC_PROTOCOL_LIST})
    ```
 
----
-
 ##### 11、查找指定的库文件
 
 > 查找指定的库文件
@@ -285,8 +251,6 @@ find_library( # Sets the name of the path variable.
               log )
 ```
 
----
-
 ##### 12、设置编译类型
 
 > **设置编译类型 Debug | Release**
@@ -298,19 +262,13 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_BUILD_TYPE Release)
 ```
 
----
-
 
 
 ### 三、常用语法
 
 > 条件控制
 
----
 
-
-
----
 
 ### 四、常用变量
 
@@ -318,8 +276,6 @@ set(CMAKE_BUILD_TYPE Release)
 - 环境变量
 - 系统信息
 - 编译选项
-
----
 
 #### 1、预定义变量
 
@@ -339,8 +295,6 @@ set(CMAKE_BUILD_TYPE Release)
 |     **CMAKE_C_COMPILER**     |              指定C编译器               |
 |    **CMAKE_CXX_COMPILER**    |             指定C++编译器              |
 
----
-
 #### 2、环境变量
 
 - 使用环境变量
@@ -355,8 +309,6 @@ set(CMAKE_BUILD_TYPE Release)
    set(ENV{Name} value) # 这里没有“$”符号
   ```
 
----
-
 #### 3、系统信息
 
 |            变量            |                       含义                        |
@@ -368,8 +320,6 @@ set(CMAKE_BUILD_TYPE Release)
 |          **UNIX**          | 在所有的类 UNIX 平台下为TRUE，包括 OS X 和 cygwin |
 |         **WIN32**          |   在所有的 win32 平台下该值为 TRUE，包括 cygwin   |
 
----
-
 #### 4、编译选项
 
 |         变量          |              含义              |
@@ -379,6 +329,4 @@ set(CMAKE_BUILD_TYPE Release)
 |  **CMAKE_CXX_FLAGS**  |          C++ 编译选项          |
 
 > **BUILD_SHARED_LIBS**：这个开关用来控制默认的库编译方式，<u>如果不进行设置，使用 add_library 又没有指定库类型的情况下，**默认编译生成的库都是静态库**</u>。如果 **set(BUILD_SHARED_LIBS ON)** 后，**默认生成的为动态库**
-
----
 

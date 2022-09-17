@@ -14,12 +14,12 @@ node hello.js
 
 ![](https://pic.imgdb.cn/item/629832aa0947543129c3d269.png)
 
-| 按键       | 功能                   |
-| ---------- | ---------------------- |
+| 按键         | 功能          |
+| ---------- | ----------- |
 | :arrow_up: | 定位到上一次执行的命令 |
-| tab        | 快速补全路径           |
-| esc        | 清空当前命令           |
-| cls        | 清空终端               |
+| tab        | 快速补全路径      |
+| esc        | 清空当前命令      |
+| cls        | 清空终端        |
 
 ### 三、fs文件系统模块
 
@@ -33,7 +33,7 @@ const fs=require('fs')
 
 #### 2、读取文件内容
 
-###### 	1、读取文件
+###### 1、读取文件
 
 <img src="https://pic.imgdb.cn/item/629835f80947543129c78dfc.png" style="zoom:50%;" />
 
@@ -44,7 +44,7 @@ fs.readFile('./hello.js','utf8',function(err,data){
 })
 ```
 
-###### 	2、判断文件读取成功
+###### 2、判断文件读取成功
 
 ```javascript
 fs.readFile('./hello.js','utf8',function(err,data){
@@ -75,8 +75,6 @@ fs.writeFile('./test.txt','maxin','utf8',function(err){
 ```
 __dirname //表示当前文件所处的目录
 ```
-
-
 
 ### 四、path路径模块
 
@@ -119,8 +117,6 @@ const path=require('path')
 let pathTest=path.join(__dirname,'/test.txt')
 console.log(path.extname(pathTest));//.txt
 ```
-
-
 
 ### 五、http 模块
 
@@ -218,8 +214,6 @@ server.listen(8090,function(){
 })
 ```
 
-
-
 ### 六、模块化
 
 ##### 1、概念
@@ -248,7 +242,7 @@ const electron=require('electron')
 ----------**module 对象**
 
 > module.exports 将成员共享出去
->
+> 
 > 默认为一个空对象
 
 - ```javascript
@@ -285,8 +279,6 @@ const electron=require('electron')
 
 CommonJS
 
-
-
 ### 七、包管理
 
 ##### 1、包概念
@@ -315,7 +307,7 @@ npm install moment@2.22.2
 > 不用删除之前的包
 
 - 包管理
-
+  
   <img src="https://pic.imgdb.cn/item/6299ac3109475431297b6194.png" style="zoom: 67%;" />
 
 - 一次性安装所有包
@@ -391,17 +383,17 @@ nrm use taobao
 ###### 1、项目包
 
 - 开发依赖包
-
+  
   > devDependencies
-  >
+  > 
   > ```shell
   > npm install ... -D
   > ```
 
 - 核心依赖包
-
+  
   > dependencies
-  >
+  > 
   > ```shell
   > npm install ...
   > ```
@@ -411,7 +403,7 @@ nrm use taobao
 - 目录
 
 > C:\Users\MateBook13\AppData\Roaming\npm\node_modules
->
+> 
 > 工具性质的包
 
 - 安装全局包
@@ -493,15 +485,13 @@ npm unpublish ... --force
 
 ![](https://pic.imgdb.cn/item/6299da090947543129b8c0fd.png)
 
-
-
 ### 八、Express
 
 -----------**web**开发框架
 
 ##### 1、基本服务器
 
-###### 	1、创建基本服务器
+###### 1、创建基本服务器
 
 ```javascript
 const express=require('express')
@@ -513,7 +503,7 @@ app.listen(8090,()=>{
 })
 ```
 
-###### 	2、监听*Get*和*Post*的请求
+###### 2、监听*Get*和*Post*的请求
 
 ```javascript
 app.get('/usr',(req,res)=>{
@@ -529,7 +519,7 @@ app.post('/usr',(req,res)=>{
 })
 ```
 
-###### 	3、获取*URL*携带的查询参数
+###### 3、获取*URL*携带的查询参数
 
 ```javascript
 http://127.0.0.1:8090/?name=maxin
@@ -540,7 +530,7 @@ app.post('/',(req,res)=>{
 })
 ```
 
-###### 	4、获取*URL*的动态参数
+###### 4、获取*URL*的动态参数
 
 ```javascript
 http://127.0.0.1:8090/usr/3/hello
@@ -553,7 +543,7 @@ app.get('/usr/:id/:name',(req,res)=>{
 
 ##### 2、静态资源托管
 
-###### 	1、单个资源托管
+###### 1、单个资源托管
 
 ```javascript
 http://127.0.0.1:8090/3-1.png
@@ -571,7 +561,7 @@ app.listen(8090,()=>{
 })
 ```
 
-###### 	2、托管多个资源目录
+###### 2、托管多个资源目录
 
 ```javascript
 const express=require('express')
@@ -587,7 +577,7 @@ app.listen(8090,()=>{
 })
 ```
 
-###### 	3、挂载路径前缀
+###### 3、挂载路径前缀
 
 ```javascript
 http://127.0.0.1:8090/resources/3-1.png
@@ -613,13 +603,13 @@ app.listen(8090,()=>{
 > - 请求类型
 > - 请求URL
 > - 处理函数
->
+> 
 > 先后顺序匹配
 
 ###### 2、使用
 
 1. 简单使用
-
+   
    ```javascript
    const express=require('express')
    
@@ -639,9 +629,9 @@ app.listen(8090,()=>{
    ```
 
 2. 模块化路由
-
+   
    <img src="https://pic.imgdb.cn/item/629f3b540947543129db3fce.png" style="zoom: 50%;" />
-
+   
    ```javascript
    const express=require('express')
    
@@ -657,7 +647,7 @@ app.listen(8090,()=>{
    ```
 
 3. 添加前缀
-
+   
    ```javascript
    app.use("/api",userRouter)
    ```
@@ -777,13 +767,13 @@ app.use((err,req,res,next)=>{
 1. express.static  //静态资源
 
 2. express.json  //解析JSON  （4.16.0+）
-
+   
    ```javascript
    app.use(express.json())
    ```
 
 3. express.urlencodes  //解析URL-encoded 数据 （4.16.0+）
-
+   
    ```javascript
    app.use(express.urlencoded({ extended :false}))
    
@@ -816,14 +806,12 @@ app.post('/',(req,res)=>{
 
 <img src="https://pic.imgdb.cn/item/62a0327e0947543129d60f40.png" style="zoom: 50%;" />
 
-
-
 ##### 
 
 ###### 7、自定义中间件
 
 1. 监听data,end数据
-
+   
    ```javascript
    app.use((req,res,next)=>{
        let str=''
@@ -838,7 +826,7 @@ app.post('/',(req,res)=>{
    ```
 
 2. querystring模块
-
+   
    <img src="https://pic.imgdb.cn/item/62a70a890947543129c3ab12.png" style="zoom:67%;" />
 
 ###### 8、接口
@@ -856,7 +844,7 @@ router.get('/get',(req,res)=>{
 
 router.post('/post',(req,res)=>{
     const body=req.body
-    
+
     res.send({
         status:0,
         msg:"POST成功",
@@ -868,7 +856,7 @@ router.post('/post',(req,res)=>{
 ###### 9、解决跨域
 
 > **CORS** 配置
->
+> 
 > <img src="https://pic.imgdb.cn/item/62a7148a0947543129d65654.png" style="zoom:50%;" />
 
 响应头：

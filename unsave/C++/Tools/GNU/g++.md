@@ -4,13 +4,9 @@
 >
 > **g++** 是GNU推出的基于C/C++的编译器，是开放源代码领域应用最广泛的编译器，具有功能强大，编译代码支持性能优化等特点。现在很多程序员都应用GCC，怎样才能更好的应用GCC。目前，GCC可以用来编译C/C++、FORTRAN、JAVA、OBJC、ADA等语言的程序，可根据需要选择安装支持的语言。
 
----
-
 `目录`
 
 [toc]
-
----
 
 ### 一、编译过程
 
@@ -20,8 +16,6 @@
 | -S   | 编译指定源文件，产生汇编语言（.s） |
 | -c   | 编译源文件，产生机器语言（.o）     |
 | -o   | 链接生成可执行文件                 |
-
----
 
 #### 1、预处理
 
@@ -38,8 +32,6 @@ g++ -E main.cpp - o main.i
 ```bash
 g++ -S main.i - o main.s 
 ```
-
----
 
 #### 3、汇编
 
@@ -59,8 +51,6 @@ g++ main.o - o main
 
 `默认生成a.out 文件`
 
----
-
 #### 5、快速生成
 
 > 自动执行所有步骤
@@ -70,8 +60,6 @@ g++ main.cpp -o main
 ```
 
 `默认生成a.out 文件`
-
----
 
 
 
@@ -90,8 +78,6 @@ g++ main.cpp -o main
 -C:保留注释信息
 ```
 
----
-
 #### 1、调试文件
 
 > ==**-g**==
@@ -103,8 +89,6 @@ g++ main.cpp -o main
 # 产生带调试信息的可执行文件test
 g++ -g test.cpp
 ```
-
----
 
 #### 2、优化源代码
 
@@ -127,8 +111,6 @@ g++ -g test.cpp
 # 使用 -O2优化源代码，并输出可执行文件
 g++ -O2 test.cpp
 ```
-
----
 
 #### **3、库文件**
 
@@ -155,8 +137,6 @@ g++ -lglog test.cpp
 g++ -L/home/bing/mytestlibfolder -lmytest test.cpp
 ```
 
----
-
 #### 4、头文件
 
 > ==**-I**==
@@ -173,8 +153,6 @@ g++ -L/home/bing/mytestlibfolder -lmytest test.cpp
 #-I参数可以用相对路径，比如头文件在当前目录
 g++ -I/myinclude test.cpp
 ```
-
----
 
 #### 5、警告信息
 
@@ -221,8 +199,6 @@ g++ -w test.cpp
 g++ -std=c++11 test.cpp
 ```
 
----
-
 #### 7、定义宏
 
 > ==**-D**==
@@ -245,8 +221,6 @@ g++ -DDEBUG main.cpp
 // 2. 第七行代码可以被执行
 ```
 
----
-
 ```bash
 g++ [-c|-S|-E] [-std=standard]
            [-g] [-pg] [-Olevel]
@@ -257,8 +231,6 @@ g++ [-c|-S|-E] [-std=standard]
            [-o outfile] [@file] infile...
 ```
 
----
-
 
 
 ### 三、实战
@@ -268,8 +240,6 @@ g++ [-c|-S|-E] [-std=standard]
 <img src="https://pic.imgdb.cn/item/631cadf416f2c2beb14c9195.png" style="zoom:50%;" />
 
 ![](https://pic.imgdb.cn/item/631cadfa16f2c2beb14c990c.png)
-
----
 
 #### 1、简单编译
 
@@ -284,8 +254,6 @@ g++ main.cpp src/swap.cpp -I include/ -o main
 ```bash
 g++ main.cpp src/swap.cpp -I include/ -std=c++11 -O2 -Wall -o main_02
 ```
-
----
 
 #### 2、生成库文件编译
 
@@ -319,11 +287,7 @@ cd ..
 g++ main.cpp -I include -L src -l swap -o static_main
 ```
 
----
-
 <img src="https://pic.imgdb.cn/item/631cb31016f2c2beb1522f3a.png" style="zoom: 80%;" />
-
----
 
 ##### 2、动态库
 
@@ -350,8 +314,6 @@ g++ -shared -o libswap.so swap.o
 > g++ swap.cpp -I ../include -fPIC -shared -o libswap.so
 > ```
 
----
-
 ###### 3、链接
 
 > **注意：同时存在静态库和动态库是优先链接动态库**
@@ -363,11 +325,7 @@ cd ..
 g++ main.cpp -I include -L src -l swap -o share_main
 ```
 
----
-
 <img src="https://pic.imgdb.cn/item/631cb62a16f2c2beb1566285.png" style="zoom:67%;" />
-
----
 
 `运行`
 

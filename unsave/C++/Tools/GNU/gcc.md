@@ -4,13 +4,9 @@
 >
 > **gcc** 是GNU推出的基于C/C++的编译器，是开放源代码领域应用最广泛的编译器，具有功能强大，编译代码支持性能优化等特点。现在很多程序员都应用GCC，怎样才能更好的应用GCC。目前，GCC可以用来编译C/C++、FORTRAN、JAVA、OBJC、ADA等语言的程序，可根据需要选择安装支持的语言。
 
----
-
 `目录`
 
 [toc]
-
----
 
 ### 一、编译过程
 
@@ -20,8 +16,6 @@
 | -S   | 编译指定源文件，产生汇编语言（.s） |
 | -c   | 编译源文件，产生机器语言（.o）     |
 | -o   | 链接生成可执行文件                 |
-
----
 
 #### 1、预处理
 
@@ -38,8 +32,6 @@ gcc -E main.c - o main.i
 ```bash
 gcc -S main.i - o main.s 
 ```
-
----
 
 #### 3、汇编
 
@@ -59,8 +51,6 @@ gcc main.o - o main
 
 `默认生成a.out 文件`
 
----
-
 #### 5、快速生成
 
 > 自动执行所有步骤
@@ -70,10 +60,6 @@ gcc main.c -o main
 ```
 
 `默认生成a.out 文件`
-
----
-
-
 
 ### 二、编译参数
 
@@ -90,8 +76,6 @@ gcc main.c -o main
 -C:保留注释信息
 ```
 
----
-
 #### 1、调试文件
 
 > ==**-g**==
@@ -102,8 +86,6 @@ gcc main.c -o main
 # -g 选项告诉 GCC 产生能被 GNU 调试器GDB使用的调试信息，以调试程序。 # 产生带调试信息的可执行文件test
 gcc -g test.c
 ```
-
----
 
 #### 2、优化源代码
 
@@ -126,8 +108,6 @@ gcc -g test.c
 # 使用 -O2优化源代码，并输出可执行文件
 gcc -O2 test.c
 ```
-
----
 
 #### **3、库文件**
 
@@ -154,8 +134,6 @@ gcc -lglog test.c
 gcc -L/home/bing/mytestlibfolder -lmytest test.c
 ```
 
----
-
 #### 4、头文件
 
 > ==**-I**==
@@ -172,8 +150,6 @@ gcc -L/home/bing/mytestlibfolder -lmytest test.c
 #-I参数可以用相对路径，比如头文件在当前目录
 gcc -I/myinclude test.c
 ```
-
----
 
 #### 5、警告信息
 
@@ -207,8 +183,6 @@ gcc -w test.c
 >
 > **一般与-Wall搭配使用`-Wall -Werror` 只要有警告信息则编译停止**
 
----
-
 #### 6、设置编译标准
 
 > ==**-std**==
@@ -219,8 +193,6 @@ gcc -w test.c
 # 使用 c++11 标准编译 
 gcc -std=c99 test.c
 ```
-
----
 
 #### 7、定义宏
 
@@ -243,8 +215,6 @@ int main()
 // 2. 第七行代码可以被执行
 ```
 
----
-
 ```bash
 gcc [-c|-S|-E] [-std=standard]
            [-g] [-pg] [-Olevel]
@@ -254,8 +224,5 @@ gcc [-c|-S|-E] [-std=standard]
            [-foption...] [-mmachine-option...]
            [-o outfile] [@file] infile...
 ```
-
----
-
 
 

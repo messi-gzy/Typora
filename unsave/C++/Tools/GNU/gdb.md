@@ -4,8 +4,6 @@
 > - **GDB**可以调试C、C++、Go、java、 objective-c、PHP等语言。
 > - 虽然它是命令行模式的调试工具，但是它的功能强大到你无法想象，能够让用户**在程序运行时观察程序的内部结构和内存的使用情况**。
 
----
-
 `GDB主要功能`
 
 - 设置**断点(断点可以是条件表达式）**
@@ -15,21 +13,15 @@
 - **动态改变程序的执行环境** 
 - **分析崩溃程**序产生的core文件
 
----
-
 `目录`
 
 [toc]
-
----
 
 
 
 ## 一、调试命令参数
 
 > **GDB** 调试的主要参数
-
----
 
 #### 1、主要参数
 
@@ -50,8 +42,6 @@
 |   **print(p)**    |                         打印值及地址                         |
 |    **quit(q)**    |                           退出gdb                            |
 
----
-
 #### 2、断点参数
 
 |                命令                |                功能                |
@@ -66,8 +56,6 @@
 |      **enable [breakpoints]**      |              启用断点              |
 |     **disable [breakpoints]**      |              禁用断点              |
 |      **run argv[1] argv[2]**       |          调试时命令行传参          |
-
----
 
 #### 3、**==提示==**
 
@@ -98,13 +86,9 @@
 >    Reading symbols from /home/maxin/Code/cpp/study/main...(no debugging symbols found)...done.
 >    ```
 
----
-
 
 
 ## 二、实战
-
----
 
 #### 1、编译并开始调试
 
@@ -129,8 +113,6 @@ int main(int args,char **argv)
 }
 ```
 
----
-
 `编译`
 
 > ```bash
@@ -148,8 +130,6 @@ int main(int args,char **argv)
 > ```
 > gdb test_with_g -q
 > ```
-
----
 
 #### 2、调试
 

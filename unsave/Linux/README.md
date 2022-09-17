@@ -8,31 +8,11 @@
 
 ## 一、Linux
 
-### 1、环境配置
-
-[环境配置](./Linux/Linux_environment.md)
-
----
-
-### 2、命令行
-
-[Linux 命令](./Linux/Linux命令.md)
-
----
-
-### 3、Linux 基础
-
-[Linux 基础](./Linux/Linux_basic.md)
-
-### 4、Vim
-
-[Vim](./Linux/Vim.md)
-
----
-
-### 5、Shell
-
-[Shell](./Linux/shell.md)
+- [环境配置](./Linux/Linux_environment.md)
+- [Linux 基础](./Linux/Linux_basic.md)
+- [Linux 命令](./Linux/Linux_order.md)
+- [Vim](./Linux/vim.md)
+- [Shell](./Linux/shell.md)
 
 ---
 
@@ -40,11 +20,9 @@
 
 ---
 
-### 1、命令语句
+- [命令语句](./Git/Git_order.md)
 
----
-
-### 2、图形界面工具
+- 图形界面工具
 
 ---
 
@@ -52,14 +30,11 @@
 
 ---
 
-### 1、Windows
+- Windows
+- CentOS
+- Ubuntu
+- MacOS
+- Kylin
+- Deepin
 
-### 2、CentOS
-
-### 3、Ubuntu
-
-### 4、MacOS
-
-### 5、Kylin
-
-### 6、Deepin
+[VMware](./VMware/VMware Pro各版本虚拟机安装配置.md)
