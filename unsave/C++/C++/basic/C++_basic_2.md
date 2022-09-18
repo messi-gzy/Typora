@@ -35,7 +35,7 @@
 
 ##### 1、开辟数据
 
-> ### $\textcolor{red}{new}$<-->$\textcolor{red}{delete\\\free()}$
+> #### $\textcolor{red}{new}$<-->$\textcolor{red}{delete|free()}$
 
 获取和释放堆内存
 
