@@ -1,74 +1,163 @@
 # 基础[4]
 
--  $\textcolor{#e18a3b}{【一】}$**[排序和分页](#1)**
-- $\textcolor{#e18a3b}{【二】}$**[多表查询](#2)**
+-  $\textcolor{#e18a3b}{【一】}$**[排序](#1)**
+-  $\textcolor{#e18a3b}{【二】}$**[分页](#2)**
+- $\textcolor{#e18a3b}{【三】}$**[多表查询](#3)**
 
-## 一、排序和分页
+## 一、排序
 
 <a id="1">**`目录`**</a>
 
-- $\textcolor{#2a6e3f}{【1】}$ [](#1.1)
-- $\textcolor{#2a6e3f}{【2】}$ [](#1.2)
-- $\textcolor{#2a6e3f}{【3】}$ [](#1.3)
-- $\textcolor{#2a6e3f}{【4】}$ [](#1.4)
-- $\textcolor{#2a6e3f}{【5】}$ [](#1.5)
-- $\textcolor{#2a6e3f}{【6】}$ [](#1.6)
+- $\textcolor{#2a6e3f}{【1】}$ [排序规则](#1.1)
+- $\textcolor{#2a6e3f}{【2】}$ [单列排序](#1.2)
+- $\textcolor{#2a6e3f}{【3】}$ [多列排序](#1.3)
 
-### 1、
+### 1、排序规则
 
-<a id="1.1"></a>
+<a id="1.1">排序规则</a>
 
-### 2、
+> **如果没有使用排序，默认是按添加数据的顺序进行排序的。**
 
-<a id="1.2"></a>
+- $\textcolor{SeaGreen}{【1】}$ 使用 ORDER BY 子句排序
+  -  **`ASC`（ascend）: 升序** 
+  - **`DESC`（descend）:降序**
+  - **==如果未指定排序方式，默认 升序==**
+- $\textcolor{SeaGreen}{【2】}$ ORDER BY 子句在SELECT语句的结尾。
 
-### 3、
+`举例`
 
-<a id="1.3"></a>
+```sql
+SELECT employee_id,last_name,salary
+    FROM employees
+WHERE salary BETWEEN 11000 AND 30000
+ORDER BY salary DESC ;
+```
 
-### 4、
+### 2、单列排序
 
-<a id="1.4"></a>
+<a id="1.2">单列排序</a>
 
-### 5、
+`举例`
 
-<a id="1.5"></a>
+```sql
+SELECT employee_id,last_name,salary
+    FROM employees
+WHERE salary BETWEEN 11000 AND 30000
+ORDER BY salary DESC ;
+```
 
-### 6、
+### 3、多列排序
 
-<a id="1.6"></a>
+<a id="1.3">多列排序</a>
 
-## 二、多表查询
+![](https://pic.imgdb.cn/item/6329685216f2c2beb1ab0207.png)
+
+`举例`
+
+```sql
+SELECT employee_id,last_name,salary,department_id
+    FROM employees
+WHERE salary BETWEEN 11000 AND 30000
+ORDER BY department_id DESC,salary ASC ;
+```
+
+> **在第一层排序中，遇到相同的，再按二层排序方法排序，依次排序**
+
+## 二、分页
 
 <a id="2">**`目录`**</a>
 
-- $\textcolor{#2a6e3f}{【1】}$ [](#2.1)
-- $\textcolor{#2a6e3f}{【2】}$ [](#2.2) 
-- $\textcolor{#2a6e3f}{【3】}$ [](#2.3)
-- $\textcolor{#2a6e3f}{【4】}$ [](#2.4)
-- $\textcolor{#2a6e3f}{【5】}$ [](#2.5)
-- $\textcolor{#2a6e3f}{【6】}$ [](#2.6)
+- $\textcolor{#2a6e3f}{【1】}$ [定义](#2.1)
+- $\textcolor{#2a6e3f}{【2】}$ [规则](#2.2) 
+- $\textcolor{#2a6e3f}{【3】}$ [拓展](#2.3)
+
+### 1、定义
+
+<a id="2.1">定义</a>
+
+> **分页就是指在数据库获取数据时，只获得我们所需的数据条目**
+
+### 2、规则
+
+<a id="2.2">规则</a>
+
+**`LIMIT`**
+
+#### 2.1、格式
+
+```mysql
+LIMIT [位置偏移量,] 行数
+```
+
+- $\textcolor{SeaGreen}{【1】}$ 第一个【位置偏移量】参数指示MySQL从哪一行开始显示，是一个可选参数，如果不指定“位置偏移 量”，将会从表中的第一条记录开始**（第一条记录的位置偏移量是0，第二条记录的位置偏移量是 1，以此类推）**；
+- $\textcolor{SeaGreen}{【2】}$第二个参数“行数”指示返回的记录条数。
+
+#### 2.2、举例
+
+```sql
+--前10条记录：
+SELECT * FROM 表名 LIMIT 0,10; 
+// 或者
+SELECT * FROM 表名 LIMIT 10;
+--第11至20条记录： 
+SELECT * FROM 表名 LIMIT 10,10;
+--第21至30条记录： 
+SELECT * FROM 表名 LIMIT 20,10;
+
+###公式
+SELECT * FROM table
+LIMIT(PageNo - 1)*PageSize,PageSize;
+```
+
+#### 2.3、注意
+
+- **$\textcolor{SeaGreen}{【1】}$  LIMIT 子句必须放在整个SELECT语句的最后**
+- **$\textcolor{SeaGreen}{【2】}$ ORDER BY 子句在SELECT语句的结尾。**
+- $\textcolor{SeaGreen}{【3】}$ 约束返回结果的数量可以 减少数据表的网络传输量 ，也可以提升查询效率 。
+
+### 3、拓展
+
+<a id="2.3">拓展</a>
+
+> MySQL 8.0中可以使用“LIMIT 3 OFFSET 4”，意思是获取从第5条记录开始后面的3条记录，和“LIMIT 4,3;”返回的结果相同。
+>
+> ```sql
+> LIMIT 3 OFFSET 4
+> ```
+>
+> 偏移量为 `4`，条数为 `3`
+
+## 三、多表查询
+
+<a id="3">**`目录`**</a>
+
+- $\textcolor{#2a6e3f}{【1】}$ [](#3.1)
+- $\textcolor{#2a6e3f}{【2】}$ [](#3.2) 
+- $\textcolor{#2a6e3f}{【3】}$ [](#3.3)
+- $\textcolor{#2a6e3f}{【4】}$ [](#3.4)
+- $\textcolor{#2a6e3f}{【5】}$ [](#3.5)
+- $\textcolor{#2a6e3f}{【6】}$ [](#3.6)
 
 ### 1、
 
-<a id="2.1"></a>
+<a id="3.1"></a>
 
 ### 2、
 
-<a id="2.2"></a>
+<a id="3.2"></a>
 
 ### 3、
 
-<a id="2.3"></a>
+<a id="3.3"></a>
 
 ### 4、
 
-<a id="2.4"></a>
+<a id="3.4"></a>
 
 ### 5、
 
-<a id="2.5"></a>
+<a id="3.5"></a>
 
 ### 6、
 
-<a id="2.6"></a>
+<a id="3.6"></a>
