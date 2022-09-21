@@ -79,19 +79,71 @@
 
 <a id="1.3">组成</a>
 
-- 数组中的每个数据被称为
+- 数组中的每个数据被称为数组元素
+- 通过下标访问值
+- 对每个元素进行赋值或取值的操作被称为“元素的访问“
 
 ### 4、遍历
 
 <a id="1.4">遍历</a>
 
+```java
+String[] array;
+array=new String[]{"h","e","l","l","o"};
+for (String string : array) {
+    System.out.println(string);
+}
+```
+
+![](https://img1.imgtp.com/2022/09/21/SNaqDzdV.png)
+
 ### 5、排序
 
 <a id="1.5">排序</a>
 
+- 选择排序
+  
+  > 直接选择排序、堆排序
+
+- 交换排序 
+  
+  > 冒泡排序、快速排序
+
+- 插入排序
+  
+  > 直接插入排序、折半插入排序、Shell排序
+
+- 归并排序
+
+- 桶式排序
+
+- 基数排序
+
+`冒泡排序` 
+
+![](https://img1.imgtp.com/2022/06/02/UyfsA9IR.gif)
+
+```java
+for (int i = 0; i < arr.length; ++i) {
+    for (int j = 0; j < arr.length - 1 - i; ++j) {
+        if (arr[j] > arr[j + 1]) {
+            int temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }   
+    }
+}
+```
+
+[其他排序方法及图片请看这里](../../../DailyNotes/day_3.md)
+
 ### 6、注意
 
 <a id="1.6">注意</a>
+
+- 防止数组空指针异常
+
+- 防止数组越界
 
 ## 二、方法
 
