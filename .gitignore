@@ -1,5 +1,6 @@
-psuh.bat
+push.bat
 desktop.ini
 copy.bat
-./website/
+website/
 exports/
+scripts/

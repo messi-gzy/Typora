@@ -1,1 +1,0 @@
-cmd /k "cd E:/Data_Tool/Typora && node E:/Data/Electron/Mark/markpro/ports/git_simple_use/lib/status.js"
