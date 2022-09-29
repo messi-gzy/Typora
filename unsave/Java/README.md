@@ -42,21 +42,19 @@
 
 #### 1.4、[-->](./Java/basic/basic[4].md)基础[4]
 
-- $\textcolor{#2a6e3f}{【1】}$ 
-- $\textcolor{#2a6e3f}{【2】}$ 
-- $\textcolor{#2a6e3f}{【3】}$ 
+- $\textcolor{#2a6e3f}{【1】}$ 面向对象（上）
 
 #### 1.5、[-->](./Java/basic/basic[5].md)基础[5]
 
-- $\textcolor{#2a6e3f}{【1】}$ 
-- $\textcolor{#2a6e3f}{【2】}$ 
-- $\textcolor{#2a6e3f}{【3】}$ 
+- $\textcolor{#2a6e3f}{【1】}$ 面向对象（中）
 
 #### 1.6、[-->](./Java/basic/basic[6].md)基础[6]
 
-- $\textcolor{#2a6e3f}{【1】}$ 
-- $\textcolor{#2a6e3f}{【2】}$ 
-- $\textcolor{#2a6e3f}{【3】}$ 
+- $\textcolor{#2a6e3f}{【1】}$ 面向对象（下）
+
+#### 1.7、[-->](./Java/basic/basic[6].md)基础[7]
+
+- $\textcolor{#2a6e3f}{【1】}$ 异常处理
 
 ### 2、进阶
 
