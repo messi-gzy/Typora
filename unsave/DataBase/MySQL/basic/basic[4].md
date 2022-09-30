@@ -131,20 +131,46 @@ LIMIT(PageNo - 1)*PageSize,PageSize;
 
 <a id="3">**`目录`**</a>
 
-- $\textcolor{#2a6e3f}{【1】}$ [](#3.1)
-- $\textcolor{#2a6e3f}{【2】}$ [](#3.2) 
+- $\textcolor{#2a6e3f}{【1】}$ [介绍](#3.1)
+- $\textcolor{#2a6e3f}{【2】}$ [分类](#3.2) 
 - $\textcolor{#2a6e3f}{【3】}$ [](#3.3)
 - $\textcolor{#2a6e3f}{【4】}$ [](#3.4)
 - $\textcolor{#2a6e3f}{【5】}$ [](#3.5)
 - $\textcolor{#2a6e3f}{【6】}$ [](#3.6)
 
-### 1、
+### 1、介绍
 
-<a id="3.1"></a>
+<a id="3.1">介绍</a>
 
-### 2、
+> 多表查询，也称为关联查询，指**两个或更多个表一起完成查询操作**。
+>
+> 前提条件：这些一起查询的表之间是有关系的（一对一、一对多），它们之间一定是有关联字段，这个 关联字段可能建立了外键，也可能没有建立外键。
 
-<a id="3.2"></a>
+`笛卡尔积`
+
+笛卡尔积为两个集合(两张表)中的每条数据进行两两组合的结果。
+
+<img src="https://pic1.imgdb.cn/item/6336f81d16f2c2beb1cdc0bc.png" style="zoom: 67%;" />
+
+==消除笛卡尔积==，**添加条件**
+
+`简单实现`
+
+```sql
+SELECT employee_id,department_name
+FROM employees,departments
+WHERE employees.department_id = departments.department_id
+```
+
+`注意`
+
+**==在表中有相同列时，在列名之前加上表名前缀，明确字段所在的表==**
+
+### 2、分类
+
+<a id="3.2">分类</a>
+
+
 
 ### 3、
 
