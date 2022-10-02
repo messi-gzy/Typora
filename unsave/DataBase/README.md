@@ -2,11 +2,11 @@
 
 <a id="0"><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<</a>
 
-- ##### $\textcolor{#2a6e3f}{【1】}$ [>>>>](#1) MySQL
+- ##### $\textcolor{#2a6e3f}{【1】}$ [✅](#1) MySQL
 
-- ##### $\textcolor{#2a6e3f}{【2】}$ [>>>>](#2) Redis
+- ##### $\textcolor{#2a6e3f}{【2】}$ [✅](#2) Redis
 
-- ##### $\textcolor{#2a6e3f}{【3】}$ [>>>>](#3)SQL
+- ##### $\textcolor{#2a6e3f}{【3】}$ [✅](#3)SQL
 
 ## MySQL
 
@@ -20,7 +20,7 @@
 - 安装
 - 基本使用
 
-[介绍、安装、简单使用](./MySQL/basic/basic[1].md)
+[介绍、安装、简单使用➡](./MySQL/basic/basic[1].md)
 
 #### 1.2、SQL-SELECT
 
@@ -30,7 +30,7 @@
 - 表结构
 - 过滤数据
 
-[SQL-SELECT](./MySQL/basic/basic[2].md)
+[SQL-SELECT➡](./MySQL/basic/basic[2].md)
 
 #### 1.3、SQL-DDL|DML|DCL
 
@@ -38,7 +38,7 @@
 - DML
 - DCL
 
-[SQL-DDL|DML|DCL](./MySQL/basic/basic[3].md)
+[SQL-DDL|DML|DCL➡](./MySQL/basic/basic[3].md)
 
 #### 1.4、
 
@@ -48,13 +48,15 @@
 
 #### 3.1、数据库操作
 
-[数据库操作](./MySQL/order/database.md)
+[数据库操作➡](./MySQL/order/database.md)
 
 #### 3.2、表操作
 
-[表操作](./MySQL/order/table.md)
+[表操作➡](./MySQL/order/table.md)
 
 
+
+---
 
 ## Redis
 

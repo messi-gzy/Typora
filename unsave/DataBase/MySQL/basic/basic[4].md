@@ -63,6 +63,8 @@ ORDER BY department_id DESC,salary ASC ;
 
 > **在第一层排序中，遇到相同的，再按二层排序方法排序，依次排序**
 
+---
+
 ## 二、分页
 
 <a id="2">**`目录`**</a>
@@ -127,6 +129,8 @@ LIMIT(PageNo - 1)*PageSize,PageSize;
 >
 > 偏移量为 `4`，条数为 `3`
 
+---
+
 ## 三、多表查询
 
 <a id="3">**`目录`**</a>
@@ -166,11 +170,62 @@ WHERE employees.department_id = departments.department_id
 
 **==在表中有相同列时，在列名之前加上表名前缀，明确字段所在的表==**
 
+- 使用别名可以简化查询。
+- 列名前使用表名前缀可以提高查询效率。
+- 使用别名后，就必须使用别名
+
 ### 2、分类
 
 <a id="3.2">分类</a>
 
+#### 2.1、等值和非等值连接
 
+##### 1、等值连接
+
+> 多个连接条件与 AND 操作符
+
+```sql
+SELECT employee_id,last_name,department_name,city
+FROM employees ,departments,locations
+WHERE employees.department_id = departments.department_id
+AND departments.location_id = locations.location_id;
+```
+
+##### 2、非等值连接
+
+> 条件存在区间
+
+```sql
+SELECT last_name,salary,grade_level
+FROM employees AS e,job_grades AS j
+WHERE e.salary BETWEEN j.lowest_sal AND j.highest_sal;
+```
+
+#### 2.2、自连接和非自连接
+
+##### 1、自连接
+
+> 字段互相关联
+>
+> <img src="https://pic1.imgdb.cn/item/6337f89c16f2c2beb1b1a1ca.png" style="zoom:50%;" />
+
+```sql
+SELECT  e1.last_name ,e1.employee_id ,e2.manager_id
+FROM employees e1,employees e2
+WHERE e1.employee_id = e2.manager_id;
+```
+
+##### 2、非自连接
+
+> 等值连接
+
+#### 2.3、内连接和外连接
+
+##### 1、内连接
+
+> 合并具有同一列的两个以上的表的行, 结果集中不包含一个表与另一个表不匹配的行
+
+##### 2、外连接
 
 ### 3、
 
@@ -184,6 +239,9 @@ WHERE employees.department_id = departments.department_id
 
 <a id="3.5"></a>
 
-### 6、
+### 6、 
 
 <a id="3.6"></a>
+
+
+
