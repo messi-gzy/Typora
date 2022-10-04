@@ -242,6 +242,8 @@ webapps/test/test.png
 
 ## 三、MySQL
 
+### 1、5.7
+
 ##### 1、检查
 
 卸载系统⾃带的MARIADB（如果有）
@@ -515,6 +517,186 @@ DataGrip：
 <img src="https://pic.imgdb.cn/item/629636a10947543129d466ad.png" style="zoom:150%;" />
 
 **安装完成！！！！**
+
+### 2、8.0+
+
+##### 1、检查
+
+卸载系统⾃带的MARIADB（如果有）
+
+```
+rpm -qa|grep mariadb
+```
+
+<img src="https://pic.imgdb.cn/item/629636920947543129d45275.png" style="zoom:50%;" />
+
+如果有，就
+
+```
+yum -y remove mariadb-server-5.5.56-2.el7.x86_64
+yum -y remove mariadb-5.5.56-2.el7.x86_64
+yum -y remove mariadb-devel-5.5.56-2.el7.x86_64
+yum -y remove mariadb-libs-5.5.56-2.el7.x86_64
+.......
+```
+
+##### 2、下载并上传
+
+> 官网：[MySQL :: Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/5.7.html#download)
+>
+> 连接：[https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.28-1.el7.x86_64.rpm-bundle.tar](https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.28-1.el7.x86_64.rpm-bundle.tar)
+
+上传并创建文件夹
+
+```
+/*上传目录*/
+/usr/local/file 
+/*创建*/
+cd /usr/local
+mkdir mysql
+```
+
+##### 3、解压
+
+```shell
+cd /usr/local/file
+#解压
+tar -xvf mysql-8.0.28-1.el7.x86_64.rpm-bundle.tar -C /usr/local/mysql
+```
+
+##### 4、安装插件
+
+```shell
+yum install openssl-devel
+```
+
+##### 5、安装包
+
+###### 1、查看
+
+```shell
+cd /usr/local/mysql
+ls
+
+##########
+mysql-community-client-8.0.28-1.el7.x86_64.rpm  
+mysql-community-client-plugins-8.0.28-1.el7.x86_64.rpm 
+mysql-community-common-8.0.28-1.el7.x86_64.rpm  
+mysql-community-devel-8.0.28-1.el7.x86_64.rpm 
+mysql-community-embedded-compat-8.0.28-1.el7.x86_64.rpm 
+mysql-community-icu-data-files-8.0.28-1.el7.x86_64.rpm 
+mysql-community-libs-8.0.28-1.el7.x86_64.rpm  
+mysql-community-libs-compat-8.0.28-1.el7.x86_64.rpm  
+mysql-community-server-8.0.28-1.el7.x86_64.rpm
+mysql-community-test-8.0.28-1.el7.x86_64.rpm
+```
+
+###### 2、依次安装
+
+```
+rpm -ivh mysql-community-common-8.0.28-1.el7.x86_64.rpm 
+
+rpm -ivh mysql-community-client-plugins-8.0.28-1.el7.x86_64.rpm 
+
+rpm -ivh mysql-community-libs-8.0.28-1.el7.x86_64.rpm
+
+rpm -ivh mysql-community-libs-compat-8.0.28-1.el7.x86_64.rpm
+
+rpm -ivh  mysql-community-devel-8.0.28-1.el7.x86_64.rpm
+
+rpm -ivh mysql-community-client-8.0.28-1.el7.x86_64.rpm
+
+rpm -ivh mysql-community-icu-data-files-8.0.28-1.el7.x86_64.rpm
+
+rpm -ivh mysql-community-embedded-compat-8.0.28-1.el7.x86_64.rpm
+
+rpm -ivh mysql-community-server-8.0.28-1.el7.x86_64.rpm
+```
+
+
+
+### 3、卸载
+
+##### 1、关闭服务
+
+- 查看服务状态
+
+  ```shell
+  systemctl status mysql
+  ```
+
+- 关闭服务
+
+  ```shell
+  systemctl stop mysql
+  ```
+
+##### 2、查看对应文件
+
+```shell
+find / -name mysql
+```
+
+![](https://pic1.imgdb.cn/item/633bc04116f2c2beb17de917.png)
+
+##### 3、删除用户组和用户
+
+- ```
+  id mysql
+  ```
+
+- ```
+  userdel mysql
+  ```
+
+- ```
+  groupdel mysql
+  ```
+
+##### 4、删除源文件和数据文件
+
+- ```
+  cd /usr/local
+  ```
+
+- ```shell
+  rm -rf mysql/
+  ```
+
+##### 5、删除配置文件
+
+###### 1、my.cnf
+
+- ```
+  rm -rf /etc/my.cnf
+  ```
+
+###### 2、mysql
+
+- ```shell
+  rm -rf /etc/init.d/mysql 
+  ```
+
+##### 6、修改环境变量
+
+- ```
+  vim ~/.bash_profile
+  ```
+
+- 删除文件末尾语句
+
+  ```
+  export PATH=$PATH:/usr/local/mysql/mysql-5.7.38-linux-glibc2.12-x86_64/bin
+  ```
+
+- 生效环境变量
+
+  ```
+  source ~/.bash_profile
+  ```
+
+
+
 
 ## 四、Nginx
 
