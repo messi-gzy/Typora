@@ -518,11 +518,266 @@ DataGrip：
 
 **安装完成！！！！**
 
+----
+
 ### 2、8.0+
 
+> 如果安装过请先卸载，卸载看下一个标题
 
+##### 2.1、卸载
+
+卸载系统⾃带的MARIADB（如果有）
+
+```
+rpm -qa|grep mariadb
+```
+
+<img src="https://pic.imgdb.cn/item/629636920947543129d45275.png" style="zoom:50%;" />
+
+如果有，就
+
+```
+yum -y remove mariadb-server-5.5.56-2.el7.x86_64
+yum -y remove mariadb-5.5.56-2.el7.x86_64
+yum -y remove mariadb-devel-5.5.56-2.el7.x86_64
+yum -y remove mariadb-libs-5.5.56-2.el7.x86_64
+.......
+```
+
+##### 2.2、下载并上传
+
+###### 1、下载
+
+[官网](https://downloads.mysql.com/archives/community/)
+
+![https://pic1.imgdb.cn/item/633e652b16f2c2beb1758ae0.png]()
+
+###### 2、上传
+
+通过ftp工具上传到**`/usr/loacl/mysql`**目录下
+
+###### 3、解压
+
+```shell
+cd /usr/local/mysql
+#解压
+tar -xvf mysql-8.0.28-1.el7.x86_64.rpm-bundle.tar -C /usr/local/mysql
+```
+
+##### 2.3、安装
+
+###### 1、授予权限
+
+由于mysql安装过程中，会通过mysql用户在/tmp目录下新建tmp_db文件，所以请给/tmp较大的权限。执 行 ：
+
+```
+chmod -R 777 /tmp
+```
+
+###### 2、安装依赖
+
+- ```shell
+  yum install libaio-devel.x86_64 -y
+  ```
+
+- ```shell
+  yum install net-tools -y
+  ```
+
+- ```shell
+  yum install -y perl-Module-Install.noarch
+  ```
+
+- ```shell
+  yum remove mysql-libs
+  ```
+
+###### 3、rpm安装
+
+```shell
+cd /usr/local/mysql
+#安装
+```
+
+**==这里安装必须按下面的顺序依次安装，不要打乱==**
+
+```shell
+rpm -ivh mysql-community-common-8.0.28-1.el7.x86_64.rpm 
+rpm -ivh mysql-community-client-plugins-8.0.28-1.el7.x86_64.rpm 
+rpm -ivh mysql-community-libs-8.0.28-1.el7.x86_64.rpm 
+rpm -ivh mysql-community-client-8.0.28-1.el7.x86_64.rpm 
+rpm -ivh mysql-community-icu-data-files-8.0.28-1.el7.x86_64.rpm
+rpm -ivh mysql-community-server-8.0.28-1.el7.x86_64.rpm
+```
+
+###### 4、查看信息
+
+```shell
+mysql --version
+##or
+mysqladmin --version
+```
+
+如果显示版本信息，代表安装成功
+
+![](https://pic1.imgdb.cn/item/633e69a816f2c2beb17d0477.png)
+
+##### 2.4、初始化
+
+###### 1、初始化
+
+```shell
+mysqld --initialize --user=mysql
+```
+
+###### 2、查看密码
+
+```shell
+cat /var/log/mysqld.log
+```
+
+![](https://pic1.imgdb.cn/item/633e7fcd16f2c2beb1a4e0b9.png)
+
+**==记录这个密码==**
+
+###### 3、启动服务
+
+```shell
+systemctl start mysqld
+```
+
+> 查看服务状态
+>
+> ```
+> systemctl status mysqld
+> ```
+>
+> ![](https://pic1.imgdb.cn/item/633e804516f2c2beb1a5c5bf.png)
+
+> 查看是否为自启动
+>
+> ```bash
+> systemctl list-unit-files|grep mysqld.service
+> ```
+>
+> ![](https://pic1.imgdb.cn/item/633e809d16f2c2beb1a667bc.png)
+>
+> - 如不是enabled可以运行如下命令设置自启动
+>
+>   ```
+>   systemctl enable mysqld.service
+>   ```
+
+##### 2.5、登陆
+
+###### 1、登陆
+
+```
+mysql -u root -p
+```
+
+输入之前记录下的密码
+
+###### 2、修改密码
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED BY '新的密码';
+```
+
+> 密码太简单可能会报错
+
+###### 3、允许远程连接
+
+依次执行三条语句
+
+```sql
+use mysql;
+###
+update user set user.Host='%' where user.User='root';
+###
+flush privileges;
+```
+
+**==记得开放3306端口==**
+
+```
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+firewall-cmd --reload  //重启防火墙
+```
+
+---
 
 ### 3、卸载
+
+##### 1、卸载系统⾃带的MARIADB（如果有）
+
+```
+rpm -qa|grep mariadb
+```
+
+<img src="https://pic.imgdb.cn/item/629636920947543129d45275.png" style="zoom:50%;" />
+
+如果有，就
+
+```
+yum -y remove mariadb-server-5.5.56-2.el7.x86_64
+yum -y remove mariadb-5.5.56-2.el7.x86_64
+yum -y remove mariadb-devel-5.5.56-2.el7.x86_64
+yum -y remove mariadb-libs-5.5.56-2.el7.x86_64
+.......
+```
+
+##### 2、关闭mysql服务
+
+```shell
+systemctl stop mysqld.service
+```
+
+> ```shell
+> #查看服务状态
+> systemctl status mysqld.service
+> ```
+
+##### 3、卸载其他版本的MySQL
+
+> ###### 通过rpm安装的卸载
+>
+> ```
+> rpm -qa | grep - i mysql
+> ```
+>
+> ![](https://pic1.imgdb.cn/item/633e5f3616f2c2beb16b0f13.png)
+>
+> 全部删除：
+>
+> ```
+> yum remove mysql-community-libs-8.0.25-1.e17.x86_64
+> ......
+> ```
+
+##### 4、删除mysql相关文件
+
+- 查找文件
+
+```shell
+find / -name mysql
+```
+
+- 删除文件
+
+删除所有查找出来的文件
+
+```
+rm -rf [...]
+```
+
+##### 5、删除配置文件
+
+```shell
+rm -rf /etc/my.cnf
+```
+
+
 
 
 ## 四、Nginx
