@@ -522,7 +522,7 @@ DataGrip：
 
 ### 2、8.0+
 
-> 如果安装过请先卸载，卸载看下一个标题
+> **如果安装过请先卸载，卸载看下一个标题**
 
 ##### 2.1、卸载
 
@@ -550,7 +550,7 @@ yum -y remove mariadb-libs-5.5.56-2.el7.x86_64
 
 [官网](https://downloads.mysql.com/archives/community/)
 
-![https://pic1.imgdb.cn/item/633e652b16f2c2beb1758ae0.png]()
+<img src="https://pic1.imgdb.cn/item/633e652b16f2c2beb1758ae0.png" style="zoom: 100%;" />
 
 ###### 2、上传
 
@@ -647,23 +647,23 @@ systemctl start mysqld
 ```
 
 > 查看服务状态
->
+> 
 > ```
 > systemctl status mysqld
 > ```
->
+> 
 > ![](https://pic1.imgdb.cn/item/633e804516f2c2beb1a5c5bf.png)
 
 > 查看是否为自启动
->
+> 
 > ```bash
 > systemctl list-unit-files|grep mysqld.service
 > ```
->
+> 
 > ![](https://pic1.imgdb.cn/item/633e809d16f2c2beb1a667bc.png)
->
+> 
 > - 如不是enabled可以运行如下命令设置自启动
->
+>   
 >   ```
 >   systemctl enable mysqld.service
 >   ```
@@ -741,15 +741,15 @@ systemctl stop mysqld.service
 ##### 3、卸载其他版本的MySQL
 
 > ###### 通过rpm安装的卸载
->
+> 
 > ```
 > rpm -qa | grep - i mysql
 > ```
->
+> 
 > ![](https://pic1.imgdb.cn/item/633e5f3616f2c2beb16b0f13.png)
->
+> 
 > 全部删除：
->
+> 
 > ```
 > yum remove mysql-community-libs-8.0.25-1.e17.x86_64
 > ......
@@ -776,9 +776,6 @@ rm -rf [...]
 ```shell
 rm -rf /etc/my.cnf
 ```
-
-
-
 
 ## 四、Nginx
 
