@@ -6,9 +6,34 @@
 
 `目录`
 
-[toc]
+`目录`
 
-### 一、编译过程
+$\textcolor{#2a6e3f}{【1】}$ **[编译过程](#1)**
+
+- $\textcolor{#4834d4}{【1】}$ 预处理
+- $\textcolor{#4834d4}{【2】}$ 编译
+- $\textcolor{#4834d4}{【3】}$ 汇编
+- $\textcolor{#4834d4}{【4】}$ 链接
+- $\textcolor{#4834d4}{【5】}$ 快速生成
+
+$\textcolor{#2a6e3f}{【2】}$ **[编译参数](#2)** 
+
+|   调试文件   |    优化源代码    |   库文件   |     头文件     |
+| :----------: | :--------------: | :--------: | :------------: |
+| **警告信息** | **设置编译标准** | **定义宏** | **生成库文件** |
+
+$\textcolor{#2a6e3f}{【3】}$ **[实战](#3)**
+
+- $\textcolor{#4834d4}{【1】}$ 简单编译
+- $\textcolor{#4834d4}{【2】}$ 生成库文件
+  - 静态库
+  - 动态库
+
+---
+
+
+
+### 一、编译过程<a id="1">:umbrella:</a>
 
 | 选项 | 功能                               |
 | ---- | ---------------------------------- |
@@ -61,9 +86,11 @@ g++ main.cpp -o main
 
 `默认生成a.out 文件`
 
+---
 
 
-### 二、编译参数
+
+### 二、编译参数<a id="2">:umbrella:</a>
 
 ```bash
 -o：指定生成的输出文件；
@@ -231,9 +258,101 @@ g++ [-c|-S|-E] [-std=standard]
            [-o outfile] [@file] infile...
 ```
 
+#### 8、生成库文件编译
+
+> **同时存在静态库和动态库是优先链接动态库**
+
+##### 1、静态库
+
+> **汇编--->生成--->链接**
+
+###### 1、汇编
+
+```bash
+cd src/
+# 汇编，生成swap.o文件 
+g++ swap.cpp -c -I ../include -o swap.o
+```
+
+###### 2、生成静态库
+
+```bash
+# 生成静态库libswap.a 
+ar rs libswap.a swap.o
+```
+
+###### 3、链接
+
+```bash
+## 回到上级目录 
+cd ..
+# 链接，生成可执行文件:static_main 
+g++ main.cpp -I include -L src -l swap -o static_main
+```
+
+##### 2、动态库
+
+> **汇编--->生成--->链接**
+
+###### 1、汇编
+
+```bash
+cd src/
+# 汇编，生成Swap.o文件 
+g++ swap.cpp -I ../include -c -fPIC swap.o
+```
+
+###### 2、生成动态库
+
+```bash
+# 生成静态库libswap.so 
+g++ -shared -o libswap.so swap.o
+```
+
+> **链接和生成一步解决**
+>
+> ```bash
+> g++ swap.cpp -I ../include -fPIC -shared -o libswap.so
+> ```
+
+###### 3、链接
+
+> **注意：同时存在静态库和动态库是优先链接动态库**
+
+```bash
+## 回到上级目录 
+cd ..
+# 链接，生成可执行文件:share_main 
+g++ main.cpp -I include -L src -l swap -o share_main
+```
+
+`运行`
+
+> ==**直接运行 share_main会报错**==
+>
+> ![](https://pic.imgdb.cn/item/631cb75a16f2c2beb157b803.png)
+
+**这是因为运行时未指定动态库位置，**
+
+**我们的动态库不在系统默认的动态库位置**
+
+`解决并运行`
+
+> **指定程序运行动态库位置**
+>
+> ```bash
+> LD_LIBRARY_PATH=src/
+> ```
+
+```bash
+LD_LIBRARY_PATH=src/ ./share_main
+```
+
+---
 
 
-### 三、实战
+
+### 三、实战<a id="3">:umbrella:</a>
 
 `项目目录`
 
