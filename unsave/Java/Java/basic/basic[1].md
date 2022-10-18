@@ -1,17 +1,17 @@
 # 基础[1]
 
-> - 介绍
-> - 基础语法
+<a id="0">`目录`</a>
 
-`目录`
-
-<a id="0">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></a>
+- $\textcolor{#e18a3b}{【一】}$[介绍](#1)
+- $\textcolor{#e18a3b}{【二】}$[基础语法](#2)
 
 ## 一、介绍
 
+<a id="1"><!--目录--></a>
+
 ### 1、认识
 
-> `Java`是一门**面向对象编程语言**，不仅吸收了**C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念**，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程 。
+`Java`是一门**面向对象编程语言**，不仅吸收了**C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念**，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程 。
 
 ​	`Java`语言具有==**简单性、面向对象、分布式、健壮性、安全性、跨平台性、可移植性、多线程与动态性等特点**==。`Java`语言可以编写**桌面应用程序、Web应用程序、分布式系统和嵌入式系统等** 。Java 快速、安全、可靠。
 
@@ -30,15 +30,15 @@
 
 #### 1、JVM
 
-> **Java Virtual Machine**是==Java虚拟机==，**Java程序需要运行在虚拟机上**，不同的平台有自己的虚拟机，因此==**Java语言可以实现跨平台**==。
+**Java Virtual Machine**是==Java虚拟机==，**Java程序需要运行在虚拟机上**，不同的平台有自己的虚拟机，因此==**Java语言可以实现跨平台**==。
 
 #### 2、jre
 
-> **Java Runtime Environment**包括**==Java虚拟机和Java程序所需的核心类库等==**。核心类库主要是java.lang包：包含了运行Java程序必不可少的系统类，如基本数据类型、基本数学函数、字符串处理、线程、异常处理类等，系统缺省加载这个包
+**Java Runtime Environment**包括**==Java虚拟机和Java程序所需的核心类库等==**。核心类库主要是java.lang包：包含了运行Java程序必不可少的系统类，如基本数据类型、基本数学函数、字符串处理、线程、异常处理类等，系统缺省加载这个包
 
 #### 3、jdk
 
-> **Java Development Kit**是提供给Java开发人员使用的，**其中包含了Java的开发工具**，也**包括了JRE**。所以安装了JDK，就无需再单独安装JRE了。其中的开发工具：**编译工具(javac.exe)，打包工具(jar.exe)**等
+**Java Development Kit**是提供给Java开发人员使用的，**其中包含了Java的开发工具**，也**包括了JRE**。所以安装了JDK，就无需再单独安装JRE了。其中的开发工具：**编译工具(javac.exe)，打包工具(jar.exe)**等
 
 #### 4、三者基本关系
 
@@ -50,31 +50,31 @@
 
 #### 1、编译
 
-> ==**javac**==
->
-> - 示例
->
-> ```java
-> public class Hello{
-> 	public static void main(String[] args){
-> 		System.out.println("Hello World!!!");
-> 	}
-> }
-> ```
->
-> - 编译
->
-> ```bash
-> javac Hello.java
-> ```
+==**javac**==
+
+- 示例
+
+```java
+public class Hello{
+	public static void main(String[] args){
+		System.out.println("Hello World!!!");
+	}
+}
+```
+
+- 编译
+
+```bash
+javac Hello.java
+```
 
 #### 2、运行
 
-> ==**java**==
->
-> ```
-> java Hello
-> ```
+==**java**==
+
+```
+java Hello
+```
 
 #### 3、运行jar包
 
@@ -116,6 +116,8 @@ nohup java -jar xxx.jar>xx.log &
 - 关闭`SSh`，程序继续
 
 ## 二、基础语法
+
+<a id="2"><!--目录--></a>
 
 - 注释
 - 变量
@@ -230,9 +232,9 @@ nohup java -jar xxx.jar>xx.log &
 
 ##### 1.4、使用原则
 
-> **在使用变量时需要遵循的原则为：就近原则**
->
-> **首先在局部范围找，有就使用；接着在成员位置找。**
+**在使用变量时需要遵循的原则为：就近原则**
+
+**首先在局部范围找，有就使用；接着在成员位置找。**
 
 #### 2、所属数据类型区分
 
@@ -289,8 +291,8 @@ nohup java -jar xxx.jar>xx.log &
 
 > **==类外面不能有变量的声明==**
 
-[:arrow_double_up::arrow_double_up::arrow_double_up::arrow_double_up::arrow_double_up::arrow_double_up:](#0)
-
 ---
 
-**[README](../../README.md)**
+[返回总目录](#0)
+
+**[返回上一页](../../README.md)**

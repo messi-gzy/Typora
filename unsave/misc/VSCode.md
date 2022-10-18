@@ -1,14 +1,8 @@
 # VSCode
 
----
+`目录`
 
-## 一、目录
-
----
-
-## 二、插件推荐
-
-----
+## 一、插件推荐
 
 ### 1、C/C++
 
@@ -16,35 +10,35 @@
 
 ---
 
-#### 1、C/C++
+#### 1.1、C/C++
 
 > C/C++ 扩展为 Visual Studio Code 添加了对 C/C++ 的语言支持，包括智能提示和调试等功能。
 
 ---
 
-#### 2、C/C++ Extension Pack
+#### 1.2、C/C++ Extension Pack
 
 > C/C++ 拓展包
 
 ---
 
-#### 3、C/C++ Snippets
+#### 1.3、C/C++ Snippets
 
 > C/C++ **代码段**的补充提示
 
 ---
 
-#### 4、CMake
+#### 1.4、CMake
 
-##### 4.1、CMake
+##### 1.4.1、CMake
 
 > **CMakeLists** 的智能提示编写
 
-##### 4.2、CMake Language Support
+##### 1.4.2、CMake Language Support
 
 > **CMakeLists.txt** 的高亮显示，语法检查
 
-##### 4.3、CMake Tools
+##### 1.4.3、CMake Tools
 
 > CMake工具为Visual Studio Code中的基于CMake的项目提供了一个功能齐全、方便和强大的工作流程。
 >
@@ -52,7 +46,7 @@
 
 ---
 
-#### 5、Doxygen Documentation Generator
+#### 1.5、Doxygen Documentation Generator
 
 > 根据方法或者类内容自动生成注释提示信息
 
@@ -60,7 +54,7 @@
 
 ---
 
-#### 6、Better C++ Syntax
+#### 1.6、Better C++ Syntax
 
 > 这将为您提供 C++ 的前沿语法突出显示。这意味着您的主题将能够更好地为您的代码着色。这曾经是一个修复，但后来 VS Code 开始使用它作为 C 和 C++ 突出显示的官方来源。
 
@@ -68,71 +62,59 @@
 
 ### 2、Python
 
----
+### 3、Java
 
-### 3、NodeJS
+3.1、
 
----
+### 4、NodeJS
 
-### 4、Vue
+### 5、Vue
 
----
+### 6、rust
 
-### 5、rust
+### 7、HTML
 
----
+### 8、Go
 
-### 6、HTML
-
----
-
-### 7、Go
-
----
-
-### 8、主题
-
----
+### 9、主题
 
 #### 1、主题颜色
 
 ##### 1.1、Ayu
 
-> 包括文件图标
->
-> <img src="https://pic.imgdb.cn/item/6303904816f2c2beb1208d1c.png" style="zoom: 33%;" />
+包括文件图标
+
+<img src="https://pic.imgdb.cn/item/6303904816f2c2beb1208d1c.png" style="zoom: 33%;" />
 
 ---
 
 ##### 1.2、C/C++ Themes
 
-> ![](https://pic.imgdb.cn/item/6303909316f2c2beb120abd3.png)
+![](https://pic.imgdb.cn/item/6303909316f2c2beb120abd3.png)
 
 ---
 
 ##### 1.3、GitHub Theme
 
-> 六种主题
->
-> ![](https://pic.imgdb.cn/item/6303910b16f2c2beb120d882.png)
+六种主题![](https://pic.imgdb.cn/item/6303910b16f2c2beb120d882.png)
 
 ---
 
 ##### 1.4、Slack Theme
 
-> 十一种图标
->
-> ![](https://pic.imgdb.cn/item/630391d516f2c2beb12168dc.png)
+十一种图标
+
+![](https://pic.imgdb.cn/item/630391d516f2c2beb12168dc.png)
 
 ---
 
 ##### 1.5、Quiet Light Theme
 
-> 个人最喜欢的一款主题，虽然整体为白色看起来比较刺眼，但是顶部及底部、侧边栏更多为柔和色，在平常使用起来比较舒服。
->
-> VSCode自带
->
-> ![](https://pic.imgdb.cn/item/630392f316f2c2beb1221dd4.png)
+个人最喜欢的一款主题，虽然整体为白色看起来比较刺眼，但是顶部及底部、侧边栏更多为柔和色，在平常使用起来比较舒服。
+
+VSCode自带
+
+![](https://pic.imgdb.cn/item/630392f316f2c2beb1221dd4.png)
 
 ---
 
@@ -166,11 +148,11 @@
 
 > 书签记录，方便预览代码，也方便快速跳转到项目的标记地方
 
-> `Ctrl`+`Alt`+`K` 创建书签
->
-> `Ctrl`+`Alt`+`J` 跳转到前一个书签
->
-> `Ctrl`+`Alt`+`I` 跳转到后一个书签
+`Ctrl`+`Alt`+`K` 创建书签
+
+`Ctrl`+`Alt`+`J` 跳转到前一个书签
+
+`Ctrl`+`Alt`+`I` 跳转到后一个书签
 
 ![](https://pic.imgdb.cn/item/63024bec16f2c2beb18c3370.png)
 
@@ -376,7 +358,7 @@
 
 
 
-## 三、快捷键
+## 二、快捷键
 
 ---
 
@@ -437,26 +419,26 @@
 
 ##### 1、跳转
 
-> - 直接输入文件名，跳转到文件 
-> - `?` 列出当前可执行的动作 
-> - `!` 显示 Errors 或 Warnings 
-> - 可以 Ctrl+Shift+M : 跳转到行数，也可以 Ctrl+G 直接进入 
-> - `@` 跳转到 symbol （搜索变量或者函数），也可以 Ctrl+Shift+O 直接进入 
-> - `@` 根据分类跳转 symbol ，查找属性或函数，也可以 Ctrl+Shift+O 后输入:进入 
-> - `#` 根据名字查找 symbol ，也可以 Ctrl+T
+- 直接输入文件名，跳转到文件 
+- `?` 列出当前可执行的动作 
+- `!` 显示 Errors 或 Warnings 
+- 可以 Ctrl+Shift+M : 跳转到行数，也可以 Ctrl+G 直接进入 
+- `@` 跳转到 symbol （搜索变量或者函数），也可以 Ctrl+Shift+O 直接进入 
+- `@` 根据分类跳转 symbol ，查找属性或函数，也可以 Ctrl+Shift+O 后输入:进入 
+- `#` 根据名字查找 symbol ，也可以 Ctrl+T
 
 ---
 
 ##### 2、文件选项卡
 
-> 如果文件选项卡字体为斜体，则会被下一个文件覆盖
->
-> 如果字体为正体，则不会被覆盖
->
-> `提示`
->
-> 双击选项卡斜体变为正体
->
-> <img src="https://pic.imgdb.cn/item/631e006216f2c2beb181ea31.gif" style="zoom: 40%;" />
+如果文件选项卡字体为斜体，则会被下一个文件覆盖
+
+如果字体为正体，则不会被覆盖
+
+`提示`
+
+双击选项卡斜体变为正体
+
+<img src="https://pic.imgdb.cn/item/631e006216f2c2beb181ea31.gif" style="zoom: 40%;" />
 
 ---

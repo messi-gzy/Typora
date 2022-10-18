@@ -566,8 +566,6 @@ LIMIT ...,...
 - $\textcolor{#2a6e3f}{【2】}$ [单行子查询](#3.2)
 - $\textcolor{#2a6e3f}{【3】}$ [多行子查询](#3.3)
 - $\textcolor{#2a6e3f}{【4】}$ [相关子查询](#3.4)
-- $\textcolor{#2a6e3f}{【5】}$ [](#3.5)
-- $\textcolor{#2a6e3f}{【6】}$ [](#3.6)
 
 ### 1、介绍<a id="3.1">💙</a>
 
@@ -648,13 +646,104 @@ WHERE [expr] [operator](
 
 ### 2、单行子查询<a id="3.2">💙</a>
 
+![](https://pic1.imgdb.cn/item/634e115216f2c2beb1b603bd.png)
+
+`举例`
+
+```sql
+SELECT employee_id, manager_id, department_id
+FROM employees
+WHERE (manager_id, department_id) = (SELECT manager_id, department_id
+                                     FROM employees
+                                     WHERE employee_id = 141);
+```
+
+> **子查询查询为空，不返回任何行**
+
 ### 3、多行子查询<a id="3.3">💙</a>
+
+- 也称为集合比较子查询 
+- 内查询返回多行 
+- 使用多行比较操作符
+
+|  操作符  | 含义                                                         |
+| :------: | ------------------------------------------------------------ |
+|  **IN**  | 等于列表中的**任意一个**                                     |
+| **ANY**  | 需要和单行比较操作符一起使用，和子查询返回的**某一个值**比较 |
+| **ALL**  | 需要和单行比较操作符一起使用，和子查询返回的**所有值比较**   |
+| **SOME** | 实际上是ANY的别名，作用相同，一般常使用ANY                   |
+
+`IN`
+
+```sql
+SELECT employee_id, last_name
+FROM employees
+WHERE salary IN 
+      (SELECT MIN(salary)
+       FROM employees
+       GROUP BY department_id);
+```
+
+`ANY|SOME`
+
+```sql
+SELECT employee_id, job_id, salary
+FROM employees
+WHERE job_id <> 'IT_PROG'
+  AND salary < ANY (SELECT MIN(salary)
+                    FROM employees
+                    GROUP BY department_id)
+```
 
 ### 4、相关子查询<a id="3.4">💙</a>
 
-### 5、<a id="3.5">💙</a>
+​	**如果子查询的执行依赖于外部查询，通常情况下都是因为子查询中的表用到了外部的表，并进行了条件关联，因此每执行一次外部查询，子查询都要重新计算一次，这样的子查询就称之为<mark>关联子查询</mark>。**
+相关子查询按照一行接一行的顺序执行，主查询的每一行都执行一次子查询。
 
-### 6、<a id="3.6">💙</a>
+![](https://pic1.imgdb.cn/item/634e503716f2c2beb1595b8e.png)
+
+`举例`
+
+```sql
+SELECT last_name, salary, department_id
+FROM employees outers
+WHERE salary > (SELECT AVG(salary)
+                FROM employees innners
+                WHERE innners.department_id = outers.department_id)
+```
+
+```sql
+SELECT last_name, salary, e1.department_id
+FROM employees e1,
+     (SELECT department_id, AVG(salary) dept_avg_sal
+      FROM employees
+      GROUP BY department_id) e2
+WHERE e1.`department_id` = e2.department_id
+  AND e2.dept_avg_sal < e1.`salary`;
+```
+
+> from型的子查询：子查询是作为from的一部分，子查询要用`()`引起来，并且要给这个子查询取别 名,把它当成一张“临时的虚拟的表”来使用。
+
+#### 4.1、EXISTS|NOT EXISTS
+
+- 如果在子查询中不存在满足条件的行： 
+  - 条件返回 FALSE 
+  - 继续在子查询中查找
+- 如果在子查询中存在满足条件的行： 
+  - 不在子查询中继续查找
+  -  条件返回 TRUE
+
+`举例`
+
+```sql
+SELECT employee_id, last_name, job_id, department_id
+FROM employees eo
+WHERE EXISTS(
+              SELECT *
+              FROM employees ei
+              WHERE eo.employee_id = ei.manager_id
+          );
+```
 
 ---
 
