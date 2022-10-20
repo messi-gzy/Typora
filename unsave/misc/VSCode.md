@@ -10,35 +10,35 @@
 
 ---
 
-#### 1.1、C/C++
+##### 1.1、C/C++
 
 > C/C++ 扩展为 Visual Studio Code 添加了对 C/C++ 的语言支持，包括智能提示和调试等功能。
 
 ---
 
-#### 1.2、C/C++ Extension Pack
+##### 1.2、C/C++ Extension Pack
 
 > C/C++ 拓展包
 
 ---
 
-#### 1.3、C/C++ Snippets
+##### 1.3、C/C++ Snippets
 
 > C/C++ **代码段**的补充提示
 
 ---
 
-#### 1.4、CMake
+##### 1.4、CMake
 
-##### 1.4.1、CMake
+###### 1.4.1、CMake
 
 > **CMakeLists** 的智能提示编写
 
-##### 1.4.2、CMake Language Support
+###### 1.4.2、CMake Language Support
 
 > **CMakeLists.txt** 的高亮显示，语法检查
 
-##### 1.4.3、CMake Tools
+###### 1.4.3、CMake Tools
 
 > CMake工具为Visual Studio Code中的基于CMake的项目提供了一个功能齐全、方便和强大的工作流程。
 >
@@ -46,7 +46,7 @@
 
 ---
 
-#### 1.5、Doxygen Documentation Generator
+##### 1.5、Doxygen Documentation Generator
 
 > 根据方法或者类内容自动生成注释提示信息
 
@@ -54,7 +54,7 @@
 
 ---
 
-#### 1.6、Better C++ Syntax
+##### 1.6、Better C++ Syntax
 
 > 这将为您提供 C++ 的前沿语法突出显示。这意味着您的主题将能够更好地为您的代码着色。这曾经是一个修复，但后来 VS Code 开始使用它作为 C 和 C++ 突出显示的官方来源。
 
@@ -64,7 +64,21 @@
 
 ### 3、Java
 
-3.1、
+###### 3.1、Extension Pack for Java
+
+> 编写、运行、调试代码
+
+###### 3.2、Debugger for Java
+
+> 调试代码
+
+###### 3.3、Project Manager for Java
+
+> 用于创建`Java`项目，包括常规项目，`Maven`项目等。
+
+###### 3.4、Language support for Java ™ for Visual Studio Code
+
+> 红帽组织的**Java**编写插件
 
 ### 4、NodeJS
 
@@ -76,7 +90,17 @@
 
 ### 8、Go
 
-### 9、主题
+### 9、数据库
+
+##### 9.1、MySQL
+
+> <!--Weijan Chen-->
+>
+> MySQL可视化操作插件
+
+![](https://pic1.imgdb.cn/item/634ebd0f16f2c2beb1588dc2.png)
+
+### 10、主题
 
 #### 1、主题颜色
 
@@ -118,23 +142,13 @@ VSCode自带
 
 ---
 
-
-
 #### 2、文件图标
-
----
 
 #### 3、侧边栏图标
 
----
-
 ### 9、Git
 
----
-
 ### 10、misc
-
----
 
 #### 1、Remote-SSH
 

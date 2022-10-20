@@ -44,7 +44,23 @@
 
 ### 4、其他<a id="1.4">💚</a>
 
+**ROOLBACK**:数据回滚
 
+**COMMIT**：数据提交
+
+> `TRUNCATE`语句不能回滚，而使用 `DELETE` 语句删除数据，加上条件修改，可以回滚
+>
+> 条件修改语句
+>
+> ```sql
+> SET autocommit = FALSE;
+> ```
+
+`阿里开发规范`
+
+【参考】：TRUNCATE TABLE 比 DELETE 速度快，且使用的系统和事务日志资源少，但 TRUNCATE 无 事务且不触发 TRIGGER，有可能造成事故，故不建议在开发代码中使用此语句。 
+
+【说明】：TRUNCATE TABLE 在功能上与不带 WHERE 子句的 DELETE 语句相同。
 
 ---
 

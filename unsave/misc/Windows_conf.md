@@ -260,3 +260,18 @@ rustup self uninstall
 ```powershell
 rustup doc
 ```
+
+### 七、MASM
+
+> 汇编环境，并配置`VSCode`运行
+
+#### 7.1、下载
+
+- 使用 `Git`克隆
+- 下载压缩包
+
+```c
+// 地址
+
+```
+
