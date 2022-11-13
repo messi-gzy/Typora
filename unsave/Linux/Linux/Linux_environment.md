@@ -1103,3 +1103,104 @@ npx -v
 ```
 
 ![](https://pic.imgdb.cn/item/62977405094754312916e5dc.png)
+
+## 八、CMake
+
+#### 1、下载
+
+- [官网](https://cmake.org/download/)【https://cmake.org/download/】
+- 任意路径下下载
+
+```bash
+wget https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2.tar.gz
+```
+
+#### 2、解压
+
+```shell
+tar -zxvf cmake-3.24.2.tar.gz -C /usr/local/cmake
+```
+
+#### 3、编译
+
+- 【1】
+
+```bash
+cd /usr/local/cmake/cmake-3.24.2
+```
+
+- 【2】
+
+```shell
+yum install -y gcc gcc-c++ make automake
+# 这步一定要做，不然后续./bootstrap会报错
+yum install -y openssl openssl-devel 
+```
+
+- 【3】
+
+```
+./bootstrap
+```
+
+- 【4】
+
+```
+gmake
+```
+
+```
+gmake install
+```
+
+## 九、GCC
+
+#### 1、直接安装
+
+- GCC
+
+```bash
+sudo yum install gcc
+```
+
+- G++
+
+```bash
+sudo yum install gcc-cc++
+```
+
+- 
+
+```bash
+sudo yum install autoconf make
+```
+
+#### 2、更高版本
+
+- ```bash
+  sudo yum install centos-release-scl
+  ```
+
+- ```bash
+  sudo yum install devtoolset-9-gcc devtoolset-9-gcc-c++ devtoolset-9-binutils
+  ```
+
+  > `注意`：其中的数字可以更改为指定大版本
+
+- 激活**devtoolset**
+
+  ```bash
+  scl enable devtoolset-9 bash
+  ```
+
+  > `注意`：可以激活指定版本的gcc
+
+- 写入环境
+
+  > `注意`：scl命令只是临时，关闭终端后会恢复原版本，可写入环境，解决
+
+  ```shell
+  echo "source /opt/rh/devtoolset-9/enable" >>/etc/profile
+  ```
+
+==**注意在所有语句中自已安装的对应版本号 **==
