@@ -95,7 +95,7 @@ let pathTest=path.join(__dirname,'/test.txt')
 console.log(pathTest);
 ```
 
-##### 3、获取路径中文件名
+##### 3、获取路径中的文件名
 
 > **path.basename()**
 

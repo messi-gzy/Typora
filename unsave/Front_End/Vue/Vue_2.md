@@ -6,7 +6,7 @@ $\textcolor{#e18a3b}{【一】}$**[生命周期](#1)**
 
 $\textcolor{#e18a3b}{【二】}$**[组件](#2)**
 
-$\textcolor{#e18a3b}{【一】}$**[生命周期](#1)**
+$\textcolor{#e18a3b}{【三】}$**[Vue脚手架](#3)**
 
 $\textcolor{#e18a3b}{【一】}$**[生命周期](#1)**
 
@@ -118,11 +118,248 @@ Vue在关键时刻使用‘钩子’将自已设定的函数取出来执行，�
 
 #### 1、非单文件组件
 
+##### 1.1、创建子组件
+
+> <mark>注意</mark>
+>
+> - 创建组件时不需要指定 **el**
+> - **data必须写成函数式**
+
+###### 1、school
+
+```javascript
+const school = Vue.extend({
+    template: `
+    <div>
+        <h2>学校名称：{{school.name}}</h2>
+        <h2>学校地址：{{school.address}}</h2>
+    </div>
+    `,
+    data() {
+        return {
+            school: {
+                name: "华北电力大学",
+                address: "北京昌平"
+            }
+        }
+    },
+})
+```
+
+###### 2、student
+
+```javascript
+const student = Vue.extend({
+    template: `
+    <div>
+        <h2>学生姓名：{{student.name}}</h2>
+        <h2>学生年龄：{{student.age}}</h2>
+    </div>
+    `,
+    data() {
+        return {
+            student: {
+                name: "MaXin",
+                age: 20
+            }
+        }
+    }
+})
+```
+
+##### 1.2、注册组件
+
+> - 需要写**el**
+> - 需要写**components**
+
+```javascript
+const vm = new Vue({
+    el: "#root",
+    // 注册组件
+    components: {
+        school: school,
+        student: student
+    }
+})
+```
+
+```html
+<div id="root">
+    <school></school>
+    <hr>
+    <student></student>
+</div>
+```
+
+<mark>**全局注册**</mark>
+
+```javascript
+Vue.component('student',student)
+Vue.component('school',school)
+```
+
+##### 1.3、注意
+
+
+
+##### 1.4、组件的嵌套
+
+```javascript
+school = Vue.extend({
+    template: `
+    <div>
+        <h2>学校名称：{{school.name}}</h2>
+        <h2>学校地址：{{school.address}}</h2>
+        <button @click="showName">点我提示</button>
+        <student></student>
+    </div>
+    `,
+    data() {
+        return {
+            school: {
+                name: "华北电力大学",
+                address: "北京昌平"
+            }
+        }
+    },
+    methods: {
+        showName(){
+            alert(this.school.name)
+        }
+    },
+    components:{
+        student
+    }
+})
+```
+
+##### 1.5、VueComponent
+
+> 组件的实例对象，由vm实例对象掌控
+
 #### 2、单文件组件
 
+```vue
+<template>
+  <div class="demo">
+    <h2>学校名称：{{ student.name }}</h2>
+    <h2>学校地址：{{ student.age }}</h2>
+    <button @click="showName">点我提示</button>
+  </div>
+</template>
+  
+<script>
+export default Vue.extend({
+  name: "Student",
+  data() {
+    return {
+      student: {
+        name: "gzy",
+        age: 18,
+      },
+    };
+  },
+  methods: {
+    showName(){
+        alert(this.student)
+    }
+  },
+});
+</script>
+  
+<style>
 
+</style>
+```
 
 ---
 
 [返回顶部](#0)
 
+## 三、Vue脚手架
+
+<a id="3"><!----Vue脚手架---></a>
+
+#### 1、安装脚手架
+
+##### 1.1、安装node
+
+直接官网下载安装
+
+##### 1.2、修改淘宝镜像
+
+```
+npm config set registry https://registry.npm.taobao.org
+```
+
+##### 1.3、安装脚手架
+
+```bash
+npm install -g @vue/cli
+```
+
+##### 1.4、验证
+
+```
+vue -V
+```
+
+#### 2、新建项目
+
+1. 切换到自已选择的目录下
+
+2. 打开命令行
+
+3. ```
+   Vue create <XXXX>
+   ```
+
+   <!--XXXX是自已起的名字--->
+
+   > 根据自已的需求选择相应版本
+   >
+   > 不太熟练可以选中default Vue2
+
+4. ```
+   cd <XXXX>
+   # 进入自已创建的文件
+   ```
+
+5. ```
+   npm run serve
+   ```
+
+   打包运行
+
+6. 按照输出的文件路径在浏览器中访问
+
+   > http://localhost:8080/
+
+#### 3、分析脚手架
+
+![](https://pic.imgdb.cn/item/6372427c16f2c2beb1eabb54.png)
+
+启动后执行main.js加载App组件，然后相继加载子组件，插入到html中显示页面
+
+##### 3.1、render
+
+```vue
+render:createElement=>{
+	return createElement('h1','hello')
+}
+
+/********/
+render:e=>return e('h1','hello')
+```
+
+#### 4、修改默认配置
+
+```
+ vue inspect > output.js
+```
+
+查看配置文件输出到 output.js文件中
+
+
+
+[返回顶部](#0)
