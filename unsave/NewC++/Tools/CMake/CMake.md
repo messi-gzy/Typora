@@ -17,7 +17,7 @@
 6. 高效率，因为cmake在工具链中没有libtool。
 7. 可扩展，可以为cmake编写特定功能的模块，扩展cmake功能。
 
-### 2、编译
+### 2、使用
 
 > ```ABAP
 > cmake [options] <path-to-source>
@@ -46,3 +46,51 @@ mingw32-make | make
 #Windows默认编译器是 MSVC
 ```
 
+### 3、安装
+
+#### 3.1、下载
+
+- [官网](https://cmake.org/download/)【https://cmake.org/download/】
+- 任意路径下下载
+
+```bash
+wget https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2.tar.gz
+```
+
+#### 3.2、解压
+
+```shell
+tar -zxvf cmake-3.24.2.tar.gz -C /usr/local/cmake
+```
+
+#### 3.3、编译
+
+- 【1】
+
+```bash
+cd /usr/local/cmake/cmake-3.24.2
+```
+
+- 【2】
+
+```shell
+yum install -y gcc gcc-c++ make automake
+# 这步一定要做，不然后续./bootstrap会报错
+yum install -y openssl openssl-devel 
+```
+
+- 【3】
+
+```
+./bootstrap
+```
+
+- 【4】
+
+```
+gmake
+```
+
+```
+gmake install
+```

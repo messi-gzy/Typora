@@ -541,7 +541,7 @@ int *p=(int *)0x7fff160addc0;//赋值了任意数，没有意义
 ```c++
 int arr[10]={1,2,3};
 int *p=arr;
-cout<<++*p<<endl;// 2
+cout<<*++p<<endl;// 2
 ```
 
 ##### 2、动态数组

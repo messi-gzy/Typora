@@ -68,25 +68,20 @@
 
 - $\textcolor{#2a6e3f}{【1】}$ 面向对象（下）
 
-|  static  | 理解main方法 | 代码块     |    final     | 抽象类\|方法 |
-| :------: | :----------: | ---------- | :----------: | :----------: |
-| **接口** |  **内部类**  | **包装类** | **简单模式** |              |
-
-#### 	1.7、[➡](./Java/basic/basic[7].md)基础[7]
-
-- $\textcolor{#2a6e3f}{【1】}$ 异常处理
+|  static  | 理解main方法 | 代码块     | final | 抽象类\|方法 |
+| :------: | :----------: | ---------- | :---: | :----------: |
+| **接口** |  **内部类**  | **包装类** |       |              |
 
 ### 2、进阶<a id="1.2">:ocean:</a>
 
 #### 	2.1、[➡](./Java/advanced/advanced[1].md)进阶[1]
 
-- $\textcolor{#2a6e3f}{【1】}$ 
-- $\textcolor{#2a6e3f}{【2】}$ 
-- $\textcolor{#2a6e3f}{【3】}$ 
+- $\textcolor{#2a6e3f}{【1】}$ 异常处理
+- $\textcolor{#2a6e3f}{【2】}$ 文件IO
 
 #### 	2.2、[➡](./Java/advanced/advanced[1].md)进阶[2]
 
-- $\textcolor{#2a6e3f}{【1】}$ 
+- $\textcolor{#2a6e3f}{【1】}$ 集合
 - $\textcolor{#2a6e3f}{【2】}$ 
 - $\textcolor{#2a6e3f}{【3】}$ 
 

@@ -55,45 +55,27 @@
 
 #### 1.2、[➡](./C++/basic/C++_basic_2.md)基础[2]
 
-- ###### $\textcolor{#2a6e3f}{【1】}$
+- ###### $\textcolor{#2a6e3f}{【1】}$内存分区
 
-- ###### $\textcolor{#2a6e3f}{【2】}$
+- ###### $\textcolor{#2a6e3f}{【2】}$引用
 
-- ###### $\textcolor{#2a6e3f}{【3】}$
-
-- ###### $\textcolor{#2a6e3f}{【4】}$
-
-- ###### $\textcolor{#2a6e3f}{【5】}$
-
-- ###### $\textcolor{#2a6e3f}{【6】}$
+- ###### $\textcolor{#2a6e3f}{【3】}$函数中级
 
 #### 1.3、[➡](./C++/basic/C++_basic_3.md)基础[3]
 
-- ###### $\textcolor{#2a6e3f}{【1】}$
-
-- ###### $\textcolor{#2a6e3f}{【2】}$
-
-- ###### $\textcolor{#2a6e3f}{【3】}$
-
-- ###### $\textcolor{#2a6e3f}{【4】}$
-
-- ###### $\textcolor{#2a6e3f}{【5】}$
-
-- ###### $\textcolor{#2a6e3f}{【6】}$
+- ###### $\textcolor{#2a6e3f}{【1】}$类和对象
 
 #### 1.4、[➡](./C++/basic/C++_basic_4.md)基础[4]
 
-- ###### $\textcolor{#2a6e3f}{【1】}$
+- ###### $\textcolor{#2a6e3f}{【1】}$文件操作
 
-- ###### $\textcolor{#2a6e3f}{【2】}$
+- ###### $\textcolor{#2a6e3f}{【2】}$模版
 
-- ###### $\textcolor{#2a6e3f}{【3】}$
+- ###### $\textcolor{#2a6e3f}{【3】}$异常处理
 
-- ###### $\textcolor{#2a6e3f}{【4】}$
+- ###### $\textcolor{#2a6e3f}{【4】}$预处理器
 
-- ###### $\textcolor{#2a6e3f}{【5】}$
-
-- ###### $\textcolor{#2a6e3f}{【6】}$
+- ###### $\textcolor{#2a6e3f}{【5】}$指针中级
 
 ---
 
@@ -101,7 +83,7 @@
 
 #### 2.1、[➡](./C++/advanced/C++_advanced_1.md)进阶[1]
 
-- ###### $\textcolor{#2a6e3f}{【1】}$
+- ###### $\textcolor{#2a6e3f}{【1】}$STL[1] [🔁](#1.4)
 
 - ###### $\textcolor{#2a6e3f}{【2】}$
 
