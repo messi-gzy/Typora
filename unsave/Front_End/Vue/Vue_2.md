@@ -362,4 +362,10 @@ render:e=>return e('h1','hello')
 
 
 
+**==Vue2 -----》 vuex3==**
+
+**==Vue2 -----》 vue-router 3==**
+
+
+
 [返回顶部](#0)

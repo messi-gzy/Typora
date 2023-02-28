@@ -339,3 +339,6 @@ set(CMAKE_BUILD_TYPE Release)
 
 > **BUILD_SHARED_LIBS**：这个开关用来控制默认的库编译方式，<u>如果不进行设置，使用 add_library 又没有指定库类型的情况下，**默认编译生成的库都是静态库**</u>。如果 **set(BUILD_SHARED_LIBS ON)** 后，**默认生成的为动态库**
 
+---
+
+[README](../../README.md)

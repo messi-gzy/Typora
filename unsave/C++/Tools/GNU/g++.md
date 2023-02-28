@@ -6,8 +6,6 @@
 
 `目录`
 
-`目录`
-
 $\textcolor{#2a6e3f}{【1】}$ **[编译过程](#1)**
 
 - $\textcolor{#4834d4}{【1】}$ 预处理
@@ -468,3 +466,6 @@ g++ main.cpp -I include -L src -l swap -o share_main
 LD_LIBRARY_PATH=src/ ./share_main
 ```
 
+---
+
+[README](../../README.md)

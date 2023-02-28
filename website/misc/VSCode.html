@@ -1,0 +1,635 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+#write p code {
+    color: #1500f8;
+    /*内联*/
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1 {
+    text-align:center;
+}
+h2 {
+    color: #880000;
+    text-align:center;
+}
+h3 {
+    color: #ba5140;
+}
+h4 {
+    color: #a76283;
+}
+h5 {
+    color: #ba5b49;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+   color: #777;
+   /*text-align:center;*/
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+ul li::marker {
+    color: #dd7694;
+}
+blockquote {
+    border-left: 3px solid #1cab00;
+    padding: 0 15px;
+    color: #777777;
+    /*background-color: #ecf8f2;*/
+}
+/*引用*/
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+    background-color: #e6f8ef;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+mark {
+    color: #f85300;
+    background: #ffffff;
+}
+/*高亮*/
+
+
+
+</style><title>VSCode</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#vscode">VSCode</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一插件推荐">一、插件推荐</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1cc">1、C/C++</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#11cc">1.1、C/C++</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#12cc-extension-pack">1.2、C/C++ Extension Pack</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#13cc-snippets">1.3、C/C++ Snippets</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#14cmake">1.4、CMake</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#141cmake">1.4.1、CMake</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#142cmake-language-support">1.4.2、CMake Language Support</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#143cmake-tools">1.4.3、CMake Tools</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#15doxygen-documentation-generator">1.5、Doxygen Documentation Generator</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#16better-c-syntax">1.6、Better C++ Syntax</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2python">2、Python</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3java">3、Java</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#31extension-pack-for-java">3.1、Extension Pack for Java</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#32debugger-for-java">3.2、Debugger for Java</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#33project-manager-for-java">3.3、Project Manager for Java</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#34language-support-for-java-™-for-visual-studio-code">3.4、Language support for Java ™ for Visual Studio Code</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4nodejs">4、NodeJS</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#5vue">5、Vue</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#6rust">6、rust</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#7html">7、HTML</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#8go">8、Go</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#9数据库">9、数据库</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#91mysql">9.1、MySQL</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#10主题">10、主题</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1主题颜色">1、主题颜色</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#11ayu">1.1、Ayu</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#12cc-themes">1.2、C/C++ Themes</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#13github-theme">1.3、GitHub Theme</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#14slack-theme">1.4、Slack Theme</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#15quiet-light-theme">1.5、Quiet Light Theme</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2文件图标">2、文件图标</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3侧边栏图标">3、侧边栏图标</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#9git">9、Git</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#10misc">10、misc</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1remote-ssh">1、Remote-SSH</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2bookmarks">2、Bookmarks</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3cloudmusic">3、CloudMusic</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4zhihu-on-vscode">4、Zhihu On VSCode</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#5z-reader">5、z-reader</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#6codesnap">6、CodeSnap</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#7polacode-2022">7、Polacode-2022</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#8nba-real-time-score">8、NBA real-time score</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#9coderun">9、CodeRun</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#10docker">10、Docker</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#11hex-editor">11、Hex Editor</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#12leetcode">12、LeetCode</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#13live-server">13、Live Server</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#14markdown-preview-enhanced">14、Markdown Preview Enhanced</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#15mysql">15、MySQL</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#16path-intellisense">16、Path Intellisense</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#17project-manager">17、Project Manager</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#18sqlite-viewer">18、SQLite Viewer</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#19todo-tree">19、Todo Tree</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#20vscode-pdf">20、vscode-pdf</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#21drawio-integration">21、Draw.io Integration</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#22code-spell-checker">22、Code Spell Checker</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#23live-share">23、Live Share</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二快捷键">二、快捷键</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1全局操作">1、全局操作</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2页面操作">2、页面操作</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3运行调试操作">3、运行|调试操作</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4部分使用">4、部分使用</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1跳转">1、跳转</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h5 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2文件选项卡">2、文件选项卡</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='vscode'><span>VSCode</span></h1><p><code>目录</code></p><h2 id='一插件推荐'><span>一、插件推荐</span></h2><h3 id='1cc'><span>1、C/C++</span></h3><blockquote><p><span>开发C/C++ 拓展插件</span></p></blockquote><hr /><h5 id='11cc'><span>1.1、C/C++</span></h5><blockquote><p><span>C/C++ 扩展为 Visual Studio Code 添加了对 C/C++ 的语言支持，包括智能提示和调试等功能。</span></p></blockquote><hr /><h5 id='12cc-extension-pack'><span>1.2、C/C++ Extension Pack</span></h5><blockquote><p><span>C/C++ 拓展包</span></p></blockquote><hr /><h5 id='13cc-snippets'><span>1.3、C/C++ Snippets</span></h5><blockquote><p><span>C/C++ </span><strong><span>代码段</span></strong><span>的补充提示</span></p></blockquote><hr /><h5 id='14cmake'><span>1.4、CMake</span></h5><h6 id='141cmake'><span>1.4.1、CMake</span></h6><blockquote><p><strong><span>CMakeLists</span></strong><span> 的智能提示编写</span></p></blockquote><h6 id='142cmake-language-support'><span>1.4.2、CMake Language Support</span></h6><blockquote><p><strong><span>CMakeLists.txt</span></strong><span> 的高亮显示，语法检查</span></p></blockquote><h6 id='143cmake-tools'><span>1.4.3、CMake Tools</span></h6><blockquote><p><span>CMake工具为Visual Studio Code中的基于CMake的项目提供了一个功能齐全、方便和强大的工作流程。</span></p><p><span>自动化编译项目。</span></p></blockquote><hr /><h5 id='15doxygen-documentation-generator'><span>1.5、Doxygen Documentation Generator</span></h5><blockquote><p><span>根据方法或者类内容自动生成注释提示信息</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/63033d3e16f2c2beb1ef21e4.gif" referrerpolicy="no-referrer"></p><hr /><h5 id='16better-c-syntax'><span>1.6、Better C++ Syntax</span></h5><blockquote><p><span>这将为您提供 C++ 的前沿语法突出显示。这意味着您的主题将能够更好地为您的代码着色。这曾经是一个修复，但后来 VS Code 开始使用它作为 C 和 C++ 突出显示的官方来源。</span></p></blockquote><hr /><h3 id='2python'><span>2、Python</span></h3><h3 id='3java'><span>3、Java</span></h3><h6 id='31extension-pack-for-java'><span>3.1、Extension Pack for Java</span></h6><blockquote><p><span>编写、运行、调试代码</span></p></blockquote><h6 id='32debugger-for-java'><span>3.2、Debugger for Java</span></h6><blockquote><p><span>调试代码</span></p></blockquote><h6 id='33project-manager-for-java'><span>3.3、Project Manager for Java</span></h6><blockquote><p><span>用于创建</span><code>Java</code><span>项目，包括常规项目，</span><code>Maven</code><span>项目等。</span></p></blockquote><h6 id='34language-support-for-java-™-for-visual-studio-code'><span>3.4、Language support for Java ™ for Visual Studio Code</span></h6><blockquote><p><span>红帽组织的</span><strong><span>Java</span></strong><span>编写插件</span></p></blockquote><h3 id='4nodejs'><span>4、NodeJS</span></h3><h3 id='5vue'><span>5、Vue</span></h3><h3 id='6rust'><span>6、rust</span></h3><h3 id='7html'><span>7、HTML</span></h3><h3 id='8go'><span>8、Go</span></h3><h3 id='9数据库'><span>9、数据库</span></h3><h5 id='91mysql'><span>9.1、MySQL</span></h5><blockquote><!--Weijan Chen--><p><span>MySQL可视化操作插件</span></p></blockquote><p><img src="https://pic1.imgdb.cn/item/634ebd0f16f2c2beb1588dc2.png" referrerpolicy="no-referrer"></p><h3 id='10主题'><span>10、主题</span></h3><h4 id='1主题颜色'><span>1、主题颜色</span></h4><h5 id='11ayu'><span>1.1、Ayu</span></h5><p><span>包括文件图标</span></p><p><img src="https://pic.imgdb.cn/item/6303904816f2c2beb1208d1c.png" style="zoom: 33%;" /></p><hr /><h5 id='12cc-themes'><span>1.2、C/C++ Themes</span></h5><p><img src="https://pic.imgdb.cn/item/6303909316f2c2beb120abd3.png" referrerpolicy="no-referrer"></p><hr /><h5 id='13github-theme'><span>1.3、GitHub Theme</span></h5><p><span>六种主题</span><img src="https://pic.imgdb.cn/item/6303910b16f2c2beb120d882.png" referrerpolicy="no-referrer"></p><hr /><h5 id='14slack-theme'><span>1.4、Slack Theme</span></h5><p><span>十一种图标</span></p><p><img src="https://pic.imgdb.cn/item/630391d516f2c2beb12168dc.png" referrerpolicy="no-referrer"></p><hr /><h5 id='15quiet-light-theme'><span>1.5、Quiet Light Theme</span></h5><p><span>个人最喜欢的一款主题，虽然整体为白色看起来比较刺眼，但是顶部及底部、侧边栏更多为柔和色，在平常使用起来比较舒服。</span></p><p><span>VSCode自带</span></p><p><img src="https://pic.imgdb.cn/item/630392f316f2c2beb1221dd4.png" referrerpolicy="no-referrer"></p><hr /><h4 id='2文件图标'><span>2、文件图标</span></h4><h4 id='3侧边栏图标'><span>3、侧边栏图标</span></h4><h3 id='9git'><span>9、Git</span></h3><h3 id='10misc'><span>10、misc</span></h3><h4 id='1remote-ssh'><span>1、Remote-SSH</span></h4><blockquote><p><span>连接远程主机进行云开发</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/630246a216f2c2beb1893be1.png" referrerpolicy="no-referrer"></p><hr /><h4 id='2bookmarks'><span>2、Bookmarks</span></h4><blockquote><p><span>书签记录，方便预览代码，也方便快速跳转到项目的标记地方</span></p></blockquote><p><code>Ctrl</code><span>+</span><code>Alt</code><span>+</span><code>K</code><span> 创建书签</span></p><p><code>Ctrl</code><span>+</span><code>Alt</code><span>+</span><code>J</code><span> 跳转到前一个书签</span></p><p><code>Ctrl</code><span>+</span><code>Alt</code><span>+</span><code>I</code><span> 跳转到后一个书签</span></p><p><img src="https://pic.imgdb.cn/item/63024bec16f2c2beb18c3370.png" referrerpolicy="no-referrer"></p><hr /><p><span>如果快捷键冲突，更换快捷键</span></p><ol start='' ><li><img src="https://pic.imgdb.cn/item/63024bec16f2c2beb18c3379.png" style="zoom:67%;" /></li><li><img src="https://pic.imgdb.cn/item/63024bec16f2c2beb18c3380.png" style="zoom:200%;" /></li></ol><hr /><h4 id='3cloudmusic'><span>3、CloudMusic</span></h4><blockquote><p><span>网易云音乐插件。在功能方面，该插件几乎支持了全部网易云可用功能，包括账号登录，歌单同步、搜索、收藏、心动模式、私人FM、歌词显示、榜单查看等功能！还可以查看个人听歌排行、每日推荐，新歌上架等板块，非常强大。</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/6302515c16f2c2beb18e8da2.png" referrerpolicy="no-referrer"></p><hr /><h4 id='4zhihu-on-vscode'><span>4、Zhihu On VSCode</span></h4><blockquote><p><span>基于 VSCode 的知乎客户端提供包括阅读，搜索，创作，发布等一站式服务，内容加载速度比 Web 端更快，创新的 Markdown-Latex 混合语法让内容创作者更方便地插入代码块，数学公式，并一键发布至知乎平台。</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/6302501716f2c2beb18e062c.png" referrerpolicy="no-referrer"></p><hr /><h4 id='5z-reader'><span>5、z-reader</span></h4><blockquote><p><span>小说阅读器</span></p><p><span>用来摸鱼或学习的小说阅读插件,支持在线搜索和本地阅读,支持 txt 和 epub 格式</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/6302611616f2c2beb195d6a2.png" referrerpolicy="no-referrer"></p><hr /><h4 id='6codesnap'><span>6、CodeSnap</span></h4><blockquote><p><span>代码截图工具</span></p><p><span>Take beautiful screenshots of your code in VS Code!</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/6302525b16f2c2beb18ef52b.png" style="zoom: 50%;" /></p><hr /><p><code>效果</code></p><p><img src="https://pic.imgdb.cn/item/6302525b16f2c2beb18ef53e.png" referrerpolicy="no-referrer"></p><hr /><h4 id='7polacode-2022'><span>7、Polacode-2022</span></h4><blockquote><p><span>代码截图工具</span></p></blockquote><ol start='' ><li><p><code>Ctrl+Shift+P</code><span> 打开 命令工具</span></p><p><span>输入</span><code>polacode</code></p><p><img src="https://pic.imgdb.cn/item/6302558316f2c2beb1902f21.png" referrerpolicy="no-referrer"></p></li><li><p><span>不用复制粘贴，左边直接选择，右边自动同步。</span></p><p><span>同时还</span><strong><span>可以修改样式</span></strong><span>，最后保存图片。</span></p></li></ol><hr /><h4 id='8nba-real-time-score'><span>8、NBA real-time score</span></h4><blockquote><p><span>实时获取当天NBA比赛比分，并显示在vscode下方状态栏左侧；更可以观看实时文字直播，以及赛后数据统计。你可以边搬砖边关注NBA</span></p></blockquote><p><span>右键选择 </span><code>get NBA real-time score</code><span>  既打开插件，软件左下角实时显示比赛赛况。</span></p><hr /><h4 id='9coderun'><span>9、CodeRun</span></h4><blockquote><p><span>一键运行代码程序</span></p><p><strong><span>C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6, Ruby, Go, Lua, Groovy, PowerShell, BAT/CMD, BASH/SH, F# Script, F# (.NET Core), C# Script, C# (.NET Core), VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml Script, R, AppleScript, Elixir, Visual Basic .NET, Clojure, Haxe, Objective-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Free Pascal, Haskell, Nim, D, Lisp, Kit, V, SCSS, Sass, CUDA, Less, Fortran, Ring, Standard ML, and custom command</span></strong></p></blockquote><hr /><h4 id='10docker'><span>10、Docker</span></h4><blockquote><p><strong><span>Docker</span></strong></p></blockquote><hr /><h4 id='11hex-editor'><span>11、Hex Editor</span></h4><blockquote><p><span>二进制文件修改器</span></p><p><span>vscode 默认不支持打开二进制文件，此插件可以修改</span><strong><span>16进制</span></strong><span>的文件</span></p></blockquote><hr /><h4 id='12leetcode'><span>12、LeetCode</span></h4><blockquote><p><strong><span>LeetCode</span></strong><span> 刷题系统</span></p></blockquote><hr /><h4 id='13live-server'><span>13、Live Server</span></h4><blockquote><p><span>生成一个本地服务器，实时刷新生成的</span><strong><span>HTML页面</span></strong></p></blockquote><hr /><h4 id='14markdown-preview-enhanced'><span>14、Markdown Preview Enhanced</span></h4><blockquote><p><strong><span>Markdown</span></strong><span> 文件预览器</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/630259c416f2c2beb192d607.png" referrerpolicy="no-referrer"></p><hr /><h4 id='15mysql'><span>15、MySQL</span></h4><blockquote><p><code>MySQL</code><span> 数据库的可视化操作、阅读。</span></p></blockquote><hr /><h4 id='16path-intellisense'><span>16、Path Intellisense</span></h4><blockquote><p><strong><span>路径智能补全</span></strong></p></blockquote><p><img src="https://pic.imgdb.cn/item/63025bd216f2c2beb193ad6d.gif" referrerpolicy="no-referrer"></p><hr /><h4 id='17project-manager'><span>17、Project Manager</span></h4><blockquote><p><span>快速更改项目</span></p></blockquote><p><span>保存此次项目，下次快速更换项目。</span></p><p><img src="https://pic.imgdb.cn/item/63025c5816f2c2beb193e03e.png" style="zoom: 67%;" /></p><hr /><h4 id='18sqlite-viewer'><span>18、SQLite Viewer</span></h4><blockquote><p><strong><span>sqlite</span></strong><span> 数据库的可视化操作</span></p></blockquote><hr /><h4 id='19todo-tree'><span>19、Todo Tree</span></h4><blockquote><p><span>快速标记你的项目 例如：</span><strong><span>TODO、Bug...</span></strong></p><p><span>方便快速预览项目代码，快速跳转到目标地点</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/63025d3716f2c2beb1943964.png" referrerpolicy="no-referrer"></p><hr /><h4 id='20vscode-pdf'><span>20、vscode-pdf</span></h4><blockquote><p><span>PDF阅读器</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/630260f616f2c2beb195cb5f.png" referrerpolicy="no-referrer"></p><hr /><h4 id='21drawio-integration'><span>21、Draw.io Integration</span></h4><blockquote><p><strong><span>Draw.io</span></strong><span> 流程图设计</span></p></blockquote><ol start='' ><li><span>新建  </span><code>.drawio</code><span> 文件打开即可编辑流程图</span></li></ol><p><img src="https://pic.imgdb.cn/item/6302fbb216f2c2beb1c8da21.png" referrerpolicy="no-referrer"></p><hr /><h4 id='22code-spell-checker'><span>22、Code Spell Checker</span></h4><blockquote><p><span>代码拼写检测</span></p></blockquote><p><img src="https://pic.imgdb.cn/item/6303269c16f2c2beb1e000a2.png" referrerpolicy="no-referrer"></p><p><img src="https://pic.imgdb.cn/item/6303269c16f2c2beb1e000a8.png" referrerpolicy="no-referrer"></p><hr /><h4 id='23live-share'><span>23、Live Share</span></h4><blockquote><p><strong><span>实时协作编辑和调试</span></strong></p></blockquote><blockquote><p><span>Visual Studio Live Share允许我们与他人实时协作编辑和调试，不管我们使用的是哪种编程语言或正在构建的应用程序类型。它允许我们立即(并且安全地)共享我们当前的项目，然后根据需要共享调试会话、终端实例、本地主机web应用程序、语音呼叫等等！加入我们的会话的开发人员从我们的环境中接收所有的编辑器上下文(例如，语言服务、调试)，这确保了他们可以立即开始有效地协作，而不需要克隆任何代码或安装任何sdk。</span></p></blockquote><ol start='' ><li><span>登陆：推荐使用</span><code>Github</code><span>登陆</span></li><li><span>按提示操作防火墙</span></li><li><span>复制会议链接</span></li><li><span>开始协作编辑与调试</span></li></ol><hr /><p>&nbsp;</p><p>&nbsp;</p><h2 id='二快捷键'><span>二、快捷键</span></h2><hr /><h4 id='1全局操作'><span>1、全局操作</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>快捷键</span></th><th style='text-align:center;' ><span>功能</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><strong><span>Shift+Alt+F</span></strong></td><td style='text-align:center;' ><span>格式化</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+Shift+P</span></strong></td><td style='text-align:center;' ><span>命令面板</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+P</span></strong></td><td style='text-align:center;' ><span>转到文件</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+w</span></strong></td><td style='text-align:center;' ><span>关闭当前文件</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+`</span></strong></td><td style='text-align:center;' ><span>终端</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+B</span></strong></td><td style='text-align:center;' ><span>关闭侧边栏</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+,</span></strong></td><td style='text-align:center;' ><span>设置</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+shift+</span></strong></td><td style='text-align:center;' ><span>拓展</span></td></tr><tr><td style='text-align:center;' ><strong><span>F11</span></strong></td><td style='text-align:center;' ><span>全屏</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+shift+F</span></strong></td><td style='text-align:center;' ><span>搜索</span></td></tr></tbody></table></figure><hr /><h4 id='2页面操作'><span>2、页面操作</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>快捷键</span></th><th style='text-align:center;' ><span>功能</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><strong><span>Alt+ up</span><span>|</span><span>down</span></strong></td><td style='text-align:center;' ><span>当前行上移 </span><span>|</span><span> 下移</span></td></tr><tr><td style='text-align:center;' ><strong><span>F2</span></strong></td><td style='text-align:center;' ><span>变量统一命名</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+/</span></strong></td><td style='text-align:center;' ><span>注释</span></td></tr><tr><td style='text-align:center;' ><strong><span>Shift+Alt+ up</span><span>|</span><span>down</span></strong></td><td style='text-align:center;' ><span>向上</span><span>|</span><span>下复制一行</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+Alt+up</span><span>|</span><span>down</span></strong></td><td style='text-align:center;' ><span>向上</span><span>|</span><span>向下选择同一列</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+D</span></strong></td><td style='text-align:center;' ><span>选择最近的单词</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+G</span></strong></td><td style='text-align:center;' ><span>跳转到指定行</span></td></tr><tr><td style='text-align:center;' ><strong><span>Home</span><span>|</span><span> End</span></strong></td><td style='text-align:center;' ><span>行首</span><span>|</span><span>行尾</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+Home</span><span>|</span><span>End</span></strong></td><td style='text-align:center;' ><span>文件头</span><span>|</span><span>文件尾</span></td></tr><tr><td style='text-align:center;' ><strong><span>F12</span></strong></td><td style='text-align:center;' ><span>定义处</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+[ </span><span>|</span><span> ]</span></strong></td><td style='text-align:center;' ><span>代码缩进</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+Shift+[ </span><span>|</span><span> ]</span></strong></td><td style='text-align:center;' ><span>隐藏</span><span>|</span><span>显示函数片段</span></td></tr></tbody></table></figure><hr /><h4 id='3运行调试操作'><span>3、运行|调试操作</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>快捷键</span></th><th style='text-align:center;' ><span>功能</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><strong><span>F9</span></strong></td><td style='text-align:center;' ><span>当前行增加或取消断点</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+F9</span></strong><span>（自已定义）</span></td><td style='text-align:center;' ><span>取消所有断点</span></td></tr><tr><td style='text-align:center;' ><strong><span>F5</span></strong></td><td style='text-align:center;' ><span>调试运行</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+F5</span></strong></td><td style='text-align:center;' ><span>无调试运行</span></td></tr><tr><td style='text-align:center;' ><strong><span>Shift+F5</span></strong></td><td style='text-align:center;' ><span>停止调试</span></td></tr><tr><td style='text-align:center;' ><strong><span>Ctrl+Shift+F5</span></strong></td><td style='text-align:center;' ><span>重新调试</span></td></tr><tr><td style='text-align:center;' ><strong><span>F5</span></strong></td><td style='text-align:center;' ><span>继续下一步</span></td></tr><tr><td style='text-align:center;' ><strong><span>F10</span></strong></td><td style='text-align:center;' ><span>单步调试</span></td></tr><tr><td style='text-align:center;' ><strong><span>F11</span></strong></td><td style='text-align:center;' ><span>进入函数</span></td></tr><tr><td style='text-align:center;' ><strong><span>Shift+F11</span></strong></td><td style='text-align:center;' ><span>出函数</span></td></tr></tbody></table></figure><hr /><h4 id='4部分使用'><span>4、部分使用</span></h4><h5 id='1跳转'><span>1、跳转</span></h5><ul><li><span>直接输入文件名，跳转到文件 </span></li><li><code>?</code><span> 列出当前可执行的动作 </span></li><li><code>!</code><span> 显示 Errors 或 Warnings </span></li><li><span>可以 Ctrl+Shift+M : 跳转到行数，也可以 Ctrl+G 直接进入 </span></li><li><code>@</code><span> 跳转到 symbol （搜索变量或者函数），也可以 Ctrl+Shift+O 直接进入 </span></li><li><code>@</code><span> 根据分类跳转 symbol ，查找属性或函数，也可以 Ctrl+Shift+O 后输入:进入 </span></li><li><code>#</code><span> 根据名字查找 symbol ，也可以 Ctrl+T</span></li></ul><hr /><h5 id='2文件选项卡'><span>2、文件选项卡</span></h5><p><span>如果文件选项卡字体为斜体，则会被下一个文件覆盖</span></p><p><span>如果字体为正体，则不会被覆盖</span></p><p><code>提示</code></p><p><span>双击选项卡斜体变为正体</span></p><p><img src="https://pic.imgdb.cn/item/631e006216f2c2beb181ea31.gif" style="zoom: 40%;" /></p><hr /></div></div>
+
+<script>(function(){var e=document.body.parentElement,t=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(e,t,n){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var i=e.target;i&&i!=this;i=i.parentNode)if(i.matches(t)){!1===n.call(i,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)};function o(){return e.scrollTop}r("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),d(),!1}),r("click",".outline-item",function(e){var t=this.querySelector(".outline-label");if(location.hash="#"+t.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),c(),n.add("outline-item-active")}});var a,s,l=function(){var e=o();n=null;for(var i=0;i<t.length&&t[i][1]-e<60;i++)n=t[i]},c=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},d=function(){if(n){c();var e=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(e)if(i){var t=e.closest(".outline-item-open>ul>.outline-item-wrapper");if(t)t.classList.add("outline-item-active");else{for(var r=(e=e.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(e=r).parentElement.closest(".outline-item-wrapper");e.classList.add("outline-item-active")}}else e.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(e){a&&clearTimeout(a),a=setTimeout(function(){l(),d()},300)});var u=function(){s=setTimeout(function(){!function(){t=[];var e=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");t.push([i,e+n.getBoundingClientRect().y])})}(),l(),d()},300)};window.addEventListener("resize",function(e){s&&clearTimeout(s),u()}),u()})();</script></body>
+</html>

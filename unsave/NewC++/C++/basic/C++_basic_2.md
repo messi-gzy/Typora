@@ -53,6 +53,8 @@
 
 $\textcolor{red}{new}$ <-->$\textcolor{red}{delete}$
 
+$\textcolor{red}{malloc}$ <-->$\textcolor{red}{free}$
+
 获取和释放堆内存
 
 [内存分区详细内容:airplane:](../../../DailyNotes/day_2.md)
