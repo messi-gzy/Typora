@@ -1209,15 +1209,3 @@ sudo yum install autoconf make
 
 
 
-## 十、Clang
-
-> 前提：
->
-> g++，gcc，cmake（高版本，上文都有安装方式）
->
-> ```bash
-> yum intsall perl
-> ```
-
-
-
